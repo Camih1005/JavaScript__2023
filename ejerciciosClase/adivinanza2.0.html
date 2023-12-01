@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+       let min=1
+       let max=100
+
+        numeroaleatorio = Math.floor(Math.random()*(max - min)+min)
+
+        while(true){
+            let usuario = Number(prompt('Dijite el numero a adivinar'))
+            
+            if(usuario === numeroaleatorio){
+                alert('Acertaste al numero es ' + numeroaleatorio)
+                break
+            }
+            else if(usuario < numeroaleatorio){
+                alert(`el numero es mayor a ${usuario}`)
+            }
+
+            else if(usuario > numeroaleatorio){
+                alert(`el numero es menor a ${usuario}`)
+            }
+        }
+    </script>
+</body>
+</html>

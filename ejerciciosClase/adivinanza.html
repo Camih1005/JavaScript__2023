@@ -9,27 +9,22 @@
     <script>
         let min = 1;
         let max = 100;
-        numeroaleatorio = Math.random()*(max - min)+min
-        alert(numeroaleatorio)
-        
-
-
-       
+        numeroaleatorio = Math.floor(Math.random()*(max - min)+min)
         
         while (true){
-            let dijitos = Number(prompt('dijite el numero a adivinar del 1 al 100'))
+        let dijitos = Number(prompt('dijite el numero a adivinar del 1 al 100'))
         if (numeroaleatorio === dijitos){
             alert('el numero es correcto')
             break
             
         }
         else if(numeroaleatorio < dijitos){
-            alert('el numero es mayor, ya casi')
+            alert('el numero es menor, ya casi')
             
         }
-        else(numeroaleatorio > dijitos);{
+        else if(numeroaleatorio > dijitos);{
 
-            alert('el numero es menor ya casi')
+            alert('el numero es mayor ya casi')
             
         }
     }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        let fecha = prompt('dijite la fecha DD/MM/AAAA')
+        fecha = fecha.split('/')
+        console.log(fecha)
+
+        dd = Number([0])
+        mm = Number([1])
+        aaaa= Number([2])
+
+        if(dd <= 30 || mm <= 12 || aaaa <= 2023){
+            alert('fecha valida');
+        }
+        else if(dd > 31 || mm > 13 || aaaa > 2024){
+            alert('Error fecha invalida')
+        }
+        
+        
+
+
+        
+
+        
+    </script>
+</body>
+</html>

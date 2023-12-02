@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="h1">Promedio de numeros positivos totales</h2>
+    <p id="pp"></p>
+    <h1 id="numeros"></h1>
+
+    
+    
+    <script>
+        let suma = 0
+        let cont = 0
+        let numeros = ''
+
+        while(true){
+            numero = Number(prompt('Dijite un numero'))
+            if(numero >= 0 ){
+                
+                suma += numero
+                cont ++ 
+            alert('Correcto')
+        }
+            else if(numero < 0){
+
+            
+            alert('Numero negativo')
+            break
+        }
+         
+        
+        }
+        console.trace(numero)
+
+        let promedio = (suma)/(cont);
+        alert(promedio)
+        
+        document.getElementById('h1').innerHTML
+        document.getElementById('numeros').innerHTML = promedio;
+
+    </script>
+
+</body>
+</html>

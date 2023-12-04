@@ -6,14 +6,14 @@
 
 const nombres = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara'];
 
-console.log (nombres.indexOf('Rafael'));
+// console.log (nombres.indexOf('Rafael'));
 
 /* 
 	📌 .lastIndexOf() 
 	Obtenemos el último index de un elemento repetido.
 */
 
-console.log(nombres.lastIndexOf('Rafael'))
+// console.log(nombres.lastIndexOf('Rafael'))
 
 /* 	
 	📌 .forEach()
@@ -21,23 +21,23 @@ console.log(nombres.lastIndexOf('Rafael'))
     caca es la funcion o el nombre que se le da, y ds(puede ser cualquier nombre) es el segundo parametro y solo sirve para saber las pocisiones
 */
 
-nombres.forEach((caca, ds) => {
-    console.log(`Hola ${caca} (${ds})`)
-})
+// nombres.forEach((caca, ds) => {
+//     console.log(`Hola ${caca} (${ds})`)
+// })
 
 /* 
 	📌 .find()
 	Nos permite recorrer un arreglo y devuelve el PRIMER elemento que retornemos.
 */
 
-const resultado = nombres.find((nombre) => {
-    if(nombre[0] === 'R'){
+// const resultado = nombres.find((nombre) => {
+//     if(nombre[0] === 'R'){
 
     
-    return nombre;
-    }
-})
-console.log(resultado)
+//     return nombre;
+//     }
+// })
+// console.log(resultado)
 
 /* 
 	📌 .map()
@@ -45,3 +45,17 @@ console.log(resultado)
 	en base a los resultados de esa función.
 */
 
+const nombresMayusculas = nombres.map ((nombres) =>{return nombres.toUpperCase();
+});
+
+console.log(nombresMayusculas)
+
+/* 📌 .filter()
+	Nos permite ejecutar una función por cada elemento 
+	y luego crear un arreglo en base a los resultados de esa función. 
+*/
+
+const nombres4letras = nombres.filter((nombres) => {
+	return
+	 nombres;
+})

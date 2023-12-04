@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+let iva = 0.21; 
+let mercado = ''
+
+while (true) {
+  let precio = Number(prompt('Ingrese el precio del producto'));
+  
+  if (isNaN(precio)) {
+    alert('Ingresaste algo incorrecto. Por favor, ingresa el precio nuevamente.');
+  }
+  else if(precio < 0){
+    alert('El precio es invalido dijta un valor valido')
+  }
+  else {
+    let precioTotal = precio + (precio * iva);
+    alert(`El precio total más IVA es: ${precioTotal}`);
+    break;
+  }
+}
+    </script>
+  </body>
+</html>

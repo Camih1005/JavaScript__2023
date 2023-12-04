@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+  let numeros = prompt('Ingrese tres números');
+  
+  while (true) {
+    if (numeros.length !== 3 || isNaN(parseInt(numeros))) {
+      alert(`El valor ${numeros} es inválido, intenta de nuevo`);
+      numeros = prompt('Ingrese tres números nuevamente');
+    } else {
+      let centenas = numeros[0];
+      let decenas = numeros[1];
+      let unidades = numeros[2];
+      alert(`El número ${numeros} tiene ${centenas} centenas, ${decenas} decenas y ${unidades} unidades`);
+      break;
+    }
+  }
+</script>
+
+
+</body>
+</html>

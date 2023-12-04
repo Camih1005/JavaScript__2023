@@ -6,15 +6,58 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
+   <script>
 
 
-        function capturNum(num){
-            let sum = 0
-            let num = (num.length)
+function capturarDato() {
+    let dato = prompt("Ingrese un número (ingrese 0 para detenerse):");
+    return parseFloat(dato);
+}
+
+
+function main() {
+    let suma = 0;
+    let cantidadValores = 0;
+    let mayorValor = Number.MIN_SAFE_INTEGER;
+    let menorValor = Number.MAX_SAFE_INTEGER;
+
+    while (true) {
+        let nuevoDato = capturarDato();
+
+        if (nuevoDato === 0) {
+            break; 
         }
 
+        
+        suma += nuevoDato;
 
-    </script>
+        cantidadValores++;
+
+       
+        if (nuevoDato > mayorValor) {
+            mayorValor = nuevoDato;
+        }
+
+       
+        if (nuevoDato < menorValor) {
+            menorValor = nuevoDato;
+        }
+    }
+
+    
+    let promedio = suma / cantidadValores;
+
+    
+    document.write("Sumatoria de los valores:", suma);
+    document.write("Valor del promedio:", promedio);
+    document.write("Cantidad de valores digitados:", cantidadValores);
+    document.write("Mayor valor:", mayorValor);
+    document.write("Menor valor:", menorValor);
+}
+
+
+main();
+
+   </script>
 </body>
 </html>

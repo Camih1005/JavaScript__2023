@@ -6,17 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-
+    <p id="miParrafo"></p>
    <script>
 
-    while(true){
-        let numeropar = parseInt(prompt('Dijite un numero'))
-        if(numeropar / 2 * 2 === numeropar ){
-            alert(`El numero ${numeropar} es par`)
-            break
-        }
-        
-    }
+const miParrafo = document.getElementById('miParrafo');
+console.log(miParrafo.textContent);
 
    </script> 
     

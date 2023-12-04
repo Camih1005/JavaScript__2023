@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        function precioscliente (precio,cantidad){
+            let res = precio * cantidad
+            let total = ''
+            if(precio < 0 && cantidad <= 0){
+                total = 'Valor con error'
+            }else if(precio > 0 && cantidad > 0 ){
+                resultado = (`Compraste ${nom} \n precio unitario ${precio} \n cantidad ${cantidad} \n Total a pagar es: ${res}`)
+                alert(resultado)
+                document.write(resultado)
+            }
+            
+        } 
+
+        let nom = prompt('ingrese el nombre del producto')
+
+        if(Number(nom) && isNaN(nom)){
+            alert('no es valido intenta de nuevo')
+        }
+        else{
+            let precio = Number(prompt('Ingrese el precio del producto'))
+            let cantidad = Number(prompt('Ingrese la cantidad de productos'))
+            let Final = precioscliente(precio,cantidad)
+            
+        }
+        
+        
+
+    </script>
+</body>
+</html>

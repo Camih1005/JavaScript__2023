@@ -8,11 +8,63 @@
 <body>
     <script>
 /*Arrais vacias*/
-        let marcas = new Array (5)
-        console.log(marcas)
+//         let marcas = new Array (6)
+        
+// /*agrega valores al array*/
+//         marcas[0] = 'Audi'
+//         marcas[1] = 'Lamborghini'
+//         console.log(marcas)
 
-        marcas[0] = 'Audi'
-        marcas[1] = 'Lamborghini'
+
+//         let array = [mam,mom.mim,mem]
+//         let remove = splice(1,2)
+//         console.log (remove)
+
+        /*le pone le valor que quieres*/
+        let arr = ['apple', 'banana', 'orange']
+        let str = arr.join(' ')
+        console.log(str)
+
+/*Devuelve el indice de banana*/
+        let sds = ['apple', 'banana', 'orange']
+        let ssd = sds.indexOf('banana')
+        console.log(ssd)
+
+
+        let frutas = ['pera','manzana','mandarina', 'banana']
+
+        /*recorreo por indices*/
+        for (let i =0; i<frutas.length; i++){
+            console.log(frutas[i])
+        }
+
+        /*recorrido por elementos*/
+        for(const fruta of frutas){
+            console.log(fruta)
+        }
+
+        let arre = [4.0,2.5,2.5,3.5]
+
+        arre.forEach(function(e){
+            console.log(e)
+        })
+
+        arre.forEach(e => console.log(e))
+
+        let num = [1,2,3]
+/*map*/
+        let curv8 = arre.map(e => e*0.8+1)
+        console.log(curv8)
+
+        /*filter*/
+        let may3 = arre.filter(function (e){
+            if( e >= 3) return e
+            
+        })
+        console.log(may3)
+
+        let sumc8 = arre.reduce((c,e) => c+  (e *0.8 + 1))
+        console.log(sumc8.toFixed(2))
 
     </script>
 </body>

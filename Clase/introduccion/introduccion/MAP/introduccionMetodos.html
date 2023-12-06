@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const frutas = new Map([['manzanas', 2500], ['peras',2000],['banano', 1500]])
+        console.log(frutas)
+        console.log('cantidad de llaves: ' + frutas.size)
+
+        frutas.set('pitahaya', 5000)
+        frutas.set('mango', 3000)
+        console.log('cantidad de llaves es de: '+frutas.size)
+
+        console.log('el valor de la fruta de camilo:' + frutas.get('mango'))/* .get llama el valor, no la llave*/
+        
+        console.log(frutas.delete('pepino'))
+        console.log(frutas.delete('peras'))
+
+        console.log('el mango existe en la canasta de frutas: ' + frutas.has('mango'))
+
+        frutas.forEach((v , k) => {
+            console.log(`El precio de ${k} es: $${v}`)
+        })
+
+        for(const e of frutas.entries()){
+            console.log(`los precios de ${e[0]} es: $${e[1]}`)
+        }
+
+        for(const [k,v] of frutas.entries()){
+            console.log(`El precioso de ${k} es: $${v}`)
+        }
+
+
+    </script>
+
+</body>
+</html>

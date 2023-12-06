@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+       
+        factur = new Map()
+        function agregarFac(k,v){
+            k = Number(prompt('Ingrese el numero de factura'))
+            v = Number(prompt('Ingrese el valor de la factura'))
+           if(k < 0 || isNaN(k) && v < 0 ){
+                alert('Dijitaste mal el codigo de la factura, vuelve a intentarlo')
+
+           }
+           else{  
+               alert('factira ingresada')
+               dijitarCodigo = factur
+               alert(factur.set(k))
+               console.log(factur.set(k))
+           }
+
+        }
+        agregarFac()
+
+
+    </script>
+
+</body>
+</html>

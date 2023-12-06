@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+ /*
+    Una función es un bloque de código, autocontenido, que se puede definir una vez y ejecutar en cualquier momento. Opcionalmente, una función puede aceptar parámetros y devolver un valor.
+
+    Las funciones en JavaScript son objetos, un tipo especial de objetos:
+
+    Se dice que las funciones son ciudadanos de primera clase porque pueden asignarse a un valor, y pueden pasarse como argumentos y usarse como un valor de retorno.
+    https://github.com/jonmircha/youtube-js/blob/main/00_basicos.html
+    */
+        //declaracion de funcion
+        function estoEsUnaFuncion(){
+            console.log('uno')
+            console.log('dos')
+            console.log('tres')
+        }
+        function unaFuncionQueDevuelveValor(){
+            console.log('uno')
+            return 19
+            console.log('dos')
+            console.log('tres')
+            return 'La funcion ha retornado una cadena de texto'
+        }
+
+        let valorDeFuncion = unaFuncionQueDevuelveValor()
+        //console.log(valorDeFuncion)
+        //invocacion de funcion
+
+        function saludar(nombre,edad){
+            console.log(`Hola mi nombre es ${nombre} y tengo ${edad } años`)
+        }
+
+
+
+        saludar('camilo',13)
+
+
+    </script>
+    
+</body>
+</html>

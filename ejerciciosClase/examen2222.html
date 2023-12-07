@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Facturas</title>
+</head>
+<style>
+    body{
+        background-color: rgb(255, 255, 255);
+        
+    }
+    #hola{
+        margin: 0 auto;
+        border: solid 1px rgb(0, 0, 0);
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    h1,h2,h3,h4,h5,h6,p,button{
+        text-align: center;
+    }
+    
+    li{
+        text-align: center;
+        border: solid 1px rgb(0, 0, 0);
+        width: 300px;
+
+    }
+</style>
+<body>
+    
+    <div id="hola">
+    <h1>Banco de la republica</h1>
+    <button onclick="agregarPrestamo()">Iniciar prestamo</button>
+    <div id="resumen">
+        <h2>Solicitud de prestamo</h2>
+        <hr>
+        <p>Prestamo solicitado <span id="totalFacturas">0</span></p>
+        <p>IVA <span id="totalCobrado">0</span></p>
+        <p>Meses <span id="totalPendiente">0</span></p>
+    </div>
+
+    <h2>Listado del prestamo</h2>
+
+    <ol id="facturaList">
+
+    </ol>
+
+    
+</div>
+
+    <script>
+        const facturas = new Map();
+        
+        
+
+        function agregarPrestamo() {
+            const numeroFactura = prompt("Ingrese el monto a prestar:");
+            const IvaPagar = parseFloat(prompt("Ingrese el iva a Pagar:"));
+            const Tiempo = parseFloat(prompt("Ingrese meses a prestar"));
+
+            if (isNaN(IvaPagar)) {
+                alert("Por favor, ingrese un valor numérico válido para el coste de la factura.");
+                return;
+            }
+
+            facturas[numeroFactura,Tiempo] = IvaPagar;
+
+            mostrarFacturas();
+            mostrarResumen();
+            
+        }
+
+
+       
+
+        function mostrarPagosMeaAmes() {
+            const facturaList = document.getElementById('facturaList');
+            facturaList.innerHTML = '';
+
+            for (const numeroFactura in facturas) {
+                const listItem = document.createElement('li');
+                listItem.textContent = `Factura #${numeroFactura} - $${facturas[numeroFactura]}`;
+                facturaList.appendChild(listItem);
+            }
+        }
+
+        function mostrarResumen() {
+            const totalFacturas = Object.keys(facturas).length;
+            const totalCobrado = Object.values(facturas).reduce((acc, curr) => acc + curr, 10);
+            const totalPendiente = totalFacturas + totalCobrado;
+
+            document.getElementById('totalFacturas').textContent = totalFacturas;
+            document.getElementById('totalCobrado').textContent = totalCobrado;
+            document.getElementById('totalPendiente').textContent = totalPendiente;
+            alert(`Resumen:\nTotal de Facturas: ${totalFacturas}\nTotal Cobrado: $${totalCobrado}\nTotal Pendiente de Cobro: $${totalPendiente}`);
+        }
+    </script>
+</body>
+</html>

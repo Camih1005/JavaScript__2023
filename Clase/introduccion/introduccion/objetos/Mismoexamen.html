@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla de Amortización</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Banco de la republica</h2>
+
+  <label for="monto">Monto del préstamo:</label>
+  <input type="text" id="monto" placeholder="Ingrese el monto">
+
+  <label for="interes">Tasa de interés anual (%):</label>
+  <input type="text" id="interes" placeholder="Ingrese la tasa de interés">
+
+  <label for="pagos">Número de pagos:</label>
+  <input type="text" id="pagos" placeholder="Ingrese el número de pagos">
+
+  <button onclick="calcularAmortizacion()">Calcular Tabla de Amortización</button>
+
+  <div id="resultado"></div>
+
+  <table>
+
+    <thead>
+        <tr>
+      <td>Monto del credito</td>
+      <td>Tasa de interes</td>
+      <td>Numero de pago mensual</td>
+      <td>Valor total</td>
+      <td>Valor mensual</td>
+    </tr>
+    <tr id="tablaMin">
+        <td id="mont">0</td>
+        <td id="tasa">0</td>
+        <td id="numpago">0</td>
+        <td id="valort">0</td>
+        <td id="valorm">0</td>
+    </tr>
+    </thead>
+
+  </table>
+
+  <script>
+
+    let montoss = document.getElementById('mont') = monto
+
+
+    function calcularAmortizacion() {
+      const monto = parseFloat(document.getElementById('monto').value);
+      const interesAnual = parseFloat(document.getElementById('interes').value);
+      const numPagos = parseInt(document.getElementById('pagos').value);
+
+      const tasaInteresMensual = interesAnual / 12 / 100;
+      const cuotaMensual = (monto * tasaInteresMensual) / (1 - Math.pow(1 + tasaInteresMensual, -numPagos));
+
+      let saldoRestante = monto;
+      let tablaAmortizacion = [];
+
+      for (let i = 1; i <= numPagos; i++) {
+        const interesPendiente = saldoRestante * tasaInteresMensual;
+        const abonoCapital = cuotaMensual - interesPendiente;
+        saldoRestante -= abonoCapital;
+
+        const fila = {
+          Meses: i,
+          CuotaMensual: cuotaMensual.toFixed(2),
+          Interes: interesPendiente.toFixed(2),
+          Abono: abonoCapital.toFixed(2),
+          Saldo: saldoRestante.toFixed(2)
+        };
+
+        tablaAmortizacion.push(fila);
+      }
+
+      mostrarTabla(tablaAmortizacion);
+    }
+
+    function mostrarTabla(tabla) {
+      const resultadoDiv = document.getElementById('resultado');
+      resultadoDiv.innerHTML = '';
+
+      const table = document.createElement('table');
+
+   
+      const thead = document.createElement('thead');
+      const headerRow = document.createElement('tr');
+      for (const key in tabla[0]) {
+        const th = document.createElement('th');
+        th.textContent = key;
+        headerRow.appendChild(th);
+      }
+      thead.appendChild(headerRow);
+      table.appendChild(thead);
+
+ 
+      const tbody = document.createElement('tbody');
+      tabla.forEach(fila => {
+        const tr = document.createElement('tr');
+        for (const key in fila) {
+          const td = document.createElement('td');
+          td.textContent = fila[key];
+          tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+
+      resultadoDiv.appendChild(table);
+    }
+  </script>
+
+</body>
+</html>

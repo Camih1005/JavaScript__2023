@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+const persona = {
+            nombre : 'camilo',
+            edad :23,
+            trabaja: true,
+            familia: ['Cata','Maria'],
+            direccion:{
+                calle: 'calle 103',
+                numero: 13,
+                ciudad: 'Floridablanca'
+                
+            }
+            
+        }
+
+        const clonarPerson = Object.assign({},persona)
+        console.log(clonarPerson)
+
+        const clonado2 = {... persona}
+        console.log(clonado2)
+
+
+        const a1 = {a : 1}
+        const a2 = {b : 2}
+        const a3 = {c : 3}
+
+        const ot = {... a1, ...a2, ...a3}
+        console.log(ot)
+    </script>
+    
+</body>
+</html>

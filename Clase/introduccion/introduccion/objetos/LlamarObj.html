@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8JSON OBJETOS">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+const obj = {
+   'empleados':[
+    {
+        'nombre': 'Camilo',
+        'apellido':'Hernandez',
+        
+        
+    },
+    {
+        'nombre': 'Cristian',
+        'apellido':'Torres',
+        
+    },
+    {
+        'nombre': 'Karla',
+        'apellido':'Rivera',
+        
+    },
+     
+    ],
+    'nombrecompleto':function(pos){
+        return this.empleados[pos].nombre + ' ' + this.empleados[pos].apellido
+    }
+
+
+}
+console.log(obj.empleados[2].apellido)
+console.log(obj.empleados[2].nombrecompleto())
+
+    </script>
+
+</body>
+</html>

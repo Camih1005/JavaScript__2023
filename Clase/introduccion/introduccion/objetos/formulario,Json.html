@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action=""> 
+        <label for="nombre">NOmbre:</label> <input type="text" name="nombre" id="nombre"> <br> <label
+            for="edad">Edad:</label> <input type="number" name="edad" ,id="edad"> </form> <button
+        onclick="capturarForm()">Enviar</button>
+    <script>          function capturarForm() { const form = document.querySelector("form")             const formData = new FormData(form)             for (const e of formData) { console.log(e) } formData.append("nombre", "Oscar")             const nombres = formData.getAll("nombre")             console.log(nombres) }
+    </script>
+
+</body>
+
+</html>

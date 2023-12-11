@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color: cornsilk;
+        }
+        label{
+            color: rgb(132, 0, 255);
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <label for="nombre">nombre del producto</label>
+    <input type="text" id="namber" placeholder="Ingrese el nombre">
+    <br>
+    <label for="cantidad">Cantidad del producto</label>
+    <input type="number" id="Cantidad" placeholder="Ingrese cantidad">
+    <br>
+    <label for="valor">Valor del producto</label>
+    <input type="number" id="Valort" placeholder="Ingrese del precio del producto">
+    <br>
+    <button onclick="Calculartotal()">Calcular</button>
+<script>
+    function Calculartotal(){
+        const nomb = (document.getElementById('namber').value);
+        const cant = parseInt(document,getElementById('Cantidad').value);
+        const precioPr = parseFloat(document.getElementById('Valort'))
+        const calcPro = cant * precioPr
+        const tablaP = []
+        
+
+        for(let i = 1; nomb<= 100; i++ ){
+
+        }
+    }
+
+    
+</script>
+    
+</body>
+</html>

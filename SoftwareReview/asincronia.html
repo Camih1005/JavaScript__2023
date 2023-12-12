@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            list-style: none;
+        }
+        ul,li{
+            border: solid 1px black;
+            margin: 0 auto;
+        }
+    </style>
+    <h1>Callbacks y Asincronia</h1>
+    <ul id="lista">
+
+    </ul>
+    <script>
+
+setTimeout(function () {
+    let a = ['[Enviado de :1]']
+    let agg = document.getElementById('lista')
+    let li = document.createElement('li')
+    li.textContent = a
+    agg.appendChild(li);
+    });
+
+
+setTimeout(function () {
+    let b = ['[Enviado de :2]']
+    let agg = document.getElementById('lista')
+    let li = document.createElement('li')
+    li.textContent = b
+    agg.appendChild(li);
+    }, 1000);
+
+    setTimeout(function () {
+    let c = ['[Enviado de :3]']
+    let agg = document.getElementById('lista')
+    let li = document.createElement('li')
+    li.textContent = c
+    agg.appendChild(li);
+    }, 5000);
+
+    setTimeout(function () {
+    let d = ['[Enviado de :4]']
+    let agg = document.getElementById('lista')
+    let li = document.createElement('li')
+    li.textContent = d
+    agg.appendChild(li);
+    }, 3000);
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

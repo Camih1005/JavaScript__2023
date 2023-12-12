@@ -1,0 +1,46 @@
+//llenar un array con  nombres y sacar las dos ultimas letras del array()
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+         function AgregarNombre(lis){
+            let NumNombre = prompt('Cuantas veces quieres que se repita');
+            for(let i = 0;i < NumNombre; i++){
+            let PedirNom = prompt('Dijite el nombre')
+            lis.push(PedirNom)
+            }           
+        }
+
+        function SeleccionarPalabras(lis){
+            let listaV = []
+             lis.forEach(element => {
+                console.log(element)
+                palabra = element.slice(-2)
+                listaV.push(palabra)
+             });
+
+             console.log(listaV)
+             return listaV
+        }
+
+        let nombres = []
+
+        AgregarNombre(nombres)
+        let retLis = SeleccionarPalabras(nombres)
+      
+
+
+
+
+
+    </script>
+
+</body>
+</html>

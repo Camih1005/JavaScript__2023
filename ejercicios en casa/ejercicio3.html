@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Concatenar</h1>
+    <ul id="lista">
+        
+    </ul>
+    <h2>Valores concatenados</h2>
+    <p id="textop"></p>
+    
+    <Script>
+
+            function agregarConc(conc){
+                let agg = document.getElementById('textop')
+                agg.textContent = conc
+                }
+
+            function concatenarP(lis){
+                let conc = ''
+                lis.forEach(element => {
+                    conc = conc + element
+                });
+                agregarConc(conc)
+                return conc
+            }
+
+            function mostrarLis(PedirNom){
+                let agg = document.getElementById('lista')
+                let li = document.createElement('li')
+                li.textContent = PedirNom
+                agg.appendChild(li)
+
+            }
+
+
+
+            function AgregarNombre(lis){
+            let NumNombre = prompt('Cuantas veces quieres que se repita');
+            for(let i = 0;i < NumNombre; i++){
+            let PedirNom = prompt('Dijite el nombre')
+            mostrarLis(PedirNom)
+            lis.push(PedirNom)
+            }           
+        }
+
+        let nombres = []
+
+        AgregarNombre(nombres)
+       let concatenando = concatenarP(nombres)
+       console.log(concatenando)
+
+
+    </Script>
+
+</body>
+</html>

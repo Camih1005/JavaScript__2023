@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let frutas = ['piña', 'mango', 'pene', 'mandarina','mora'];
+
+        function selecFru(frutas){
+            let fruitV = []
+            let val  = []
+            frutas.forEach(element => {
+            let saber = element.includes('p')
+            val.push(saber)
+            val.push(element)
+            fruitV.push(val)
+            });
+            return fruitV
+        }
+
+        let hola =selecFru(frutas)
+        console.log(hola)
+        console.log(hola.length)
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function sumarN(cont){
+            let suma = 0
+            for(let i = 0; i < cont.length; i++){
+                suma = suma + cont[i];
+            }
+            return suma
+
+        }
+
+        let nombres = []
+        function AgregarNombre(lis){
+            let NumNombre = prompt('Cuantas veces quieres que se repita');
+            for(let i = 0;i < NumNombre; i++){
+            let PedirNom = prompt('Dijite el nombre')
+            lis.push(PedirNom)
+            }           
+        }|  1
+        
+        function contarLetras(lis){
+            let listt = []
+            lis.forEach(element => {
+               let num =  element.length
+               listt.push(num)
+            });
+            return listt
+        }
+
+        
+        AgregarNombre(nombres)
+        let cont = contarLetras(nombres)
+        console.log(cont)
+        let sumas = sumarN(cont)
+        console.log(`La suma de palabras es ${sumas}`)
+        
+
+    </script>
+    
+</body>
+</html>

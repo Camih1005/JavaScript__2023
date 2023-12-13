@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        const datos=[
+            {
+                id:1,
+                title: 'Iron man',
+                years: 2008
+            },
+            {
+                id:2,
+                title: 'Spiderman: HomeComing',
+                years: 2017
+            },
+            {
+                id:3,
+                title: 'Avengers: Endgame',
+                years: 2019
+            },
+        ];
+
+        // const getDatos = () =>{
+        //     setTimeout(() => {
+        //         console.log(getDatos())
+        //         return datos;
+        //     },1500)
+        // }
+ 
+        const getDatos = () =>{
+            return new Promise((resolve,reject) => {
+                if (datos.length === 0){
+                    reject(new Error('Error. No existe'))
+                }
+            }
+        
+        
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -24,16 +24,31 @@
                 console.log(this.nombre + 'esta caminando')
             }
         }
-        console.log(persona)
-        console.log(persona.nombre)
-        persona.caminar()
-        persona.nombre = 'Daniela' //cambiar nombre
-        console.log(persona.nombre)
+        // console.log(persona)
+        // console.log(persona.nombre)
+        // persona.caminar()
+        // persona.nombre = 'Daniela' //cambiar nombre
+        // console.log(persona.nombre)
         const cadenaPersonas = JSON.stringify(persona)
-        console.log(cadenaPersonas)
+         console.log(cadenaPersonas)
 
         const jspers = JSON.parse(cadenaPersonas)
         console.log(jspers)
+        console.log(persona[0])
+        const dsds = persona.find((caca) => caca > 10 )
+        console.log(dsds)
+
+        const inventario = [
+        { nombre: "manzanas", cantidad: 2 },
+            { nombre: "bananas", cantidad: 0 },
+                { nombre: "cerezas", cantidad: 5 },
+                ];
+
+        function esCereza(fruta) {
+         return fruta.nombre === "cerezas";
+        }
+
+    console.log(inventario.find(esCereza));
     </script>
 
 </body>

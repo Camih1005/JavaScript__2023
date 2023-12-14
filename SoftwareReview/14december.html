@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Luckiest+Guy&family=Zen+Dots&display=swap');
+
+        * {
+            font-family: 'Luckiest Guy', cursive;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 90px;
+        }
+
+        body {
+            background-image: url(../imagenes/picachui.jpg);
+            background-size: 1600px 900px;
+            background-repeat: no-repeat;
+            background-color: rgb(7, 67, 245);
+        }
+
+        input {
+            width: 100px;
+            height: 20px;
+            background-color: rgba(0, 244, 4, 0.406);
+            color: black;
+            border-radius: 10px 2px;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.506);
+        }
+
+        .Maricon {
+            height: auto;
+            width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            width: 150px;
+        }
+
+        span {
+            color: rgb(231, 231, 0);
+        }
+
+        #mama {
+            display: flex;
+            justify-content: center;
+            margin: 30px;
+        }
+
+        table {
+            width: 500px;
+            background-color: rgba(107, 107, 107, 0.429);
+            border-radius: 30px 10px;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.506);
+            margin-top: 20px; 
+        }
+
+        img {
+            width: 23px;
+        }
+
+        .listt {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           
+            background-position: center;
+            background-repeat: no-repeat;
+            
+        }
+
+        ul {
+            background-color: rgba(182, 205, 255, 0.5);
+            font-size: 10px;
+            width: 60%;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 5px;
+        }
+
+        button {
+            background-color: rgba(71, 41, 216, 0.365);
+            border-radius: 10px 2px;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.506);
+        }
+        tr th{
+            background-color: rgba(21, 255, 0, 0.38);
+        }
+        li{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ELIJE <span>TU POKE</span>MON FAVORITO</h1>
+    <div id="mama">
+        <input type="number" id="pokemonIdInput" placeholder="Ingrese el ID">
+        <button onclick="getPokemonInfo()">Buscar Pokémon</button>
+    </div>
+    <div class="Maricon">
+        <table id="pokemonTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>IMAGEN</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="listt">
+        <h2>LISTA DE POKÉMON</h2>
+        <ul id="pokemonList"></ul>
+    </div>
+
+    <script>
+        async function getPokemonInfo() {
+            const pokemonIdInput = document.getElementById('pokemonIdInput');
+            const userInput = pokemonIdInput.value;
+            
+            if (!userInput) {
+                return;
+            }
+
+            const pokemonId = parseInt(userInput);
+            if (isNaN(pokemonId) || pokemonId <= 0 || pokemonId > 100) {
+                alert('Ingrese un ID válido (del 1 al 100).');
+                return;
+            }
+
+            const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                const pokemonImage = data.sprites.front_default;
+                const pokemonName = data.name;
+                const pokemonCode = data.id;
+
+                document.getElementById('pokemonTable').innerHTML = `
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOMBRE</th>
+                            <th>IMAGEN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style='width:100px; text-align: center;'>${pokemonCode}</td>
+                            <td style='position:relative;left:37px;color: rgb(231, 231, 0)'>${pokemonName}</td>
+                            <td><img src="${pokemonImage}" alt="${pokemonName}" style="width: 170px; height: 170px;position:relative;left:60px"></td>
+                        </tr>
+                    </tbody>
+                `;
+
+            } catch (error) {
+                alert('Error al obtener los datos:', error);
+            }
+        }
+
+        async function getPokemonList() {
+            const apiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=100';
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                const pokemonList = document.getElementById('pokemonList');
+
+                pokemonList.innerHTML = '';
+
+                data.results.forEach(pokemon => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `ID: ${pokemon.url.split('/').slice(-2, -1)} - Nombre: ${pokemon.name}`;
+                    pokemonList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Error al obtener la lista de Pokémon:', error);
+            }
+        }
+
+        getPokemonList();
+    </script>
+
+</body>
+</html>

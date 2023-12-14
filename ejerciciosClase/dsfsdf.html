@@ -3,17 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Pokémon</title>
+    <style>
+        body {
+            background-image: url(../imagenes/picachui.jpg);
+            background-color: blue;
+        }
+    </style>
 </head>
 <body>
+    
+
     <script>
-        let n1 = Number(prompt('ingrese un numero'))
-        let n2 = Number(prompt('ingrese un numero'))
+        async function getPokemonList() {
+            const apiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=100';
 
-        let salida = `Los numeros ${n1} + ${n2}\n es igual a ${n1 + n2}\n la resta es ${n1 - n2} y la multipicacion es ${n1 * n2}\n division es ${n1 / n2} `
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
 
-        console.log(salida)
-        alert(salida)
+                const pokemonList = document.getElementById('pokemonList');
+
+               
+                pokemonList.innerHTML = '';
+
+                data.results.forEach(pokemon => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `ID: ${pokemon.url.split('/').slice(-2, -1)} - Nombre: ${pokemon.name}`;
+                    pokemonList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Error al obtener la lista de Pokémon:', error);
+            }
+        }
+
+       
+        getPokemonList();
     </script>
 </body>
 </html>

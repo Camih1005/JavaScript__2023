@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        async function getNomber(nompoke){
+            const url = `https://pokeapi.co/api/v2/pokemon/${nompoke}`;
+            const respuestas = await fetch(url);
+            if (!respuestas.ok)
+                throw new Error("Pokemon no exite");
+
+            const json = await respuestas.json();
+            //retorna el nombre del usuario
+            return json.sprites.front_default;
+
+        }
+
+        ///// getnombre es una promesa
+
+        (async function(){
+            try{
+                let pr = prompt('dijite')
+                let urlImg = await getNomber(pr)
+                console.log(urlImg)
+
+                urlImg = await getNomber('limber');
+                console.log(urlImg);
+            }catch(error){
+                console.error(error.message)
+            }
+        })()
+    </script>
+    
+</body>
+</html>

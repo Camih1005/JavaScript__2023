@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        const fs = require('fs').promises;
+
+        async function fetchData(){
+            try{
+                const data = await fs.readFile('robots.txt', 'utf-8');
+                console.log(data)
+
+            }catch(error){
+                console.error('ERROR PUTO',error.message)
+            }
+        }
+        fetchData()
+
+    </script>
+    
+</body>
+</html>

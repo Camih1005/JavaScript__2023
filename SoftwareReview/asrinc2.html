@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ASINCRONIA-PROMISE</h1>
+    <ul id="lista">
+
+    </ul>
+
+    <script>
+
+
+
+        let A = new Promise((resolve,reject)=>{
+            setTimeout(() => {
+            
+            resolve('Promesa A cumplida')
+            }, 1000);
+            setTimeout(()=>{
+                reject('Promesa no cumplida')
+            },2000)
+        })
+        let b = new Promise((resolve,reject)=>{
+            setTimeout(() => {
+            
+            resolve('Promesa B cumplida')
+            }, 5000);
+            setTimeout(()=>{
+                reject('Promesa no cumplida')
+            },5000)
+        })
+
+
+        let hora = new Date()
+        Promise.all([A,b])
+        .then((response)=>{
+            let agg = document.getElementById('lista')
+            let li = document.createElement('li')
+            li.textContent = `malparido ${response}  ${hora.toLocaleTimeString()}`
+            agg.appendChild(li);
+        })
+        .catch((error)=>{
+            let agg = document.getElementById('lista')
+            let li = document.createElement('li')
+            li.textContent = ('error',error)
+            agg.appendChild(li);
+        })
+
+        
+    
+    </script>
+    
+</body>
+</html>

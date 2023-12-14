@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        async function DadosGet(iterations){
+            let numbers = []
+            
+            for (let i = 0; i < iterations; i++){
+                const Aleatorio = await(1 + Math.floor(Math.random() * 6))
+                numbers.push(Aleatorio)
+                if(Aleatorio === 6){
+                    throw new Error('se ha sacado un 6'
+                    )
+                    
+        
+                }
+                
+            }return numbers
+
+        }
+        async function obtdatos(){
+            try{
+                let num = Number(prompt('Dijite numero'))
+                const datosObtenidos = await DadosGet(num)
+                console.log(datosObtenidos)
+            }catch(error){
+                console.error('malparido TIRE OTRO QUE NO SEA 6', error.message)
+               
+            }
+        }
+        obtdatos()
+
+        // const doTask = (iterations) => {
+        //     const numbers = [];
+        //     for (let i = 0; i < iterations; i++) {
+        //         const number = 1 + Math.floor(Math.random() * 6);
+        //         numbers.push(number);
+        //         if (number === 6) {
+        //             return {
+        //                 error: true,
+        //                 iter: i + 1,
+        //                 message: "Se ha sacado un 6"
+
+        //             };
+        //         }
+        //     }
+        //     return {
+        //         error: false,
+        //         value: numbers
+        //     };
+        // }
+        // console.log(doTask(10));
+
+
+    </script>
+
+</body>
+
+</html>

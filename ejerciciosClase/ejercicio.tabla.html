@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Tabla pokemones</h1>
+<table id="tabla">
+
+</table>
+    <script>
+
+async function getNomber(nompoke){
+            const url = `https://pokeapi.co/api/v2/pokemon/${nompoke}`;
+            const respuestas = await fetch(url);
+            if (!respuestas.ok)
+                throw new Error("Pokemon no exite");
+
+            const json = await respuestas.json();
+            //retorna el nombre del usuario
+            return json.sprites.front_default;
+
+        }
+
+        const obj = 
+            { ID: pr, 
+              NOMBRE : pr ,
+              IMAGEN_FRONTAL : url,
+
+            }
+        
+
+        ///// getnombre es una promesa
+
+        (async function(){
+            try{
+                let pr = number(prompt('dijite'))
+                let urlImg = await getNomber(pr)
+                console.log(urlImg)
+
+                
+                let agg = document.getElementById('tabla')
+                let li = document.createElement('tr')
+                li.textContent = PedirNom
+                agg.appendChild(li)
+            }catch(error){
+                console.error(error.message)
+            }
+        })()
+
+    </script>
+    
+</body>
+</html>

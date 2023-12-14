@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+        // function getNombre(nomusu){
+        //     const url = `http://api.github.com/users/${nomusu}`
+
+        //     //fetch es una promesa
+        //     fetch(url)
+        //     .then(respuesta => respuesta.json())
+        //     .then(json => {
+        //         console.log(json.name)
+        //     })
+        // }
+        // getNombre('Camih1005')
+
+
+        async function getNOmbres(sut){
+            const url = `https://pokeapi.co/api/v2/pokemon/${sut}`
+
+            const respuestas = await fetch(url);
+            const json = await respuestas.json();
+
+            console.log(json.name)
+        }
+        getNOmbres('Camih1005')
+    </script>
+    
+</body>
+</html>

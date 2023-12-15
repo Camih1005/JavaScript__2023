@@ -105,25 +105,7 @@
         </div>
 
         <script>
-            function time(a) {
-                max = 806
-                min = 0
-                const contra = Math.floor(Math.random() * (max - min) + min);
-                for (let i = 0; i < contra; i++) {
-                    const element = contra[i];
-                    setTimeout((resolve, reject) => {
-
-                        console.log
-                    }, 2000);
-
-
-                }
-            }
-            time()
-
-
-
-
+        
             async function getPokemonSelec() {
                 max = 806
                 min = 0
@@ -138,7 +120,7 @@
                     const response = await fetch(apiUrl);
                     const data = await response.json();
 
-                    const pokemonImage = data.sprites.other['official-artwork'].front_default;;
+                    const pokemonImage = data.sprites.other['official-artwork'].front_default;
                     const pokemonName = data.name;
                     const pokemonCode = data.id;
                     const hp = data.stats[0].base_stat

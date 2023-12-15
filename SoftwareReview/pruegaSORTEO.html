@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Battle Simulator</title>
+    <style>
+   @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Luckiest+Guy&family=Zen+Dots&display=swap');
+
+* {
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    background-color: rgb(248, 248, 176);
+}
+
+.maricon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+h1 {
+    font-size: 30px;
+}
+
+span {
+    color: rgb(128, 128, 0);
+}
+
+.aleatoriobut {
+    width: 100px;
+    height: 40px;
+    margin: 20px;
+    background-color: brown;
+}
+
+.botsis {
+    background-color: burlywood;
+    width: 100px;
+    height: 40px;
+    margin: 20px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+}
+
+img {
+    width: 40%;
+}
+
+.segundodiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-style: double;
+
+
+
+}
+
+.listt {
+    margin-top: 300px;
+}    </style>
+</head>
+
+<body>
+    <h1>ELIJE <span>TU POKEMON</span> FAVORITO</h1>
+    <div id="mama">
+        <div class="inputs">
+            <button class="botsis" onclick="getRandomPokemon()">MI POKEMON</button>
+            <button class="aleatoriobut" onclick="startBattle()">FIGHT</button>
+        </div>
+
+        <div class="maricon">
+            <div id="pokemonTable">
+                <h1>BIENVENIDOS A POKEMON-GO</h1>
+            </div>
+
+            <div id="pokemonAlea"></div>
+        </div>
+
+        <div class="listt">
+            <h2>LISTA DE POKÉMON</h2>
+            <ul id="pokemonList"></ul>
+        </div>
+
+        <script>
+            let myPokemonData;
+            let cpuPokemonData;
+
+            async function getRandomPokemon() {
+                const pokemonIdInput = Math.floor(Math.random() * 806) + 1;
+
+                try {
+                    myPokemonData = await fetchPokemonData(pokemonIdInput);
+
+                    // Incrementar HP si el Pokemon ya fue seleccionado antes
+                    if (myPokemonData.selected) {
+                        myPokemonData.hp = Math.floor(myPokemonData.hp / 2 * (1 + myPokemonData.base_experience / 100));
+                    }
+
+                    displayPokemonInfo(myPokemonData, 'pokemonTable');
+                } catch (error) {
+                    alert('Error al obtener los datos:', error);
+                }
+            }
+
+            async function startBattle() {
+                if (!myPokemonData) {
+                    alert('Debes seleccionar un Pokemon antes de comenzar la batalla.');
+                    return;
+                }
+
+                cpuPokemonData = await fetchPokemonData(getRandomPokemonId());
+
+                displayPokemonInfo(cpuPokemonData, 'pokemonAlea');
+
+                // Simulación de batalla
+                simulateBattle();
+            }
+
+            function getRandomPokemonId() {
+                return Math.floor(Math.random() * 806) + 1;
+            }
+
+            async function fetchPokemonData(pokemonId) {
+                const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                return {
+                    name: data.name,
+                    image: data.sprites.other['official-artwork'].front_default,
+                    hp: data.stats[0].base_stat,
+                    attack: data.stats[1].base_stat,
+                    defense: data.stats[2].base_stat,
+                    speed: data.stats[3].base_stat,
+                    base_experience: data.base_experience,
+                    selected: false, // Marcador para saber si el Pokemon ha sido seleccionado
+                };
+            }
+
+            function displayPokemonInfo(pokemonData, targetElementId) {
+                const targetElement = document.getElementById(targetElementId);
+                targetElement.innerHTML = `
+                    <div class="segundodiv">
+                        <h1>${targetElementId === 'pokemonTable' ? 'MI POKEMON' : 'POKEMON CPU'}</h1>
+                        <p><img src="${pokemonData.image}" alt="${pokemonData.name}"></p>
+                        <div>NAME: ${pokemonData.name}</div>
+                        <div>HP: ${pokemonData.hp}</div>
+                        <div>ATTACK: ${pokemonData.attack}</div>
+                        <div>DEFENSE: ${pokemonData.defense}</div>
+                        <div>SPEED: ${pokemonData.speed}</div>
+                    </div>`;
+            }
+
+            function simulateBattle() {
+                const myTurn = myPokemonData.speed > cpuPokemonData.speed;
+                let turns = 0;
+
+                const interval = setInterval(() => {
+                    turns++;
+
+                    if (myTurn) {
+                        const damage = calculateDamage(myPokemonData, cpuPokemonData);
+                        cpuPokemonData.hp -= damage;
+                    } else {
+                        const damage = calculateDamage(cpuPokemonData, myPokemonData);
+                        myPokemonData.hp -= damage;
+                    }
+
+                    if (myPokemonData.hp <= 0 || cpuPokemonData.hp <= 0) {
+                        clearInterval(interval);
+
+                        setTimeout(() => {
+                            endBattle();
+                        }, 2000);
+                    }
+
+                    myTurn = !myTurn;
+                }, 1000);
+            }
+
+            function calculateDamage(attacker, defender) {
+                const speedRatio = Math.abs(attacker.speed - defender.speed);
+                const damage = attacker.attack - defender.defense;
+                return Math.floor(damage * (1 + speedRatio / 100));
+            }
+
+            function endBattle() {
+                const winner = myPokemonData.hp > cpuPokemonData.hp ? 'MI POKEMON' : 'POKEMON CPU';
+                const resultMessage = `${winner} es el ganador después de ${turns} turnos.`;
+
+                alert(resultMessage);
+
+                // Marcar el Pokemon seleccionado para incrementar HP en la próxima batalla
+                myPokemonData.selected = true;
+                myPokemonData.hp = Math.floor(myPokemonData.hp / 2 * (1 + myPokemonData.base_experience / 100));
+
+                // Limpiar la pantalla
+                document.getElementById('pokemonTable').innerHTML = '';
+                document.getElementById('pokemonAlea').innerHTML = '';
+            }
+        </script>
+    </div>
+</body>
+
+</html>

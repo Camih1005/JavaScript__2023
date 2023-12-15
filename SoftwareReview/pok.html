@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    table{
+        border: solid 1px black;
+    }
+
+</style>
+<body>
+    <h1>ELIJE <span>TU POKE</span>MON FAVORITO</h1>
+    <div id="mama">
+        <button onclick="getPokemonInfo()">Buscar Pokémon</button>
+    </div>
+    <div class="Maricon">
+        <table id="pokemonTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>IMAGEN</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script>
+
+async function getPokemonInfo() {
+            max = 100
+            min = 0
+            const pokemonIdInput = Math.floor(Math.random() * (max - min) + min);
+            console.log(pokemonIdInput)
+            const userInput = pokemonIdInput.value;
+
+       
+            const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIdInput}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                const pokemonImage = data.sprites.front_default;
+                const pokemonName = data.name;
+                const pokemonCode = data.id;
+
+                document.getElementById('pokemonTable').innerHTML = `
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOMBRE</th>
+                            <th>IMAGEN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style='width:100px; text-align: center;'>${pokemonCode}</td>
+                            <td style='position:relative;left:37px;color: rgb(231, 231, 0)'>${pokemonName}</td>
+                            <td><img src="${pokemonImage}" alt="${pokemonName}" style="width: 170px; height: 170px;position:relative;left:60px"></td>
+                        </tr>
+                    </tbody>
+                `;
+
+            } catch (error) {
+                alert('Error al obtener los datos:', error);
+            }
+        }
+
+        
+
+       
+    </script>
+    
+</body>
+</html>

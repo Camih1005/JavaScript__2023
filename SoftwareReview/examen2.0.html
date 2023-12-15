@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Luckiest+Guy&family=Zen+Dots&display=swap');
+
+    * {
+        font-family: 'Luckiest Guy', cursive;
+        text-align: center;
+        background-color: rgb(248, 248, 176);
+    }
+
+    .maricon {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    span {
+        color: rgb(128, 128, 0);
+    }
+
+    .aleatoriobut {
+        width: 100px;
+        height: 40px;
+        margin: 20px;
+        background-color: brown;
+    }
+
+    .botsis {
+        background-color: burlywood;
+        width: 100px;
+        height: 40px;
+        margin: 20px;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+
+    }
+
+    img {
+        width: 40%;
+    }
+
+    .segundodiv {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        border-style: double;
+
+
+
+    }
+
+    .listt {
+        margin-top: 300px;
+    }
+</style>
+
+<body>
+    <h1>ELIJE <span>TU POKE</span>MON FAVORITO</h1>
+    <div id="mama">
+        <div class="inputs">
+
+            <button class="botsis" onclick="getPokemonSelec()">MI POKEMON</button>
+            <button class="aleatoriobut" onclick="getPokemonInfo()">FIGHT</button>
+        </div>
+
+        <div class="maricon">
+            <div id="pokemonTable">
+                <h1>BIENVENIDOS A POKEMON-GO</h1>
+
+            </div>
+
+
+            <div id="pokemonAlea">
+
+            </div>
+
+
+
+        </div>
+        <div class="listt">
+            <h2>LISTA DE POKÉMON</h2>
+            <ul id="pokemonList"></ul>
+        </div>
+
+        <script>
+            function time(a) {
+                max = 806
+                min = 0
+                const contra = Math.floor(Math.random() * (max - min) + min);
+                for (let i = 0; i < contra; i++) {
+                    const element = contra[i];
+                    setTimeout((resolve, reject) => {
+
+                        console.log
+                    }, 2000);
+
+
+                }
+            }
+            time()
+
+
+
+
+            async function getPokemonSelec() {
+                max = 806
+                min = 0
+                const pokemonIdInput = Math.floor(Math.random() * (max - min) + min);
+                console.log(pokemonIdInput)
+                const userInput = pokemonIdInput.value;
+
+
+                const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIdInput}`;
+
+                try {
+                    const response = await fetch(apiUrl);
+                    const data = await response.json();
+
+                    const pokemonImage = data.sprites.other['official-artwork'].front_default;;
+                    const pokemonName = data.name;
+                    const pokemonCode = data.id;
+                    const hp = data.stats[0].base_stat
+                    const attack = data.stats[1].base_stat
+                    const defense = data.stats[2].base_stat
+                    const speed = data.stats[3].base_stat
+
+                    document.getElementById('pokemonTable').innerHTML = `
+                   <div class="segundodiv"><h1>MI POKEMON</h1>
+                    <p> <img src="${pokemonImage}" alt="${pokemonName}"</p>
+                    <div>NAME : ${pokemonName}</div>
+                    <div>HP : ${hp}</div>
+                    <div>ATTACK : ${attack}</div>
+                    <div>HP:${defense}</div>
+                    <div>SPEED:${speed}</div>
+                    </div>
+                    
+                `;
+
+                } catch (error) {
+                    alert('Error al obtener los datos:', error);
+                }
+            }
+
+            getPokemonList();
+
+
+
+            async function getPokemonInfo() {
+
+                max = 806
+                min = 0
+                const pokemonIdInput = Math.floor(Math.random() * (max - min) + min);
+                console.log(pokemonIdInput)
+                const userInput = pokemonIdInput.value;
+
+
+                const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIdInput}`;
+
+                try {
+
+                    const response = await fetch(apiUrl);
+                    const data = await response.json();
+
+                    const pokemonImage = data.sprites.other['official-artwork'].front_default;
+                    const pokemonName = data.name;
+                    const pokemonCode = data.id;
+                    const hp = data.stats[0].base_stat
+                    const attack = data.stats[1].base_stat
+                    const defense = data.stats[2].base_stat
+                    const speed = data.stats[3].base_stat
+
+                    document.getElementById('pokemonAlea').innerHTML = `
+                   <div class="segundodiv"><h1>POKEMON CPU</h1>
+                    <p> <img src="${pokemonImage}" alt="${pokemonName}"</p>
+                    <div>NAME : ${pokemonName}</div>
+                    <div>HP : ${hp}</div>
+                    <div>ATTACK : ${attack}</div>
+                    <div>HP:${defense}</div>
+                    <div>SPEED:${speed}</div>
+                    </div>
+                    
+                `;return userInput
+
+                } catch (error) {
+                    alert('Error al obtener los datos:', error);
+                }
+            }
+            getPokemonInfo()
+
+            function batalla() {
+                return new Promise((resolve, reject) => {
+                    if(contra==2){
+
+                    }
+                const empezar = Math.floor(Math.random() * (max - min) + min);
+                    setTimeout((resolve, reject) => {
+
+                    }, timeout);
+                })
+
+            }
+        </script>
+
+
+
+
+
+</body>
+
+</html>

@@ -10,12 +10,15 @@
 
     <script>
 
-        const miPromesa = new Promise((resolve,reject)=>
+        const miPromesa = new Promise((resolve,reject,EW)=>
         {
             setTimeout(() => {
                 resolve('operacion completada con exito')
             },2000)
         })
+        setTimeout(() => {
+                resolve('operacion completada con exito')
+            },2000)
         console.log('Inicio de la operacion')
         miPromesa
         .then(resultado =>{

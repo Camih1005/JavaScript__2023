@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .tabla{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 800px;
+        
+    }
+</style>
+<body>
+    <div class="tabla">
+        <form action="">
+        <input type="number" id="numero1" placeholder="Ingrese numero#1">
+        <input type="number" id="numero2" placeholder="Ingrese numero#2">
+        <p id="resultado">0</p>
+            <hr>
+        <button id="boton" onclick="res()">Resultado</button>
+        
+        
+        </form>
+        
+    </div>
+    <script>
+
+        
+        
+
+        function res(){
+            const sum1 = document.getElementById('numero1');
+            const userInput = sum1.value;
+            const sum2 = document.getElementById('numero2');
+            const userInput2 = sum2.value;
+            const caca = sum1+sum2
+            return caca
+            
+        }
+        res()
+        
+
+    
+
+    
+       
+
+
+    </script>
+</body>
+</html>

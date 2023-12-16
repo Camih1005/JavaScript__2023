@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="miElemento" class="resaltado" data-info='informacionAdicional'>
+        CONTENIDO DEL ELEMENTO
+    </div>
+    <script>
+        const miElemento = document.getElementById('miElemento');
+
+
+        const nombresDeAtributes = miElemento.getAttributeNames();
+
+
+        console.table(nombresDeAtributes)
+
+
+    </script>
+    
+</body>
+</html>

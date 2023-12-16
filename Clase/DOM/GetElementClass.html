@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <div class="clase">Element1</div>
+  <div class="clase">Element2</div>
+  <div class="clase">Element3</div>
+  <br><br>
+  <p>ffff</p>
+  <p>ffff</p>
+  <p>ffff</p>
+
+    <script>
+      //GETELEMENT CON LA CLASE
+        const elementos =  document.getElementsByClassName('clase')
+
+
+        for (let i = 0; i < elementos.length; i++) {
+          elementos[i].innerHTML = 'christian Mamelo '+i
+          
+        }
+        //GETELEMENT CON EL TAG O ETIQUETA
+        const elementosP =  document.getElementsByTagName('p')
+
+
+        for (let i = 0; i < elementosP.length; i++) {
+          elementosP[i].innerHTML = 'carlos Mamelo '+i
+          
+        }
+
+    </script>
+    
+</body>
+</html>

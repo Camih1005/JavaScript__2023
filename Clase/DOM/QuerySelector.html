@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .clase{
+        color: rgb(137, 20, 255);
+        font-size: 50px;
+    }
+    .caca{
+        background-color: blue;
+        color: aliceblue;
+    }
+    button{
+        width: 100px;
+        height: 30px;
+    }
+
+</style>
+<body>
+
+<div class="clase">Element1</div>
+  <div class="clase">Element2</div>
+  <div class="clase">Element3</div>
+  <br><br>
+  <p id="idss">ffff</p>
+  <p class="caca">papa</p>
+  <p class="caca">papa</p>
+  <button onclick="cambiar()"></button>
+
+    <script>
+      //GETELEMENT CON LA CLASE
+        const elementos =  document.querySelectora('.clase');
+
+        elementos.style.fontSize = '78px';
+
+        const elementos2 =  document.querySelector('#idss');
+
+        elementos2.style.fontSize = '35px';
+
+        function cambiar(){
+            const elementos3 =  document.querySelectorAll('.clase');
+
+            let fsize =39;
+            elementos3.forEach(parrafo =>{
+                parrafo.style.fontSize =`${fsize}px`
+                fsize +=50
+            })
+        }
+
+
+        const elementos3 =  document.querySelectora('.clase');
+
+        elementos.style.fontSize = '78px';
+
+        
+
+        </script>
+
+
+    
+    
+</body>
+</html>

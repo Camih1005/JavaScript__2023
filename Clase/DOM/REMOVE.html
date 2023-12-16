@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="miElemento" date-info="informacionAdicional">Contenido del elemento</div>
+    <button id="miboton" disabled>caca</button>
+
+    <script>
+
+
+        const element = document.getElementById('miElemento');
+
+
+
+        element.removeAttribute('data-info')
+
+
+        alert('¿data-info presente?', element.hasAttribute('data-info'));
+
+        //PARA ELIMINAR DESDE JAVASCRIP O HABILITAR
+
+
+        const mibotoN = document.getElementById('miboton')
+
+
+        console.log('El boton esta desabilitado?',mibotoN.disabled)
+
+        mibotoN.removeAttribute('disabled')
+
+        console.log('boton deshabilitado?',mibotoN.disabled)
+
+
+
+    </script>
+
+</body>
+
+</html>

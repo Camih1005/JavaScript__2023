@@ -6,51 +6,47 @@
     <title>Document</title>
 </head>
 <style>
-    .tabla{
+    .tabla {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 800px;
-        
+        width: auto;
     }
+    .form{
+        display: flex;
+        flex-direction: column;
+    }
+    #boton{
+        position: relative;
+        bottom: 85px;
+        left: 130px;
+    }
+   
 </style>
 <body>
     <div class="tabla">
-        <form action="">
-        <input type="number" id="numero1" placeholder="Ingrese numero#1">
-        <input type="number" id="numero2" placeholder="Ingrese numero#2">
-        <p id="resultado">0</p>
+        <h1>SUMA CUALQUIER NUMERO</h1>
+        <form class="form" onsubmit="return false">
+            <input type="number" id="numero1" placeholder="Ingrese numero#1">
+            <input type="number" id="numero2" placeholder="Ingrese numero#2">
             <hr>
-        <button id="boton" onclick="res()">Resultado</button>
-        
-        
+            <input type="text" id="final" placeholder="Resultado" readonly>
+            <hr>
+            
         </form>
-        
+        <button id="boton" onclick="res()">Sumar</button>
     </div>
     <script>
-
-        
-        
-
-        function res(){
+        function res() {
             const sum1 = document.getElementById('numero1');
             const userInput = sum1.value;
             const sum2 = document.getElementById('numero2');
             const userInput2 = sum2.value;
-            const caca = sum1+sum2
-            return caca
-            
+            const resultadoInput = document.getElementById('final');
+            const caca = Number(userInput) + Number(userInput2);
+            resultadoInput.value = caca
         }
-        res()
-        
-
-    
-
-    
-       
-
-
     </script>
 </body>
 </html>

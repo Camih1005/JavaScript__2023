@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Ejemplos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        div {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DOM Ejemplos</h1>
+
+    <div>
+        <h2>Seleccionar Elementos</h2>
+        <p id="demo">Este es un párrafo.</p>
+        <button onclick="seleccionarElemento()">Seleccionar</button>
+    </div>
+
+    <div>
+        <h2>Modificar Contenido</h2>
+        <p id="contenido">Este es un contenido inicial.</p>
+        <button onclick="modificarContenido()">Modificar</button>
+    </div>
+
+    <div>
+        <h2>Agregar y Quitar Elementos</h2>
+        <ul id="lista">
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+        </ul>
+        <button onclick="agregarElemento()">Agregar</button>
+        <button onclick="quitarElemento()">Quitar</button>
+    </div>
+
+    <div>
+        <h2>Seleccionar por Etiqueta y Clase</h2>
+        <ul id="listaElementos">
+            <li class="elemento">Elemento 1</li>
+            <li class="elemento">Elemento 2</li>
+            <li>Elemento 3</li>
+        </ul>
+        <button onclick="seleccionarPorEtiqueta()">Seleccionar por Etiqueta</button>
+        <button onclick="seleccionarPorClase()">Seleccionar por Clase</button>
+    </div>
+
+    <div>
+        <h2>Modificar Atributos</h2>
+        <img id="imagen" src="imagen.jpg" alt="Una imagen">
+        <button onclick="modificarAtributo()">Modificar Atributo</button>
+    </div>
+
+    <div>
+        <h2>Eventos</h2>
+        <button onclick="agregarEvento()">Agregar Evento</button>
+        <p id="eventoParrafo">Haz clic en el botón para ver el evento.</p>
+    </div>
+
+    <script>
+        // Función para seleccionar un elemento por su id
+        function seleccionarElemento() {
+            var elemento = document.getElementById("demo");
+            alert("Se seleccionó el elemento: " + elemento.innerHTML);
+        }
+
+        // Función para modificar el contenido de un elemento
+        function modificarContenido() {
+            var elemento = document.getElementById("contenido");
+            elemento.innerHTML = "Contenido modificado.";
+        }
+
+        // Función para agregar un elemento a la lista
+        function agregarElemento() {
+            var lista = document.getElementById("lista");
+            var nuevoElemento = document.createElement("li");
+            nuevoElemento.appendChild(document.createTextNode("Nuevo Elemento"));
+            lista.appendChild(nuevoElemento);
+        }
+
+        // Función para quitar un elemento de la lista
+        function quitarElemento() {
+            var lista = document.getElementById("lista");
+            var elementos = lista.getElementsByTagName("li");
+
+            if (elementos.length > 0) {
+                lista.removeChild(elementos[0]);
+            } else {
+                alert("La lista está vacía.");
+            }
+        }
+
+        // Función para seleccionar elementos por etiqueta
+        function seleccionarPorEtiqueta() {
+            var elementos = document.getElementsByTagName("li");
+            alert("Se seleccionaron " + elementos.length + " elementos por etiqueta.");
+        }
+
+        // Función para seleccionar elementos por clase
+        function seleccionarPorClase() {
+            var elementos = document.getElementsByClassName("elemento");
+            alert("Se seleccionaron " + elementos.length + " elementos por clase.");
+        }
+
+        // Función para modificar un atributo
+        function modificarAtributo() {
+            var imagen = document.getElementById("imagen");
+            imagen.src = "nueva-imagen.jpg";
+            imagen.alt = "Nueva imagen";
+        }
+
+        // Función para agregar un evento
+        function agregarEvento() {
+            var parrafo = document.getElementById("eventoParrafo");
+            parrafo.addEventListener("click", function () {
+                alert("Se hizo clic en el párrafo.");
+            });
+        }
+    </script>
+</body>
+
+</html>

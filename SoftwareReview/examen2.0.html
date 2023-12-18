@@ -149,7 +149,7 @@
                     }, i * interval);
                 }
 
-                // Mostrar el Pokémon seleccionado después de 7 segundos
+                
                 setTimeout(() => {
                     getPokemonInfo(pokemonIdArray[iterations - 1], targetElementId);
                     document.querySelector('.aleatoriobut').disabled = false;
@@ -164,10 +164,9 @@
 
                 isGameRunning = true;
 
-                // Desactivar el botón "Fight"
+                
                 document.querySelector('.aleatoriobut').disabled = true;
 
-                // Mostrar imágenes de Pokémon durante 7 segundos
                 showRandomPokemon('pokemonAlea');
             }
 

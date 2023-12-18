@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="texto">
+    <button onclick="palabrasA()  " >poner</button>
+    <h1 id="colo"></h1>
+
+    <script>
+        let map = [];
+
+        function palabrasA() {
+            const palabras = document.getElementById('texto');
+            const palInput = palabras.value;
+            
+            const reversa = palInput.split('').reverse().join('');
+            map.push(reversa);
+
+            const coloo = document.getElementById('colo');
+            coloo.innerHTML = map.join(' ');
+        }
+    </script>
+    
+</body>
+</html>

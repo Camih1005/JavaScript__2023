@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .tabla {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 400px;
+        border: double 1px black;
+        margin: 0 auto;
+        box-shadow: 3px 3px 3px 3px;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .boton {
+        margin: 20px;
+        box-shadow: 1px 1px 1px 1px;
+        color: rgb(255, 0, 0);
+        border: none;
+        border-radius: 5px;
+        width: 100px;
+        height: 40px;
+    }
+
+    .titulo {
+        font-size: 20px;
+        color: red;
+    }
+
+    .cacas {
+        font-size: 16px;
+    }
+
+    .caja {
+
+        display: flex;
+    }
+</style>
+
+<body>
+    <div class="tabla">
+        <h1 class="titulo">Pasar centigrados a fahrenheit</h1>
+        <form class="form" onsubmit="return false">
+            <h1 class="cacas">Grados centigrados</h1>
+            <input type="number" id="numero1" placeholder="Grados centigrados">
+            <hr>
+            <h1 class="cacas">Grados fahrenheit</h1>
+            <input type="number" id="final" placeholder="grados fahrenheit">
+            <hr>
+
+        </form>
+        <div class="caja">
+            <button id="boton" class="boton" onclick="Centi()">Pasar a FH</button>
+            <button id="botonn" class="boton" onclick="Farenh()">Pasar a CT</button>
+        </div>
+    </div>
+    <script>
+
+
+        function Centi() {
+            const centigrados = document.getElementById('numero1');
+            const userInput = centigrados.value;
+            restultado = userInput * 9 / 5 + 32
+            const resultadoInput = document.getElementById('final');
+            const resul = Number(restultado)
+            resultadoInput.value = resul.toFixed(1)
+        }
+
+        function Farenh() {
+            const faren = document.getElementById('final')
+            const userInput2 = faren.value;
+            resul = (userInput2 - 32) * 5 / 9
+            const resultadoInput = document.getElementById('numero1');
+            const resul1 = Number(resul)
+            resultadoInput.value = resul1.toFixed(1)
+
+
+        }
+    </script>
+</body>
+
+</html>

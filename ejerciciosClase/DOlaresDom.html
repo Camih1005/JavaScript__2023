@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .tabla{
+        border: solid 2px black;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        height: auto;
+        padding: 30px;
+    }
+
+</style>
+<body>
+    <div class="tabla">
+        <h3 style="font-size: 20px; color: red;">CONVERSION DE EUROS A DOLARES</h3>
+        <form class="form" onsubmit="return false">
+            <h1 class="cacas">Euros</h1>
+            <input type="number" id="euros" placeholder="Euros">
+            <hr>
+            <h1 class="cacas">Dolares</h1>
+            <h1 id="resultado">0</h1>
+           
+            <hr>
+            
+
+        </form>
+        <div class="caja">
+            <button id="calcular" class="boton" onclick="calculo()">CALCULAR</button>
+           
+        </div>
+    </div>
+    <script>
+
+async function calculo() {
+                const apiUrl = `https://cdn.dinero.today/api/boa.json`;
+
+                try {
+                    const response = await fetch(apiUrl);
+                    const data = await response.json();
+                    const sacarMoneda = data.rates.EUR;
+                    
+
+                    const valorEuros = document.getElementById('euros');
+                     const monedaeuros = valorEuros.value;
+                    
+                     console.log(sacarMoneda)
+                    
+
+                    document.getElementById('resultado').innerHTML = `${(monedaeuros / sacarMoneda).toFixed(2)}`;
+
+                    return ;
+                } catch (error) {
+                    console.error('Error al obtener los datos:', error);
+                }
+            }
+            
+
+    </script>
+    
+</body>
+</html>

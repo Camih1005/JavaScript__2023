@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manejo de Nombres</title>
+  </head>
+  <body>
+    <h2>Manejo de Nombres</h2>
 
-    #nombres{
-        width: 300PX;
-        height: 300px;
-    }
+    <label for="nombres">Nombre:</label>
+    <input type="text" id="nombres" required />
+    <button onclick="agregarNombre()">Agregar</button>
 
-</style>
-<body>
-<footer>
-    <h1>ORDENAR ARRAYS</h1>
-    <p>Nombre:</p>
-    <input type="text" id="Agregarnombre" placeholder="Inserte nombre ">
-    <button id="AgregarAl" onclick="insertarNombres()">Agregar nombre</button>
-    <h2>Nombres ordenados</h2>
-    
-    <div id="cacas">
-        
-    </div>
-    
+    <br /><br />
 
-</footer>
+    <label for="resultados">Nombres Ordenados:</label>
+    <textarea id="resultados" rows="10" cols="50" readonly></textarea>
+
+    <br /><br />
+
+    <button onclick="limpiarTextArea()">Limpiar</button>
+
     <script>
+      let nombresArray = [];
 
-            function insertarNombres(){
-            const elementosag = document.getElementById('Agregarnombre')
-            const nom = elementosag.value
-            const caca = document.getElementById('Agregarnombre').value
-            const element = document.querySelector('div')
-             const pNuevo = document.createElement('p')
-             pNuevo.innerHTML =  `${caca}`
-             element.insertBefore(pNuevo,element.firstChild)
-             console.log(element)
-             
- 
-         }
-            
+      function agregarNombre() {
+        let nombreInput = document.getElementById("nombres");
+        let nombre = nombreInput.value;
 
-            
+        if (nombre !== "") {
+          nombresArray.push(nombre);
+          nombresArray.sort()
+          actualizarTextArea()
+          nombreInput.value = "";
+        }
+      }
 
+      function actualizarTextArea() {
+        let textarea = document.getElementById("resultados");
+        textarea.value = "";
 
+        nombresArray.forEach(function (nombre) {
+          textarea.value += nombre + "\n";
+        });
+      }
 
+      function limpiarTextArea() {
+        nombresArray = [];
+        actualizarTextArea();
+      }
     </script>
-    
-</body>
+  </body>
 </html>

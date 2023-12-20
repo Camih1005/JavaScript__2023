@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classList Examples</title>
+  <style>
+    .highlight {
+      border-style: groove;
+      box-shadow: 5px 2px 3px 4px;
+      background-color: rgba(255, 255, 0, 0.301);
+      height: 500px;
+      width: 60%;
+      font-size: 30px;
+      border-color: aquamarine blue yellow red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+    #myElement{
+        text-align: center;
+        margin: 30px;
+        
+    }
+    .botones{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .titulo{
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- Elemento HTML que queremos manipular -->
+  <div class="titulo">
+  <div id="myElement">Este es un elemento de ejemplo</div>
+</div>
+    <div class="botones">
+  <!-- Botones que ejecutan diferentes métodos de classList -->
+  <button onclick="addClass()">Agregar Clase</button>
+  <button onclick="removeClass()">Eliminar Clase</button>
+  <button onclick="toggleClass()">Alternar Clase</button>
+  <button onclick="checkClass()">Verificar Clase</button>
+</div>
+  <script>
+    // Obtén una referencia al elemento HTML por su id
+    var myElement = document.getElementById('myElement');
+
+    // Función para agregar la clase 'highlight'
+    function addClass() {
+      myElement.classList.add('highlight');
+    }
+
+    // Función para eliminar la clase 'highlight'
+    function removeClass() {
+      myElement.classList.remove('highlight');
+    }
+
+    // Función para alternar la presencia de la clase 'highlight'
+    function toggleClass() {
+      myElement.classList.toggle('highlight');
+    }
+
+    // Función para verificar si el elemento tiene la clase 'highlight'
+    function checkClass() {
+      var hasHighlightClass = myElement.classList.contains('highlight');
+      if (hasHighlightClass) {
+        alert('El elemento tiene la clase "highlight".');
+      } else {
+        alert('El elemento no tiene la clase "highlight".');
+      }
+    }
+  </script>
+
+</body>
+</html>
+

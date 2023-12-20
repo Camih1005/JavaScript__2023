@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    #nombres{
+        width: 300PX;
+        height: 300px;
+    }
+
+</style>
+<body>
+<footer>
+    <h1>ORDENAR ARRAYS</h1>
+    <p>Nombre:</p>
+    <input type="text" id="Agregarnombre" placeholder="Inserte nombre ">
+    <button id="AgregarAl" onclick="insertarNombres()">Agregar nombre</button>
+    <h2>Nombres ordenados</h2>
+    
+    <div id="cacas">
+        
+    </div>
+    
+
+</footer>
+    <script>
+
+            function insertarNombres(){
+            const elementosag = document.getElementById('Agregarnombre')
+            const nom = elementosag.value
+            const caca = document.getElementById('Agregarnombre').value
+            const element = document.querySelector('div')
+             const pNuevo = document.createElement('p')
+             pNuevo.innerHTML =  `${caca}`
+             element.insertBefore(pNuevo,element.firstChild)
+             console.log(element)
+             
+ 
+         }
+            
+
+            
+
+
+
+    </script>
+    
+</body>
+</html>

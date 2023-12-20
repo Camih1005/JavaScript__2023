@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="parent">
+            <p>Hola a todos</p>
+            <p class="message">Hola,soy todo un camper</p>
+        </div>
+    </div>
+  
+    <button id="change-message" onclick="agregarElemento()">Cambiar mensaje</button>
+    <button id="change-message" onclick="eliminarElement()">Elimina mensaje</button>
+    <button id="change-message" onclick="ReplaceElement()">Remplaza mensaje</button>
+    <button id="change-message" onclick="agregarElementoDeprimero()">agregar mensaje en el primero elemento</button>
+    <script>
+
+        function agregarElemento(){
+            const element = document.querySelector('.container')
+            const div = document.createElement('div')
+            div.innerHTML = '<p onclick = "alert(\"Codigo malicioso: (att cacas\")) "><span style = "color:red">div con nuevo elemento</span><br><br></p>'
+            element.appendChild(div)
+        }
+        function eliminarElement(){
+            const element = document.querySelector('.parent')
+            const parrafo = document.querySelector('.message')
+            alert(parrafo.outerHTML)
+
+            element.removeChild(parrafo)
+        }
+
+        function ReplaceElement(){
+            const element = document.querySelector('.parent')
+            const parrafo = document.querySelector('.message')
+            alert(parrafo.outerHTML)
+
+            //nuevo
+            const Pnuevo = document.createElement('p')
+            Pnuevo.innerHTML= "<span style = 'color: blue'>Nuevo parrafo</span><br><br>"
+            //remplaza
+            element.replaceChild(Pnuevo,parrafo)
+            
+        }
+        function agregarElementoDeprimero(){
+            const element = document.querySelector('.container')
+            const pNuevo = document.createElement('p')
+            pNuevo.innerHTML =  "<span style = 'color: yellow >Nuevo parrafo</span><br><br>"
+            element.insertBefore(pNuevo,element.firstChild)
+            console.log(element)
+        }
+
+    </script>
+</body>
+</html>

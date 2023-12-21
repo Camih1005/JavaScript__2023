@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            border: solid 20px red;
+        }
+        .parent{
+            border: solid 20px rgb(25, 0, 255);
+        }
+    
+    </style>
+    
+    <body>
+      
+       
+            <div class="container">
+                <div class="parent">
+                    <img src="" alt="">
+                    <p>Hola a todos</p>
+                    <p class="message">Maricon</p>
+                </div>
+            </div>
+            <br><br>
+            <button onclick="nav_children()">Children</button>
+            <script>
+
+                function nav_children(){
+
+                const div = document.querySelector('.parent')
+
+                //cantidad de hijos
+                console.log(div.childNodes.length)
+
+                //nodos
+                console.log('nodos totales')
+                console.log(div.childNodes)
+
+
+               //nodo padre
+                console.log('nodo padre')
+                console.log(div.parentNode)
+            }
+
+            </script>
+    
+</body>
+</html>

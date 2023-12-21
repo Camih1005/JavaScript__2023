@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: solid 2px;
+        box-shadow: 3px 3px 3px 3px;
+        width: 500px;
+        margin: 0 auto;
+    }
+    button{
+        margin: 20px;
+    }
+    button:hover{
+        margin: 24px;
+        background-color: bisque;
+        
+    }
+    #cacas{
+        height: 30px;
+    }
+
+</style>
+<body>
+    <div>
+        <h1>Nombre:</h1>
+        <input type="text" id="nombre" placeholder="Ingrese nombre">
+        <br><br>
+        <h1>Material de la caja: </h1>
+        <select name="" id="materiales" aria-placeholder="Material">
+            <option value="plastico">Plastico</option>
+            <option value="hierro">Hierro</option>
+            <option value="oro">Oro</option>
+        </select>
+        <br>
+        <h1>Seleccione dimenciones para la caja:</h1>
+        <input type="radio" name="hm" value="Diminutas" id="mate"> Diminutas
+        <input type="radio" name="hm" value="Medianas" id="mate"> Medianas
+        <input type="radio" name="hm" value="Grandes" id="mate"> Grandes
+      
+        <h1>Comentarios:</h1>
+        <textarea name="Comentarios" id="comentarios" cols="30" rows="10"></textarea>
+        <button onclick="AgregarC()">Enviar</button>
+        <div id="cacas">
+
+        </div>
+    </div>
+
+    <script>
+        function AgregarC(){
+            const nombre = document.getElementById('nombre')
+            const valorNom = nombre.value
+            const Materiall = document.getElementById('materiales')
+            const valorMate = Materiall.value
+            const dimen = document.getElementById('mate')
+            const valordimen = dimen.value
+            const coment = document.getElementById('comentarios')
+            const valorcoment = coment.value
+            
+            const p =  document.getElementById('cacas')
+            const agg = document.createElement('p')
+            agg.innerHTML =`${valorNom} ha pedido una caja de ${valorMate} con unas dimensiones ${valordimen} y ${valorcoment}`
+            p.appendChild(agg)
+            console.log(agg)
+            
+        }
+
+    </script>
+    
+</body>
+</html>

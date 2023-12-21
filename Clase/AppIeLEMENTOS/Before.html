@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        background-color: beige;
+    }
+    .container{
+        border:solid 2px tomato;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<body>
+    <div class="container">
+        <div>
+            <p>Hola a todos</p>
+            <p>Maricon</p>
+        </div>
+    </div>
+    <button onclick="insertarElement()">Insertar parrafo</button>
+    <br><br>
+    <button onclick="afterElement()">delpues del elemento</button>
+    <br><br>
+    <button onclick="insertarElementDespuesDelContenedor()">Insertan dentro del contenedor por dentro al principio</button>
+    <br><br>
+    <button onclick="insertarElementoDelContenedorAlFinal()">Insertan dentro del contenedor por dentro al final</button>
+    <br><br>
+    <button onclick="RemplazaHijos()">Remplaza los p</button>
+    <br><br>
+    <button onclick="replaceWithElemen()">REMPLAZA</button>
+    <br><br>
+    <button onclick="removeElement()">ELIMINA ELEMENTOS</button>
+
+    <script>
+        //Agrega un elemento antes el contenedor
+        function insertarElement(){
+            const div = document.querySelector('div')
+            const p = document.createElement('p')
+            p.innerHTML = '<span style="color:red;">este es el contenido insertado</span>'
+            div.before(p)
+        }
+        //agrega espues del container osea (class='container')
+        function afterElement(){
+            const div = document.querySelector('div')
+            const p = document.createElement('p')
+            p.innerHTML = '<span style="color:black;">este es el contenido insertado</span>'
+            div.after(p)
+        }
+        //inserta despues del contenedor péro dentro
+        function insertarElementDespuesDelContenedor(){
+            const div = document.querySelector('div')
+            const p = document.createElement('p')
+            p.innerHTML = '<span style="color:blue;">este es el contenido insertado</span>'
+            div.prepend(p)
+        }
+
+        function insertarElementoDelContenedorAlFinal(){
+            const div = document.querySelector('div')
+            const p = document.createElement('p')
+            p.innerHTML = '<span style="color:tomato;">este es el contenido insertado</span>'
+            div.append(p)
+        }
+        function RemplazaHijos(){
+            const div = document.querySelector('div')
+            const p = document.createElement('p')
+            p.innerHTML = '<span style="color:tomato;">Remplaza todo los p por este comentario</span>'
+            div.replaceChildren(p)
+        }
+
+        function replaceWithElemen(){
+            const div = document.querySelector('div')
+            const p = document.createElement('p')
+            p.innerHTML = '<span style="color:tomato;">Remplaza</span>'
+            div.replaceWith(p)
+        }
+        function removeElement(){
+            const div = document.querySelector('div')
+            const p = document.createElement('p')
+            p.innerHTML = '<span style="color:tomato;">Remplaza</span>'
+            div.remove()
+        }
+        
+        
+
+    </script>
+    
+</body>
+</html>

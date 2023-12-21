@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        border: solid 20px red;
+    }
+
+</style>
+
+<body>
+  
+    <body>
+        <div class="container">
+            <div>
+                <p>Hola a todos</p>
+                <p>Maricon</p>
+            </div>
+        </div>
+        <button onclick="insertAdjacentDespues()">Insertar parrafo Despues</button>
+        <br><br>
+        <button onclick="insertAdjacentAntes()">Insertar parrafo Antes</button>
+        <br><br>
+        <button onclick="insertAdjacent_HTML()">Insertar parrafo con todo el html</button>
+        <br><br>
+        <button onclick="insertAdjacent_texto()">Insertar parrafo con todo el html</button>
+        <br><br>
+
+<script>
+
+        function insertAdjacentDespues(){
+            const div = document.querySelector('div')
+            const p = document.createElement('p')
+            p.innerHTML = '<span style="color:red;">este es el contenido insertado</span>'
+            div.insertAdjacentElement('beforeend',p)
+        }
+        function insertAdjacentAntes(){
+            const div = document.querySelector('div')
+            const p = document.createElement('p')
+            p.innerHTML = '<span style="color:red;">este es el contenido insertado</span>'
+            div.insertAdjacentElement("afterend",p)
+        }
+        //afterbegin
+        //beforeend
+        //beforebegin
+
+        //Ahora con html
+
+        function insertAdjacent_HTML(){
+            const div = document.querySelector('div')
+            const str = '<p><span style="color:red;">este es el contenido insertado</span></p>'
+            div.insertAdjacentHTML("afterend",str)
+        }
+
+        function insertAdjacent_texto(){
+            const div = document.querySelector('div')
+            const str = "dsadasdasdas"
+            div.insertAdjacentText("beforebegin",str)
+        }
+
+</script>
+
+</body>
+</html>

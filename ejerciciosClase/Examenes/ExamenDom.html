@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+            @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Luckiest+Guy&family=Zen+Dots&display=swap');
+
+    *{
+        background-color: rgb(245, 245, 245);
+        font-family: 'Luckiest Guy', cursive;
+    }
+   
+
+    #menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 70px;
+        width: 80%;
+        border: solid red;
+        padding: 10px;
+        margin: 20px auto;
+        border-radius: 10px;
+    }
+    #menu button{
+         font-size: 20px;     
+    }
+    #container{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        border: solid 2px ;
+        width: 300px;
+        height: 300px;
+        box-shadow: 2px 2px 2px 2px gray;
+        border-radius: 10px;
+        background-color: aliceblue;
+        padding: 10px;
+
+    }
+    input{
+        border: none;
+        background-color: rgb(238, 238, 238);
+        border-radius: 5px;
+        width: 250px;
+        height: 40px;
+        box-shadow: 2px 2px 2px 2px gray;
+    }
+    .botoncarta{
+        margin: 8px;
+    }
+    .tituloCaja2{
+        font-size: 20px;
+        text-align: center;
+    }
+    #container2{
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto;
+        border: solid 2px ;
+        width: 300px;
+        height: 200px;
+        box-shadow: 2px 2px 2px 2px gray;
+        border-radius: 10px;
+      
+        text-align: center;
+    }
+    h2{
+        font-size: 15px;
+    }
+
+    #entradaRespuesta{
+        font-size: 13px;
+    }
+    .nuevaclase{
+        display: none;
+    }
+    .container2{
+        display: none;
+    }
+    #template2{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    #elimcaja{
+        width: 80px;
+        height: 20PX;
+        position: relative;
+        left: 220px;
+        border-radius: 10px;
+        background-color: rgb(255, 73, 73);
+    }
+   
+    
+</style>
+<body>
+    <section id="menu">
+        <h1>Gestion de tarjetas</h1>
+        <button onclick="agregarTarjeta()">Agregar</button>
+        <button onclick="removeElement()">Eliminar</button>
+    </section>
+    
+    <template id="template1">
+    <div id="container" >
+         <h1>Crear FlashCard</h1>
+            <p>Pregunta</p>
+            <input type="text" name="pregunta" id="pregunta" placeholder="Pregunta">
+            <p>Respuesta</p>
+            <input type="text" name="respuesta" id="respuesta" placeholder="respuesta">
+            <button class="botoncarta" onclick="Guardarpregunta()">Guardar</button> <button class="botoncarta" onclick="removeElement()">Cerrar</button>
+    </div>
+    </template>
+    <template id="template2">
+        <article id="container2">
+        <button id="elimcaja" onclick="removeCaja()" id="eliminarminicaja">clear</button>
+        <h1 class="tituloCaja2">Caja de pregunta y respuesta</h1>
+           <h2 id="entradaPregunta">---------------</h2>
+           <p id="entradaRespuesta">_______________</p>
+           
+            
+        </article>
+        
+    </template>
+    
+
+    <script>
+
+function agregarTarjeta(){
+
+  const template1 = document.getElementById('template1')
+    const clon = template1.content.cloneNode(true);
+
+     document.body.append(clon)
+     console.log(clon)
+        
+}
+
+
+
+    
+
+    function Guardarpregunta(){
+    
+    const template2 = document.getElementById('template2')
+    const clon = template2.content.cloneNode(true);
+    document.body.append(clon)
+    const valorpregunt = document.getElementById('pregunta').value
+    const meterloAlP = document.getElementById('entradaPregunta')
+    meterloAlP.innerHTML = valorpregunt
+    const valorrespuesta = document.getElementById('respuesta').value
+    const meterloaH1 = document.getElementById('entradaRespuesta')
+    meterloaH1.innerHTML = valorrespuesta    
+    
+    }
+   
+   
+
+    const todo = document.getElementById('eliminar')
+
+    function removeElement(){
+            const div = document.querySelector('div')
+            const p = document.createElement('p')
+            
+            div.remove()
+        }
+        function removeCaja(){
+            const div = document.querySelector('article')
+            const p = document.createElement('p')
+            
+            div.remove()
+        }
+
+        
+
+   
+   
+
+
+
+    </script>
+</body>
+</html>

@@ -132,14 +132,21 @@
 
     <script>
 
-function agregarTarjeta(){
 
-  const template1 = document.getElementById('template1')
+
+let templateAgregado = false;
+
+function agregarTarjeta() {
+  const template1 = document.getElementById('template1');
+
+  if (!templateAgregado) {
     const clon = template1.content.cloneNode(true);
-
-     document.body.append(clon)
-     console.log(clon)
-        
+    document.body.append(clon);
+    console.log(clon);
+    templateAgregado = true;
+  } else {
+    alert('¡Solo se puede una vez!');
+  }
 }
 
 

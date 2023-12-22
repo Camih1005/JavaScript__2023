@@ -148,7 +148,7 @@
                 const response = await fetch(apiUrl);
                 const data = await response.json();
 
-                const pokemonImage = data.sprites.front_default;
+                const pokemonImage = data.sprites.other['official-artwork'].front_default;
                 const pokemonName = data.name;
                 const pokemonCode = data.id;
 

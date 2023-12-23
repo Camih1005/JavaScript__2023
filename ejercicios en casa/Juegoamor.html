@@ -3,87 +3,244 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juego para Catalina</title>
+  <title>Feliz Navidad</title>
   <style>
     body {
-      text-align: center;
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f7f7f7; /* Color de fondo */
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(red,green);
     }
-    #game-container {
-      margin-top: 50px;
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(255, 0, 0, 0.515);
+    }
+
+    .word-button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db; /* Color de fondo azul */
+      color: #fff; /* Color del texto blanco */
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .word-button:hover {
+      background-color: #2980b9; /* Cambio de color al pasar el ratón sobre el botón */
+    }
+
+    #image-container {
       position: relative;
       overflow: hidden;
+      margin-top: 20px;
+      z-index: 1; /* Asegura que las imágenes estén por debajo del texto */
+      background-color: #f7f7f7; /* Color de fondo para las imágenes */
     }
-    #image-container {
+
+    .image-wrapper {
       display: flex;
-      transition: transform 0.5s ease-in-out;
+      animation: desplazarImagenes 60s linear infinite; /* Ajusta la duración según sea necesario */
     }
-    .hidden {
-      display: none;
+
+    .game-image {
+      position: relative;
+      width: 150px;
+      height: auto;
+      margin: 10px;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .game-image:hover {
+      transform: scale(1.1);
+    }
+
+    .image-description {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+      color: #fff; /* Color del texto blanco */
+      padding: 5px;
+      font-size: 14px;
+      text-align: center;
+      opacity: 0; /* Inicialmente oculto */
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .game-image:hover .image-description {
+      opacity: 1; /* Mostrar al pasar el ratón */
+    }
+
+    #feliz-navidad-title,
+    #mensaje-bonito {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 100%;
+    }
+
+    #feliz-navidad-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      top: 10px; /* Ajusta la posición vertical según sea necesario */
+    }
+
+    #mensaje-bonito {
+      font-size: 18px;
+      top: -290px; /* Ajusta la posición vertical según sea necesario */
+      
+    }
+
+    @keyframes desplazarImagenes {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-100% + 150px)); /* Ajusta el valor según el ancho de la imagen y el margen */
+      }
     }
   </style>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
 
-<h1 id="title">Te amo mucho mi vida</h1>
-<p>Haz clic en el botón varias veces antes de revelar algo especial.</p>
+<div class="button-container">
+  <button id="feliz-navidad-button" onclick="mostrarPalabras()">¡Feliz Navidad!</button>
 
-<div id="game-container">
-  <button id="game-button" onclick="dynamicButtonClick()">¡Adivina!</button>
-  <div id="result" class="hidden">
-    <p id="result-text"></p>
-    <button onclick="showImages()">Ver fotos</button>
+  <div id="word-buttons-container" style="display: none;">
+    <button class="word-button" onclick="iniciarJuego(1)">Palabra 1</button>
+    <button class="word-button" onclick="iniciarJuego(2)">Palabra 2</button>
+    <button class="word-button" onclick="iniciarJuego(3)">Palabra 3</button>
+    <button class="word-button" onclick="iniciarJuego(4)">Palabra 4</button>
+    <button class="word-button" onclick="iniciarJuego(5)">Palabra 5</button>
+    <button class="word-button" onclick="iniciarJuego(6)">Palabra 6</button>
   </div>
+  <div id="feliz-navidad-title">¡Feliz Navidad, mi vida!</div>
+  <div id="mensaje-bonito">Que esta Navidad te llene de amor y alegría. Eres lo mejor que me ha pasado.</div>
   <div id="image-container">
-    <!-- Coloca tus imágenes aquí -->
-    <img src="imagen1.jpg" alt="Imagen 1" style="width: 150px; margin: 10px;">
-    <img src="imagen2.jpg" alt="Imagen 2" style="width: 150px; margin: 10px;">
-    <img src="imagen3.jpg" alt="Imagen 3" style="width: 150px; margin: 10px;">
-    <!-- Agrega más imágenes según sea necesario -->
+    
+    <div class="image-wrapper" onanimationiteration="reiniciarAnimacion(event)"></div>
   </div>
 </div>
 
 <script>
-  let isMoving = false;
+  let intentosRestantes = 3;
+  let botonCorrecto;
 
-  function dynamicButtonClick() {
-    if (!isMoving) {
-      moveImages();
+  function mostrarPalabras() {
+    const felizNavidadButton = document.getElementById('feliz-navidad-button');
+    const wordButtonsContainer = document.getElementById('word-buttons-container');
+
+    // Ocultar el botón "Feliz Navidad"
+    felizNavidadButton.style.display = 'none';
+
+    // Mostrar los botones de palabras en fila
+    wordButtonsContainer.style.display = 'flex';
+  }
+
+  function iniciarJuego(botonSeleccionado) {
+    const wordButtonsContainer = document.getElementById('word-buttons-container');
+    const imageContainer = document.querySelector('.image-wrapper');
+
+    // Ocultar los botones de palabras
+    wordButtonsContainer.style.display = 'none';
+
+    // Seleccionar al azar el botón correcto
+    botonCorrecto = Math.floor(Math.random() * 6) + 1;
+
+    // Mostrar imágenes si el botón seleccionado es el correcto
+    if (botonSeleccionado === botonCorrecto) {
+      imageContainer.style.display = 'flex';
+      mostrarImagenes();
+    } else {
+      // Decrementar los intentos y mostrar mensaje
+      intentosRestantes--;
+      alert(`Intento incorrecto. Intentos restantes: ${intentosRestantes}`);
+
+      // Reiniciar si se agotan los intentos
+      if (intentosRestantes === 0) {
+        resetJuego();
+      } else {
+        // Mostrar nuevamente los botones de palabras
+        wordButtonsContainer.style.display = 'flex';
+      }
     }
   }
 
-  function moveImages() {
-    const imageContainer = $("#image-container");
-    const button = $("#game-button");
+  function mostrarImagenes() {
+    const imageContainer = document.querySelector('.image-wrapper');
+    imageContainer.innerHTML = '';
 
-    // Desplazar el contenedor de imágenes infinitamente hacia la izquierda
-    imageContainer.animate({ left: "-=2000px" }, 3000, "linear", function() {
-      isMoving = true;
-      button.text("¡Adivinaste!");
+    // Puedes reemplazar estos enlaces falsos con tus propios enlaces de imágenes
+    const imagenes = [
+      { src: 'https://i.imgur.com/TNZAePB.jpg', description: 'TE AMO MUCHO MI VIDA' },
+      { src: 'https://via.placeholder.com/150', description: 'wsdtgfsdgfsdfg' },
+      { src: 'https://via.placeholder.com/150', description: 'sdfsdfsdf 3' },
+      { src: 'https://via.placeholder.com/150', description: 'Descrisdfpción 4' },
+      { src: 'https://via.placeholder.com/150', description: 'f 5' },
+      { src: 'https://via.placeholder.com/150', description: 'Descrisdfspción 6' },
+      { src: 'https://via.placeholder.com/150', description: 'Descripsdfsdfción 7' },
+      { src: 'https://via.placeholder.com/150', description: 'Descripsdfsdfción 8' },
+      { src: 'https://via.placeholder.com/150', description: 'Descridsfdsfpción 9' },
+      { src: 'https://via.placeholder.com/150', description: 'Descripsdfsdfción 10' },
+      { src: 'https://via.placeholder.com/150', description: 'Descrisdfpción 11' },
+      { src: 'https://via.placeholder.com/150', description: 'Descrisdfsdpción 12' },
+    ];
+
+    imagenes.forEach((imagen, index) => {
+      const gameImage = document.createElement('div');
+      gameImage.classList.add('game-image');
+      gameImage.innerHTML = `
+        <img src="${imagen.src}" alt="Imagen ${index + 1}" class="image" />
+        <div class="image-description">${imagen.description}</div>
+      `;
+      imageContainer.appendChild(gameImage);
     });
+
+    // Mostrar título y mensaje bonito
+    const tituloFelizNavidad = document.getElementById('feliz-navidad-title');
+    const mensajeBonito = document.getElementById('mensaje-bonito');
+    tituloFelizNavidad.style.display = 'block';
+    mensajeBonito.style.display = 'block';
   }
 
-  function showImages() {
-    if (isMoving) {
-      const resultText = $("#result-text");
-      const resultContainer = $("#result");
-      resultText.text(
-        "¡Gracias por tanto! Te mereces lo mejor de mí. Sé que no puedo darte lujos ahora, pero tú mereces todo."
-      );
-      resultContainer.removeClass("hidden");
-      isMoving = false;
+  function resetJuego() {
+    intentosRestantes = 3;
+    botonCorrecto = undefined;
 
-      // Detener el movimiento del contenedor de imágenes
-      const imageContainer = $("#image-container");
-      imageContainer.stop(true, false);
+    const felizNavidadButton = document.getElementById('feliz-navidad-button');
+    const wordButtonsContainer = document.getElementById('word-buttons-container');
+    const imageContainer = document.querySelector('.image-wrapper');
+
+    felizNavidadButton.style.display = 'block';
+    wordButtonsContainer.style.display = 'none';
+    imageContainer.style.display = 'none';
+  }
+
+  function reiniciarAnimacion(event) {
+    if (event.animationName === 'desplazarImagenes') {
+      // Reiniciar la posición del contenedor de imágenes
+      const imageContainer = document.querySelector('.image-wrapper');
+      imageContainer.style.animation = 'none';
+      void imageContainer.offsetWidth; // Triggers reflow
+      imageContainer.style.animation = 'desplazarImagenes 20s linear infinite';
     }
   }
 </script>
 
 </body>
 </html>
-
-

@@ -5,31 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feliz Navidad</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Luckiest+Guy&family=Rubik+Bubbles&family=Zen+Dots&display=swap');
+
+    * {
+      font-family: 'Rubik bubbles', sans-serif;
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      background-color: #f7f7f7; /* Color de fondo */
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(red,green);
+      min-height: 100vh;
+      background-color: #f7f7f7;
+      background-image: url(../imagenes/fondo.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    body * {
+      text-align: center;
     }
 
     .button-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: rgba(255, 0, 0, 0.515);
+      justify-content: center;
+      padding: 20px;
+      max-width: 600px;
+      width: 90%;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
     }
 
     .word-button {
       margin: 10px;
       padding: 10px 20px;
       font-size: 16px;
-      background-color: #3498db; /* Color de fondo azul */
-      color: #fff; /* Color del texto blanco */
+      background-color: #3498db;
+      color: #fff;
       border: none;
       cursor: pointer;
       border-radius: 8px;
@@ -37,25 +57,28 @@
     }
 
     .word-button:hover {
-      background-color: #2980b9; /* Cambio de color al pasar el ratón sobre el botón */
+      background-color: #2980b9;
     }
 
     #image-container {
       position: relative;
       overflow: hidden;
       margin-top: 20px;
-      z-index: 1; /* Asegura que las imágenes estén por debajo del texto */
-      background-color: #f7f7f7; /* Color de fondo para las imágenes */
+      z-index: 1;
+      background-color: #f7f7f700;
+      border-radius: 20px;
     }
 
     .image-wrapper {
       display: flex;
-      animation: desplazarImagenes 60s linear infinite; /* Ajusta la duración según sea necesario */
+      margin-left: 0;
+      animation: desplazarImagenes 120s linear infinite;
     }
 
     .game-image {
       position: relative;
-      width: 150px;
+      width: 100%;
+      max-width: 300px;
       height: auto;
       margin: 10px;
       border-radius: 8px;
@@ -71,17 +94,17 @@
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
-      color: #fff; /* Color del texto blanco */
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #ffffff4d;
       padding: 5px;
       font-size: 14px;
       text-align: center;
-      opacity: 0; /* Inicialmente oculto */
+      opacity: 0;
       transition: opacity 0.3s ease-in-out;
     }
 
     .game-image:hover .image-description {
-      opacity: 1; /* Mostrar al pasar el ratón */
+      opacity: 1;
     }
 
     #feliz-navidad-title,
@@ -97,21 +120,72 @@
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 10px;
-      top: 10px; /* Ajusta la posición vertical según sea necesario */
+      top: 10px;
     }
 
     #mensaje-bonito {
       font-size: 18px;
-      top: -290px; /* Ajusta la posición vertical según sea necesario */
-      
+      top: -150px;
+    }
+
+    #feliz-navidad-button {
+      background-color: #b92929;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 5px 5px 5px 5px rgba(200, 200, 255, 0.384);
+      color: #f7f7f7;
+      transition: background-color 0.5s ease-in-out;
+    }
+
+    #feliz-navidad-button:hover {
+      background-color: aqua;
     }
 
     @keyframes desplazarImagenes {
       0% {
-        transform: translateX(0);
+        transform: translateX(60%);
       }
       100% {
-        transform: translateX(calc(-100% + 150px)); /* Ajusta el valor según el ancho de la imagen y el margen */
+        transform: translateX(calc(-100% + 150px));
+      }
+    }
+
+    /* Media Queries para pantallas más pequeñas */
+    @media (max-width: 768px) {
+      body{
+        background-size: cover
+      }
+      .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      max-width: 200px;
+      width: 20%;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+    }
+
+      #feliz-navidad-title {
+        font-size: 20px;
+      }
+
+      #mensaje-bonito {
+        font-size: 16px;
+        top: -100px;
+      }
+
+      #feliz-navidad-button {
+        width: 200px;
+        max-width: none;
+        height: 200px;
+        
       }
     }
   </style>
@@ -122,17 +196,17 @@
   <button id="feliz-navidad-button" onclick="mostrarPalabras()">¡Feliz Navidad!</button>
 
   <div id="word-buttons-container" style="display: none;">
-    <button class="word-button" onclick="iniciarJuego(1)">Palabra 1</button>
-    <button class="word-button" onclick="iniciarJuego(2)">Palabra 2</button>
-    <button class="word-button" onclick="iniciarJuego(3)">Palabra 3</button>
-    <button class="word-button" onclick="iniciarJuego(4)">Palabra 4</button>
-    <button class="word-button" onclick="iniciarJuego(5)">Palabra 5</button>
-    <button class="word-button" onclick="iniciarJuego(6)">Palabra 6</button>
+    <h1>TE DESEO UNA BONITA NAVIDAD A MI LADO <br>ME AMAS?</h1>
+    <button class="word-button" onclick="iniciarJuego(1)">Si</button>
+    <button class="word-button" onclick="iniciarJuego(2)">Si</button>
+    <button class="word-button" onclick="iniciarJuego(3)">Si</button>
+    <button class="word-button" onclick="iniciarJuego(4)">Si</button>
+    <button class="word-button" onclick="iniciarJuego(5)">Si</button>
+    <button class="word-button" onclick="iniciarJuego(6)">Si</button>
   </div>
   <div id="feliz-navidad-title">¡Feliz Navidad, mi vida!</div>
   <div id="mensaje-bonito">Que esta Navidad te llene de amor y alegría. Eres lo mejor que me ha pasado.</div>
   <div id="image-container">
-    
     <div class="image-wrapper" onanimationiteration="reiniciarAnimacion(event)"></div>
   </div>
 </div>
@@ -145,10 +219,7 @@
     const felizNavidadButton = document.getElementById('feliz-navidad-button');
     const wordButtonsContainer = document.getElementById('word-buttons-container');
 
-    // Ocultar el botón "Feliz Navidad"
     felizNavidadButton.style.display = 'none';
-
-    // Mostrar los botones de palabras en fila
     wordButtonsContainer.style.display = 'flex';
   }
 
@@ -156,26 +227,19 @@
     const wordButtonsContainer = document.getElementById('word-buttons-container');
     const imageContainer = document.querySelector('.image-wrapper');
 
-    // Ocultar los botones de palabras
     wordButtonsContainer.style.display = 'none';
-
-    // Seleccionar al azar el botón correcto
     botonCorrecto = Math.floor(Math.random() * 6) + 1;
 
-    // Mostrar imágenes si el botón seleccionado es el correcto
     if (botonSeleccionado === botonCorrecto) {
       imageContainer.style.display = 'flex';
       mostrarImagenes();
     } else {
-      // Decrementar los intentos y mostrar mensaje
       intentosRestantes--;
       alert(`Intento incorrecto. Intentos restantes: ${intentosRestantes}`);
 
-      // Reiniciar si se agotan los intentos
       if (intentosRestantes === 0) {
         resetJuego();
       } else {
-        // Mostrar nuevamente los botones de palabras
         wordButtonsContainer.style.display = 'flex';
       }
     }
@@ -185,20 +249,18 @@
     const imageContainer = document.querySelector('.image-wrapper');
     imageContainer.innerHTML = '';
 
-    // Puedes reemplazar estos enlaces falsos con tus propios enlaces de imágenes
     const imagenes = [
-      { src: 'https://i.imgur.com/TNZAePB.jpg', description: 'TE AMO MUCHO MI VIDA' },
-      { src: 'https://via.placeholder.com/150', description: 'wsdtgfsdgfsdfg' },
-      { src: 'https://via.placeholder.com/150', description: 'sdfsdfsdf 3' },
-      { src: 'https://via.placeholder.com/150', description: 'Descrisdfpción 4' },
-      { src: 'https://via.placeholder.com/150', description: 'f 5' },
-      { src: 'https://via.placeholder.com/150', description: 'Descrisdfspción 6' },
-      { src: 'https://via.placeholder.com/150', description: 'Descripsdfsdfción 7' },
-      { src: 'https://via.placeholder.com/150', description: 'Descripsdfsdfción 8' },
-      { src: 'https://via.placeholder.com/150', description: 'Descridsfdsfpción 9' },
-      { src: 'https://via.placeholder.com/150', description: 'Descripsdfsdfción 10' },
-      { src: 'https://via.placeholder.com/150', description: 'Descrisdfpción 11' },
-      { src: 'https://via.placeholder.com/150', description: 'Descrisdfsdpción 12' },
+      { src: 'https://i.ibb.co/jfjsMSS/fsdfdfd.png', description: 'TE AMO MUCHO MI VIDA' },
+      { src: 'https://i.ibb.co/K7PWv6k/fghfgh.png', description: 'Eres lo mejor que me ha pasado' },
+      { src: 'https://i.ibb.co/HNgrjGB/dfgdfgdf.png', description: 'Espero que pases una linda navidad' },
+      { src: 'https://i.ibb.co/M2YDcYY/dfgdfg.png', description: 'Siempre quiero estar a tu lado' },
+      { src: 'https://i.ibb.co/bPHY1js/hggfg.png', description: 'Hoy mañana y siempre' },
+      { src: 'https://i.ibb.co/b75LPTT/sdfsdfsd.png', description: 'Gracias por todo lo bonito' },
+      { src: 'https://i.ibb.co/Xp6f3fB/Dise-o-sin-t-tulodffdgdfgdf.png', description: 'Quiero empezar un año bonito a tu lado' },
+      { src: 'https://i.ibb.co/mbH7BDY/vvv.png', description: 'Mi flaca hermosa' },
+      { src: 'https://i.ibb.co/kg3CY2k/ghvg.png', description: 'Mi malgeniada' },
+      { src: 'https://i.ibb.co/7CBk13J/iiii.png', description: 'Ya vamos para 3 añitos mi vida' },
+      { src: 'https://i.ibb.co/sw3CVfb/Dise-o-sin-jhgjghjgh.png', description: 'Y vienen mil navidades mas juntos' },
     ];
 
     imagenes.forEach((imagen, index) => {
@@ -211,7 +273,6 @@
       imageContainer.appendChild(gameImage);
     });
 
-    // Mostrar título y mensaje bonito
     const tituloFelizNavidad = document.getElementById('feliz-navidad-title');
     const mensajeBonito = document.getElementById('mensaje-bonito');
     tituloFelizNavidad.style.display = 'block';
@@ -233,10 +294,9 @@
 
   function reiniciarAnimacion(event) {
     if (event.animationName === 'desplazarImagenes') {
-      // Reiniciar la posición del contenedor de imágenes
       const imageContainer = document.querySelector('.image-wrapper');
       imageContainer.style.animation = 'none';
-      void imageContainer.offsetWidth; // Triggers reflow
+      void imageContainer.offsetWidth;
       imageContainer.style.animation = 'desplazarImagenes 20s linear infinite';
     }
   }

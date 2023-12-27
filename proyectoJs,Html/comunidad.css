@@ -1,0 +1,1267 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Zen+Dots&display=swap");
+ 
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
+    h1,
+    p,
+    .footer1 {
+      view-timeline-name: --image;
+      view-timeline-axis: block;
+  
+      animation-timeline: --image;
+      animation-name: show;
+      animation-range: entry 1% cover 30%;
+      animation-fill-mode: both;
+    }
+
+
+
+ @media (max-width: 768px){
+  
+
+        body{
+        background-color: black;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        font-family: "Zen Dots", sans-serif;
+        box-sizing: border-box;
+        
+    }
+    .encabezado{
+      display: flex;
+      justify-content: space-between;
+    }
+   .vr1,.vr2,.vr3{
+    width: 400px;
+   }
+    
+ 
+         .iml {
+        background: linear-gradient(to bottom, transparent, rgb(9, 9, 9,0.1),rgb(9, 9, 9,0.1)),url(../proyecto/imagenesproyecto/concierto.png) no-repeat center center;
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      .item1 img{
+        width: 100px;
+      }
+      
+      .imagenmenu {
+        width: 20px;
+        left: 80%;
+        top: 10px;
+        
+      }
+    
+      nav {
+        max-width: 900px;
+        margin: auto;
+        background-color: gray;
+        font-size: 20px;
+        margin-top: 10px;
+        left:500px;
+        top: -240px;
+    }
+    .itemimgg img{
+        width: 30px;
+        
+    }
+   
+    .encabezado{
+    
+      display: flex;
+      width: 95%;
+      border-color: transparent transparent gray transparent;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 auto;
+      border-style: solid;
+      height: 140px;
+      flex-wrap: wrap;
+      
+  
+  }
+  .grid a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 7px #8c8c8c, 0 0 10px #474747, 0 0 21px #888888,
+        0 0 82px rgb(255, 255, 255), 0 0 92px rgb(255, 255, 255),
+        0 0 151px rgb(255, 255, 255);
+    }
+  .item1{
+      grid-column: 1/2;
+    }
+    .grid img{
+        width: 100px;
+       
+    }
+    .grid{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .item2 input{
+    width: 80px;
+    grid-column: 2/3;
+    }
+    .item2 input:hover{
+      width: 120px;
+    }
+    .itemimgg{
+      display: none;
+    }
+    .item3{
+      grid-column: 3/4;
+    }
+    .item4{
+      grid-column: 4/5;
+    }
+    .item5{
+      grid-column: 5/6;
+    }
+    .item6{
+      grid-column: 6/7;
+    }
+    .item7{
+      grid-column: 7/8;
+    }
+    .grid a{
+      color: white;
+      text-decoration: none;
+    }
+    .texto{
+      margin-top: -100px;
+      width: 300px;
+    }
+    
+    .texto h1{
+        
+       color: #ffffff;
+       margin-left:30px ;
+       font-size: 45px;
+    }
+    .mapa h2{
+        font-size: 15px;
+        margin-left: 30px;
+        margin-top: 60px;
+    }
+    .texto button{
+        font-family: "Zen Dots", sans-serif;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        background-color: rgb(37, 37, 37,0.8);
+        border: none;
+        color: white;
+        padding: 10px 10px;
+        text-decoration: none;
+        margin-left: 30px;
+        cursor: pointer;
+        border-radius: 8px;
+        width: 120px;
+        
+        top: 120px;
+        margin-top:10px ;
+       
+        
+    }
+
+    .vender{
+        border: solid 2px transparent;
+        width: 98%;
+        height: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        
+    }
+    .video1{
+        margin: 0 auto;
+        height: 1000px;
+    }
+    .vender h3{
+        margin: 20px;
+    }
+    
+    
+    .vender p{
+        font-size: 14px;
+        margin: 20px;
+        
+    }
+    .formularioventas button{
+        
+        margin:30px auto;
+        background-color: rgba(161, 161, 161, 0.9);
+        display: flex;
+        text-align: center;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+
+        font-family: "Zen Dots", sans-serif;
+
+    }
+    .formularioventas a{
+        text-decoration: none;
+        color: black;
+    }
+    .formularioventas button:hover{
+        padding: 13px;
+    }
+    .formulario{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .for{
+        background: linear-gradient(to bottom, transparent, rgb(9, 9, 9,0.8),rgb(9, 9, 9)),
+          url(../proyecto/imagenesproyecto/fondo2pagina.jpg) no-repeat center center;
+       
+        width: 90%;
+        margin: 0 auto;
+        padding: px;
+        height: 340px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    label::marker {
+        color: #ffffff;
+
+        
+      }
+
+      input {
+        height: 30px;
+        width: 190px;
+        border-radius: 20px;
+        border: none;
+        transition-duration: 0.3s;
+        cursor: text;
+        background-color: rgba(255, 82, 29, 0.3);
+        color: #fff;
+        list-style: none;
+      }
+
+      input:placeholder-shown {
+        border-color: teal;
+        color: rgb(235, 235, 235, 0.5);
+        font-family: "Zen Dots", sans-serif;
+        font-size: 15px;
+      }
+      .for p{
+        width: 90%;
+        font-size: 14px;
+       
+      }
+      .scroll{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      .sd{
+        margin: 8px;
+        margin-top: 30px;
+        border: solid;
+        padding: 12px;
+        background-color: rgb(66, 66, 66,0.2);
+      }
+      .sd a{
+        color: #fff;
+      }
+      .sd:hover{
+        margin: 8px;
+        margin-top: 30px;
+        border: solid;
+        padding: 14px;
+        background-color: rgba(184, 184, 184, 0.2);
+      }
+      .sc4{
+        background-color: rgba(184, 184, 184, 0.9);
+      }
+      .fondos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 auto;
+        margin-left:60px ;
+        margin-top: 30px;
+
+      }
+      
+      .fondos h4{
+        position: relative;
+        right: 30px;
+      }
+      .fond img{
+        width: 90%;
+      }
+     
+      span{
+        font-size: 30px;
+      }
+     .ultimo{
+        width: 90%;
+        margin: 0 auto;
+     }
+     h4 img{
+      width: 20px;
+     }
+     
+
+      .fin3{
+        display: none;
+      }
+      .container5 {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        border: none;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, transparent, rgb(9, 9, 9,0.8),rgb(9, 9, 9)),
+          url(../proyecto/imagenesproyecto/DRAGONBORN2.jpg) no-repeat center center;
+        margin: 0 auto;
+        
+        font-size: 11px;
+      }
+    
+      .fin2 {
+        width: auto;
+        height: 60px;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        
+      }
+      .fin2 a{
+        color: white;
+        text-decoration: none;
+      }
+      
+      .fin2 li{
+        list-style-type: none;
+        
+      }
+      .finall{
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+      }
+      .finall a{
+       
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 10px;
+        
+      }
+      footer h3 a{
+        margin: 0 auto;
+        width: 100px;
+        color: #ffffff;
+      }
+      @keyframes show {
+        from {
+          opacity: 0;
+          scale: 25%;
+        }
+    
+        to {
+          opacity: 1;
+          scale: 100%;
+        }
+      }
+    
+      img,
+      .container3,
+      h1,
+      p,
+      iframe {
+        view-timeline-name: --image;
+        view-timeline-axis: block;
+        animation-timeline: --image;
+        animation-name: show;
+        animation-range: entry 1% cover 30%;
+        animation-fill-mode: both;
+      }
+      .flotante{
+        display: none;
+      
+    }
+    .tr{
+        display: none;
+    }
+    .vr4, .vr5,.vr6{
+      display: none;
+    } 
+  }  
+
+
+/*TABLETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
+@media (min-width: 768px) and (max-width:1024px){
+
+  .vr4, .vr5,.vr6{
+    display: none;
+  } 
+    .tr{
+        display: none;
+    }
+
+    body{
+    background-color: black;
+    color: #fff;
+    margin: 0;
+    font-family: "Zen Dots", sans-serif;
+    position: absolute;
+    
+}
+*{
+  text-decoration: none;
+  list-style: none;
+}
+     .iml {
+    background: linear-gradient(to bottom, transparent, rgb(9, 9, 9,0.1),rgb(9, 9, 9,0.1)),url(../proyecto/imagenesproyecto/concierto.png) no-repeat center center;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .item1 img{
+    width: 100px;
+  }
+  .subir{
+    position: fixed;
+    bottom: 10px;
+    
+    height: 5rem;
+    padding: 0 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    width: 100px;
+    
+      
+    }
+   
+    .subir img{
+      width: 300px;
+      position: absolute;
+      top: 300px;
+      z-index: 10;
+
+    }
+
+
+
+  .imagenmenu {
+    width: 20px;
+    left: 80%;
+    top: 10px;
+    
+  }
+
+  nav {
+    max-width: 900px;
+    margin: auto;
+    background-color: gray;
+    font-size: 20px;
+    margin-top: 10px;
+    left:500px;
+    top: -240px;
+}
+.itemimgg img{
+    width: 30px;
+    
+}
+.encabezado{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    border-color: transparent transparent gray transparent;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    border-style: solid;
+    
+
+}
+.encabezado{
+    
+    display: grid;
+    width: 95%;
+    border-color: transparent transparent gray transparent;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    border-style: solid;
+    height: 100px;
+    
+
+}
+.grid a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 7px #8c8c8c, 0 0 10px #474747, 0 0 21px #888888,
+      0 0 82px rgb(255, 255, 255), 0 0 92px rgb(255, 255, 255),
+      0 0 151px rgb(255, 255, 255);
+  }
+.item1{
+    grid-column: 1/2;
+  }
+  .grid img{
+      width: 100px;
+     
+  }
+  .grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .item2 input{
+  width: 80px;
+  grid-column: 2/3;
+  }
+  .item2 input:hover{
+    width: 120px;
+  }
+  .itemimgg{
+    display: none;
+  }
+  .item3{
+    grid-column: 3/4;
+  }
+  .item4{
+    grid-column: 4/5;
+  }
+  .item5{
+    grid-column: 5/6;
+  }
+  .item6{
+    grid-column: 6/7;
+  }
+  .item7{
+    grid-column: 7/8;
+  }
+  .grid a{
+    color: white;
+    text-decoration: none;
+  }
+
+.item1 img{
+width: 80px;
+}
+.itemimgg img{
+    width: 60px;
+}
+.texto{
+  margin-top: -100px;
+  width: 300px;
+}
+
+.texto h1{
+    
+   color: #ffffff;
+   margin-left:30px ;
+   font-size: 45px;
+}
+.mapa h2{
+    font-size: 15px;
+    margin-left: 30px;
+    margin-top: 60px;
+}
+.texto button{
+    font-family: "Zen Dots", sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: rgb(37, 37, 37,0.8);
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+    margin-left: 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 120px;
+    
+    top: 120px;
+    margin-top:10px ;
+   
+    
+}
+
+.vender{
+    border: solid 2px transparent;
+    width: 98%;
+    height: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    
+}
+.video1{
+    margin: 0 auto;
+    height: 1000px;
+}
+.vender h3{
+    margin: 20px;
+}
+.vender p{
+    font-size: 14px;
+    margin: 20px;
+    
+}
+.formularioventas button{
+    
+    margin:30px auto;
+    background-color: rgba(161, 161, 161, 0.9);
+    display: flex;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+
+    font-family: "Zen Dots", sans-serif;
+
+}
+.formularioventas a{
+    text-decoration: none;
+    color: black;
+}
+.formularioventas button:hover{
+    padding: 13px;
+}
+.formulario{
+margin: 0 auto;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.for{
+    background: linear-gradient(to bottom, transparent, rgb(9, 9, 9,0.8),rgb(9, 9, 9)),
+      url(../proyecto/imagenesproyecto/fondo2pagina.jpg) no-repeat center center;
+   
+    width: 90%;
+    margin: 0 auto;
+    padding: px;
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+label::marker {
+    color: #ffffff;
+
+    
+  }
+
+  input {
+    height: 30px;
+    width: 190px;
+    border-radius: 20px;
+    border: none;
+    transition-duration: 0.3s;
+    cursor: text;
+    background-color: rgba(255, 82, 29, 0.3);
+    color: #fff;
+    list-style: none;
+  }
+
+  input:placeholder-shown {
+    border-color: teal;
+    color: rgb(235, 235, 235, 0.5);
+    font-family: "Zen Dots", sans-serif;
+    font-size: 15px;
+  }
+  .for p{
+    width: 90%;
+    font-size: 14px;
+   
+  }
+  .scroll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .sd{
+    margin: 8px;
+    margin-top: 30px;
+    border: solid;
+    padding: 12px;
+    background-color: rgb(66, 66, 66,0.2);
+  }
+  .sd a{
+    color: #fff;
+  }
+  .sd:hover{
+    margin: 8px;
+    margin-top: 30px;
+    border: solid;
+    padding: 14px;
+    background-color: rgba(184, 184, 184, 0.2);
+  }
+  .sc4{
+    background-color: rgba(184, 184, 184, 0.9);
+  }
+  .fondos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-left:60px ;
+    margin-top: 30px;
+
+  }
+  .fond a img{
+    width: 90%;
+    margin-top:50px ;
+    
+  }
+  .fondos h4{
+    position: relative;
+    right: 30px;
+  }
+  .fondos img{
+    width: 25px;
+  }
+  span{
+    font-size: 30px;
+  }
+ .ultimo{
+    width: 90%;
+    margin: 0 auto;
+ }
+ 
+
+  .fin3{
+    display: none;
+  }
+  .container5 {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, transparent, rgb(9, 9, 9,0.8),rgb(9, 9, 9)),
+      url(../proyecto/imagenesproyecto/DRAGONBORN2.jpg) no-repeat center center;
+    margin: 0 auto;
+    
+    font-size: 11px;
+  }
+
+  .fin2 {
+    width: auto;
+    height: 60px;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+  }
+  .fin2 a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .fin2 li{
+    list-style-type: none;
+    
+  }
+  .finall{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .finall a{
+   
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+    
+  }
+  footer h3 a{
+    margin: 0 auto;
+    width: 100px;
+    color: #ffffff;
+  }
+  @keyframes show {
+    from {
+      opacity: 0;
+      scale: 25%;
+    }
+
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
+  }
+
+  img,
+  .container3,
+  h1,
+  p,
+  iframe {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: show;
+    animation-range: entry 1% cover 30%;
+    animation-fill-mode: both;
+  }
+  .flotante{
+    display: none;
+  
+}
+.header{
+    display: none;
+}
+
+
+
+}
+@media(min-width:1024px){
+  
+
+    body{
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    margin: 0;
+    font-family: "Zen Dots", sans-serif;
+    position: absolute;
+    
+}
+*{
+  text-decoration: none;
+  list-style: none;
+}
+    .iml {
+    background: linear-gradient(to bottom, transparent, rgb(9, 9, 9,0.1),rgb(9, 9, 9,0.1)),url(../proyecto/imagenesproyecto/concierto.png) no-repeat center center;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .item1 img{
+    width: 100px;
+  }
+
+
+
+  .imagenmenu {
+    width: 20px;
+    left: 80%;
+    top: 10px;
+    
+  }
+
+
+.itemimgg img{
+    width: 30px;
+    
+}
+.encabezado{
+    
+    display: grid;
+    width: 95%;
+    border-color: transparent transparent gray transparent;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    border-style: solid;
+    height: 100px;
+    
+
+}
+.grid a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 7px #8c8c8c, 0 0 10px #474747, 0 0 21px #888888,
+      0 0 82px rgb(255, 255, 255), 0 0 92px rgb(255, 255, 255),
+      0 0 151px rgb(255, 255, 255);
+  }
+.item1{
+    grid-column: 1/2;
+  }
+  .grid img{
+      width: 100px;
+     
+  }
+  .grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .item2 input{
+  width: 80px;
+  grid-column: 2/3;
+  }
+  .item2 input:hover{
+    width: 120px;
+  }
+  .itemimgg{
+    display: none;
+  }
+  .item3{
+    grid-column: 3/4;
+  }
+  .item4{
+    grid-column: 4/5;
+  }
+  .item5{
+    grid-column: 5/6;
+  }
+  .item6{
+    grid-column: 6/7;
+  }
+  .item7{
+    grid-column: 7/8;
+  }
+  .grid a{
+    color: white;
+    text-decoration: none;
+  }
+
+.item1 img{
+width: 80px;
+}
+.itemimgg img{
+    width: 60px;
+}
+.texto{
+  margin-top: -100px;
+  width: 300px;
+}
+
+.texto h1{
+    
+   color: #ffffff;
+   margin-left:30px ;
+   font-size: 45px;
+}
+.mapa h2{
+    font-size: 15px;
+    margin-left: 30px;
+    margin-top: 60px;
+}
+.texto button{
+    font-family: "Zen Dots", sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: rgb(37, 37, 37,0.8);
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+    margin-left: 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 120px;
+    
+    top: 120px;
+    margin-top:10px ;
+   
+    
+}
+
+.vender{
+    width: 95%;
+    height: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin:  auto;
+    margin-top: 60px;
+    
+    
+    
+}
+h3{
+    display: none;
+}
+.vr1{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.vr2{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.vr3{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.vr4{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.vr5{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+.vr6{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+.video1{
+    margin: 0 auto;
+    height: 300px;
+    width: 600px;
+}
+.video1:hover{
+    margin: 0 auto;
+    height: 320px;
+    width: 480px;
+    transition-duration: 0.5s;
+}
+
+
+.formularioventas button{
+    
+    margin:30px auto;
+    background-color: rgba(161, 161, 161, 0.9);
+    display: flex;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+
+    font-family: "Zen Dots", sans-serif;
+
+}
+.formularioventas a{
+    text-decoration: none;
+    color: black;
+}
+.formularioventas button:hover{
+    padding: 13px;
+}
+.formulario{
+margin: 0 auto;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.for{
+    background: linear-gradient(to bottom, transparent, rgb(9, 9, 9,0.8),rgb(9, 9, 9)),
+      url(../proyecto/imagenesproyecto/fondo2pagina.jpg) no-repeat center center;
+   
+    width: 90%;
+    margin: 0 auto;
+    padding: px;
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+  input {
+    height: 30px;
+    width: 180px;
+    border-radius: 20px;
+    border: none;
+    transition-duration: 1s;
+    cursor: text;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    list-style: none;
+  }
+
+  input:placeholder-shown {
+    border-color: teal;
+    color: rgb(235, 235, 235, 0.5);
+    font-family: "Zen Dots", sans-serif;
+    font-size: 15px;
+  }
+  .for p{
+    width: 90%;
+    font-size: 14px;
+   
+  }
+  .scroll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .sd{
+    margin: 8px;
+    margin-top: 30px;
+    border: solid;
+    padding: 12px;
+    background-color: rgb(66, 66, 66,0.2);
+  }
+  .sd a{
+    color: #fff;
+  }
+  .sd:hover{
+    margin: 8px;
+    margin-top: 30px;
+    border: solid;
+    padding: 14px;
+    background-color: rgba(184, 184, 184, 0.2);
+  }
+  .sc4{
+    background-color: rgba(184, 184, 184, 0.9);
+  }
+  .fondos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-left:110px ;
+    margin-top: 30px;
+
+  }
+  .fond a img{
+    width: 90%;
+    margin-top:50px ;
+    
+  }
+  .fondos h4{
+    position: relative;
+    right: 30px;
+  }
+  .fondos img{
+    width: 25px;
+  }
+  span{
+    font-size: 30px;
+  }
+ .ultimo{
+    width: 90%;
+    margin: 0 auto;
+ }
+ 
+
+  .fin3{
+    display: none;
+  }
+  .container5 {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, transparent, rgb(9, 9, 9,0.8),rgb(9, 9, 9)),
+      url(../proyecto/imagenesproyecto/DRAGONBORN2.jpg) no-repeat center center;
+    margin: 0 auto;
+    
+    font-size: 11px;
+  }
+
+  .fin2 {
+    width: auto;
+    height: 60px;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+  }
+  .fin2 a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .fin2 li{
+    list-style-type: none;
+    
+  }
+  .finall{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .finall a{
+   
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+    
+  }
+  footer h3 a{
+    margin: 0 auto;
+    width: 100px;
+    color: #ffffff;
+  }
+  @keyframes show {
+    from {
+      opacity: 0;
+      scale: 25%;
+    }
+
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
+  }
+
+  img,
+  .container3,
+  h1,
+  p,
+  iframe {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: show;
+    animation-range: entry 1% cover 30%;
+    animation-fill-mode: both;
+  }
+  
+
+}
+
+
+

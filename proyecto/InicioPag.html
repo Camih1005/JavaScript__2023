@@ -72,7 +72,8 @@
             <h1>Acabados recicables para mejorar el ambiente</h1>
         <p>Dentro de los materiales reciclables comunes encontramos los plásticos de botellas, bolsas, envases y contenedores. Los metales como el hierro y el aluminio, y los productos de papel o cartón, vidrios, telas, entre otros. A su vez, existen otros tipos menos usuales, como las pilas, baterías y los electrodomésticos.</p></div>
         <article class="container3 animate__animated animate__fadeInUp">
-            <div id="cambiarColorDiadema" class="grid2 item001"><h2>Diademas &nbsp </h2>
+            <div id="cambiarColorDiadema" class="grid2 item001">
+                <h2>Diademas &nbsp </h2>
                 <div class="contASK">
                 <div><button onclick="cambiarColorDi2()" id="div1"></button></div>
                 <div><button onclick="cambiarColorDi()" id="div2"></button></div>
@@ -145,7 +146,8 @@
     </section>
     <div class="bajar">
     <article class="footer1 animate__animated animate__backInDown">
-        <div class="foot1 final">
+       
+        <div  class="foot1 final">
             <h1 class="ultimotitulo">¿QUIERES ESTAR AL TANTO DE NUESTROS PRODUCTOS?</h1>
             <div class="for">
                 <p>Ponte al dia con nosotros, deja tus datos y te estaremos enviando noticias de eventos, productos
@@ -163,12 +165,18 @@
                             <br>
                             <input type="email" id="mail" name="user_mail" placeholder="Correo Electronico" />
                         </li>
+                        <button onclick="formularioEnviado(event)" class="botonFormu">Enviar</button>
+                        
 
                     </ul>
                 </form>
+                <div id="PublicidadEnviar" class="">
+                    <h5>Gracias por confiar en nosotros</h5>
+                    <p id="pp">Apenas tengamos noticias nuevas te estaremos enviando todo via correo</p>
+                </div>
             </div>
         </div>
-
+      
 
     </article>
     <footer class="ultimo">
@@ -300,6 +308,20 @@
         publicidad.style.display = "block";
     }, 6000); 
 });
+
+    function formularioEnviado(){
+        let info = document.getElementById('PublicidadEnviar');
+        event.preventDefault();
+      info.style.display = (info.style.display === 'none') ? 'block' : 'none';
+      let valornombre = document.getElementById('name').value 
+      let p = document.getElementById('pp')
+      let mail = document.getElementById('mail').value
+
+      p.innerHTML = `Gracias ${valornombre} por confiar en nosotros, te enviaremos al correo ${mail},si el correo esta mal vuelve a ponerlo. <BR> Todas las semanas te estaremos actualizando para que estes al tanto con nuestros productos y eventos.`
+
+      
+      
+    }
    
     
 

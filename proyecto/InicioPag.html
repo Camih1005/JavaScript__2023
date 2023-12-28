@@ -11,74 +11,17 @@
     <title>GAMLION</title>
     
 </head>
-<style>
-    @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Zen+Dots&display=swap");
 
-    *{
-        font-family: "Zen Dots", sans-serif;
-    }
-
-    #diadema{
-        display: none;
-        background: url(../proyecto/imagenesproyecto/como-armar-setup-gamer-mas-epico-zona-gaming-pc-gamer.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        color: aliceblue;
-        flex-direction: column;
-        width: 100%;
-        height: 600px;
-        margin: 0 auto;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    #containerDiadema{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        border: solid 2px black;
-        width: 600px;
-        margin: 0 auto;
-    }
-    .botondia{
-      
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0);
-        border: none;
-        font-size: 18px;
-        border-radius: 10px;
-        padding: 7px;
-        color: white;
-
-    }
-    .botondia:hover{
-        background-color: rgba(0, 0, 0, 0.285); 
-    }
-    .gd{
-        width: 100%;
-        border: none;
-        
-    }
-    #diadema p{
-        width: 400px;
-        margin: 0 auto;
-        text-align: center;
-        color: aliceblue;
-        border: none;
-        background-color: rgba(0, 0, 0, 0.357);
-        border-radius: 10px;
-        padding: 15px;
-        
-    }
-  
-
-    
-</style>
 
 <body>
+    <div  id="publicidad" class="oculto animate__animated animate__fadeInDown">
+        <div id="contPublicidad">
+        <h6>Diadema IrePro Edicion limitada</h6>
+        <img src="../proyecto/imagenesproyecto/modal-mobile-home.jpg" alt="img">
+        <p>Consigue la versión limitada de los IRE PRO H848, dedicada a Mobile Legends: Bang Bang, con un código secreto para acceder a un skin permanente. Encuéntralos en sus 3 versiones de color.</p>
+        <button id="cerrarBtn">Cerrar</button>
+    </div>
+    </div>
 
     <section class="iml">
 
@@ -123,40 +66,55 @@
     <section id="productos" class="segundop">
         <h1>MEJORES ACABADOS</h1>
         <p>Materiales reciclables y mas duraderos</p>
-        <p><a href="">Mas informacion ></a></p>
+        <div id="containerbotonReciclaje"><button id="botonInform" onclick="BotonReciclaje()">Mas informacion</button></div>
+        
+        <div id="Reciclaje">
+            <h1>Acabados recicables para mejorar el ambiente</h1>
+        <p>Dentro de los materiales reciclables comunes encontramos los plásticos de botellas, bolsas, envases y contenedores. Los metales como el hierro y el aluminio, y los productos de papel o cartón, vidrios, telas, entre otros. A su vez, existen otros tipos menos usuales, como las pilas, baterías y los electrodomésticos.</p></div>
         <article class="container3 animate__animated animate__fadeInUp">
-            <div class="grid2 item001"><a href="">Diademas &nbsp </a>
-                
-                <div id="div1"></div>
-                <div id="div2"></div>
-                <button onclick="toggleInfo()">Ver mas</button>
-            </div>
-            <div class="grid2 item002"><a href="">Ratones &nbsp</a>
-                <div id="raton"></div>
-                <div id="raton2"></div>
+            <div id="cambiarColorDiadema" class="grid2 item001"><h2>Diademas &nbsp </h2>
+                <div class="contASK">
+                <div><button onclick="cambiarColorDi2()" id="div1"></button></div>
+                <div><button onclick="cambiarColorDi()" id="div2"></button></div>
+                <button class="botonvermasDiadema" onclick="toggleAudio()">Ver mas</button>
             </div>
             </div>
-            <div class="grid2 item003"><a href="">Teclado &nbsp</a>
-                <div id="teclado1"></div>
-                <div id="teclado2"></div>
+           
+            <div id="cambiarRaton" class="grid2 item002"><h2>Ratones &nbsp</h2>
+                <div class="contASK">
+                <div><button onclick="cambiarColorRaton()" id="raton"></button></div>
+                <div><button onclick="cambiarColorRaton2()" id="raton2"></button></div>
+                <button class="botonvermasDiadema" onclick="toggleMouse()">Ver mas</button>
             </div>
             </div>
-            <div class="grid2 item004"><a href="">Teclas Mecanicas &nbsp</a>
-                <div id="teclas1"></div>
-                <div id="teclas2"></div>
+            
+            <div id="CambiarTeclado" class="grid2 item003"><h2>Teclado &nbsp</h2>
+                <div class="contASK">
+                <div ><button onclick="cambiarColorteclado2()"id="teclado1"></button></div>
+                <div><button onclick="cambiarColorteclado()" id="teclado2"></button></div>
+                <button class="botonvermasDiadema" onclick="toggleTeclado()">Ver mas</button>
+            </div>
+            </div>
+            </div>
+            <div id="cambiarTeclas" class="grid2 item004"><h2>Teclas Mecanicas &nbsp</h2>
+                <div class="contASK">
+                <div ><button onclick="cambiarColorteclas2()" id="teclas1"></button></div>
+                <div><button onclick="cambiarColorteclas()"  id="teclas2"></button></div>
+                <button class="botonvermasDiadema" onclick="toggleTeclas()">Ver mas</button>
+            </div>
             </div>
             </div>
             
         </article>
-        <div id="diadema" >
-            <div id="containerDiadema">
-            <div id="especi" class="gd" ><button class="botondia" onclick="">Especificaciones</button></div>
-            <div id="contenido" class="gd"><button class="botondia" onclick="">Contenido del paquete</button></div>
+        <div id="Info" >
+            <div id="containerInfo">
+            
         </div>
-        <h3  >Diadame ultra potente</h3>
-        <p>Los Ire Pro son auriculares estéreo súper livianos con micrófono desmontable, diseñados para incrementar la libertad en el juego. Están equipados con dos modalidades de conexión inalámbrica más conexión cableada USB y son compatibles con consolas como PS5, teléfonos y otros dispositivos Bluetooth.</p>
+        <h3 id="title" ></h3>
+        <p id="p"></p>
         
     </div>
+        
 
     </section>
     <h1 class="producto">PRODUCTOS MAS VENDIDOS DEL MES</h1>
@@ -229,17 +187,122 @@
             <h3><a href="">Terminos y condiciones</a></h3>
             <h4><a href="">Cookies</a></h4>
             <h5><a href="">GamLion2023℗</a></h5>
-
         </div>
     </footer>
 
 </div>
 
 <script>
-    function toggleInfo() {
-      let info = document.getElementById('diadema');
+    function toggleAudio() {
+      let info = document.getElementById('Info');
       info.style.display = (info.style.display === 'none') ? 'block' : 'none';
+      const mouseTitle = document.getElementById('title')
+      const p = document.getElementById('p')
+      mouseTitle.innerHTML = 'ESCUCHA: ESTO ES EL TODO'
+      p.innerHTML = 'Potentes, hermosos, totales. Con retroiluminación RGB, un micrófono excepcional, construcción cómoda y robusta, y —lo más importante— una calidad de sonido arrolladora, los aclamados Zeus vuelven con más <br> '
+
     }
+    
+
+    function toggleMouse() {
+      let info = document.getElementById('Info');
+      info.style.display = (info.style.display === 'none') ? 'block' : 'none';
+      const mouseTitle = document.getElementById('title')
+      const p = document.getElementById('p')
+      mouseTitle.innerHTML = 'WIRELESS + PARACORD: LO MEJOR DE LO MEJOR'
+      p.innerHTML = 'El sistema inalámbrico de 2,4 GHz del Storm Pro es de alta velocidad que virtualmente anula la latencia y proporciona una respuesta  instantanea, absolutamente fiable. Ademas invluye un cable extraible de paracord ultra liviano, el material optimo. '
+
+    }
+
+    
+    function toggleTeclado() {
+      let info = document.getElementById('Info');
+      info.style.display = (info.style.display === 'none') ? 'block' : 'none';
+      const mouseTitle = document.getElementById('title')
+      const p = document.getElementById('p')
+      mouseTitle.innerHTML = 'HORUS MINI BLACK'
+      p.innerHTML = 'La principal diferencia entre las dos versiones del Horus Mini es la conectividad. la version estandar cuenta con cable USB C desmontable, con ficha en el, Super teclado para jugar tus juegos favoritos con alta fluidez y lo mejor de todo INALAMBRICO'
+
+    }
+
+    function toggleTeclas() {
+      let info = document.getElementById('Info');
+      info.style.display = (info.style.display === 'none') ? 'block' : 'none';
+      const mouseTitle = document.getElementById('title')
+      const p = document.getElementById('p')
+      mouseTitle.innerHTML = 'TECLAS MECANICAS ULTRA DELGADAS'
+      p.innerHTML = 'Lo mejor de lo mejor, teclas de alto desempeño para un mejor juego, Mecanicas para poder cambiar cuando quieras y modificarlas a tu gusto'
+
+    }
+    function BotonReciclaje() {
+      let info = document.getElementById('Reciclaje');
+      info.style.display = (info.style.display === 'none') ? 'block' : 'none';
+     
+    }
+    function cambiarColorDi(){
+        const colorDia = document.getElementById('cambiarColorDiadema')
+        colorDia.classList.remove("item001");
+        colorDia.classList.add('cambiarColor')
+        
+    }
+    function cambiarColorDi2(){
+        const colorDia = document.getElementById('cambiarColorDiadema')
+        colorDia.classList.remove("cambiarColor");
+        colorDia.classList.add('item001')
+        
+    }
+    function cambiarColorRaton(){
+        const colorDia = document.getElementById('cambiarRaton')
+        colorDia.classList.remove("item002");
+        colorDia.classList.add('cambiarColorRaton')
+        
+    }
+    function cambiarColorRaton2(){
+        const colorDia = document.getElementById('cambiarRaton')
+        colorDia.classList.remove("cambiarColorRaton");
+        colorDia.classList.add('item002')
+        
+    }
+    function cambiarColorteclado(){
+        const colorDia = document.getElementById('CambiarTeclado')
+        colorDia.classList.remove("item003");
+        colorDia.classList.add('cambiarColorTeclado')
+        
+    }
+    function cambiarColorteclado2(){
+        const colorDia = document.getElementById('CambiarTeclado')
+        colorDia.classList.remove("cambiarColorTeclado");
+        colorDia.classList.add('item003')
+        
+    }
+    function cambiarColorteclas(){
+        const colorDia = document.getElementById('cambiarTeclas')
+        colorDia.classList.remove("item004");
+        colorDia.classList.add('cambiarColorTeclas')
+        
+    }
+    function cambiarColorteclas2(){
+        const colorDia = document.getElementById('cambiarTeclas')
+        colorDia.classList.remove("cambiarColorTeclas");
+        colorDia.classList.add('item004')
+        
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+    let publicidad = document.getElementById("publicidad");
+    let cerrarBtn = document.getElementById("cerrarBtn");
+
+
+    cerrarBtn.addEventListener("click", function() { 
+        publicidad.style.display = "none";
+    });
+
+    setTimeout(function() {
+        publicidad.style.display = "block";
+    }, 6000); 
+});
+   
+    
+
 
 </script>
 </body>

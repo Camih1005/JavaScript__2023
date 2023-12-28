@@ -147,15 +147,7 @@ body {
         
       }
     
-      
-    
-      .grid a:hover {
-        color: #ffffff;
-        text-shadow: 0 0 7px #8c8c8c, 0 0 10px #474747, 0 0 21px #888888,
-          0 0 82px rgb(255, 255, 255), 0 0 92px rgb(255, 255, 255),
-          0 0 151px rgb(255, 255, 255);
-      }
-    
+
       .segundop img {
         height: 100%;
         width: 100%;
@@ -178,11 +170,7 @@ body {
         column-gap: 30px;
         margin-bottom: 100px;
       }
-    
-      .container2 a:hover {
-        background: 100px;
-      }
-    
+
       .grid2 a {
     
         color: #fff;
@@ -202,16 +190,7 @@ body {
         transition-duration: 1s;
         margin: 0 auto;
       }
-    
-      .item01:hover {
-        width: 350px;
-    
-        color: rgb(255, 255, 255);
-        border: 1px solid transparent;
-        transition-property: all;
-        transition-duration: 0.5s;
-      }
-    
+
       .item02 {
         background: url(../proyecto/imagenesproyecto/maousemarca.png) no-repeat center center;
         grid-column: 1/2;
@@ -225,15 +204,7 @@ body {
         transition-duration: 1s;
         margin: 0 auto;
       }
-    
-      .item02:hover {
-        width: 350px;
-        color: rgb(255, 255, 255);
-        border: 1px solid transparent;
-        transition-property: all;
-        transition-duration: 0.5s;
-      }
-    
+
       .item03 {
         background: url(../proyecto/imagenesproyecto/audio.png) no-repeat center center;
         grid-column: 1/2;
@@ -248,14 +219,7 @@ body {
         margin: 0 auto;
       }
     
-      .item03:hover {
-        width: 350px;
-    
-        color: rgb(255, 255, 255);
-        border: 1px solid transparent;
-        transition-property: all;
-        transition-duration: 0.5s;
-      }
+  
     
       .item04 {
         background: url(../proyecto/imagenesproyecto/camaralogo.png) no-repeat center center;
@@ -271,15 +235,7 @@ body {
         margin: 0 auto;
       }
     
-      .item04:hover {
-        width: 350px;
-    
-        color: rgb(255, 255, 255);
-        border: 1px solid transparent;
-        transition-property: all;
-        transition-duration: 0.5s;
-      }
-    
+  
       .item05 {
         background: url(../proyecto/imagenesproyecto/camaralogo.png) no-repeat center center;
     
@@ -294,15 +250,7 @@ body {
         transition-property: all;
         transition-duration: 1s;
       }
-    
-      .item05:hover {
-        width: 380px;
-    
-        color: rgb(255, 255, 255);
-        border: 1px solid transparent;
-        transition-property: all;
-        transition-duration: 0.5s;
-      }
+  
     
       .container3 {
         background-color: transparent;
@@ -322,9 +270,7 @@ body {
         
       }
     
-      .container3 a:hover {
-        background: 100px;
-      }
+    
     
       .grid2 a {
         color: #fff;
@@ -346,15 +292,6 @@ body {
         margin: 0 auto;
       }
     
-      .item001:hover {
-        width: 350px;
-    
-        color: rgb(255, 255, 255);
-        border: 1px solid transparent;
-        transition-property: all;
-        transition-duration: 0.5s;
-        cursor: pointer;
-      }
     
       .item002 {
         background: url(../proyecto/imagenesproyecto/COBRA-W.png) no-repeat center center;
@@ -371,15 +308,7 @@ body {
         margin: 0 auto;
       }
     
-      .item002:hover {
-        width: 350px;
-    
-        color: rgb(255, 255, 255);
-        border: 1px solid transparent;
-        transition-property: all;
-        transition-duration: 0.5s;
-        cursor: pointer;
-      }
+   
     
       .item003 {
         background: url(../proyecto/imagenesproyecto/HORUS-WHITE-FULL.png) no-repeat center center;
@@ -396,15 +325,7 @@ body {
         margin: 0 auto;
       }
     
-      .item003:hover {
-        width: 350px;
-    
-        color: rgb(255, 255, 255);
-        border: 1px solid transparent;
-        transition-property: all;
-        transition-duration: 0.5s;
-        cursor: pointer;
-      }
+      
     
       .item004 {
         background: url(../proyecto/imagenesproyecto/TECLAS.png) no-repeat center center;
@@ -421,15 +342,7 @@ body {
         margin: 0 auto;
       }
     
-      .item004:hover {
-        width: 350px;
-    
-        color: rgb(255, 255, 255);
-        border: 1px solid transparent;
-        transition-property: all;
-        transition-duration: 0.5s;
-        cursor: pointer;
-      }
+     
     
       .item005 {
         background: url(../proyecto/imagenesproyecto/TECLAS.png) no-repeat center center;
@@ -446,13 +359,7 @@ body {
         cursor: cell;
       }
     
-      .item005:hover {
-        width: 350px;
-        color: rgb(255, 255, 255);
-        border: 1px solid transparent;
-        transition-property: all;
-        transition-duration: 0.4s;
-      }
+    
       .producto{
         text-align: center;
         width: 700px;
@@ -787,10 +694,7 @@ body {
         color: #fff;
       }
     
-      .formulario input:hover {
-        width: 200px;
-        height: 35px;
-      }
+     
     
       .servicio img {
         width: 30px;
@@ -851,9 +755,7 @@ body {
         padding: 10px;
       }
     
-      .ult li a:hover {
-        color: rgb(243, 12, 27);
-      }
+    
       .ultimotitulo{
         font-size: 20px;
       }
@@ -927,6 +829,103 @@ body {
         position: relative;
         top: 1100px;
       }
+      *{
+        font-family: "Zen Dots", sans-serif;
+    }
+
+    #diadema{
+        display: none;
+        background: url(../proyecto/imagenesproyecto/ESTOOOOOOOO.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: aliceblue;
+        flex-direction: column;
+        width: 100%;
+        height: 600px;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+    }
+    
+    #containerDiadema,#containerMouse{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        border: solid 2px black;
+        width: 600px;
+        margin: 0 auto;
+    }
+    .botondia{
+      
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        font-size: 18px;
+        border-radius: 10px;
+        padding: 7px;
+        color: white;
+
+    }
+  
+    .gd{
+        width: 100%;
+        border: none;
+        
+    }
+    #diadema p{
+        width: 700px;
+        height: 300px;
+        margin: 0 auto;
+        text-align: center;
+        color: aliceblue;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.481);
+        border-radius: 10px;
+        padding: 15px;
+        
+    }
+    .botonvermasDiadema{
+      background-color: #0000005b;
+      border: none;
+      color: white;
+      width: 100px;
+      
+    }
+ 
+    #Mouse{
+      display: none;
+      background: url(../proyecto/imagenesproyecto/wirelessssss.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      color: aliceblue;
+      flex-direction: column;
+      width: 100%;
+      height: 600px;
+      margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #Mouse p{
+    width: 700px;
+    height: 300px;
+    margin: 0 auto;
+    text-align: center;
+    color: aliceblue;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.481);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 20px;
+    
+}
+      
       
       }
       
@@ -1006,11 +1005,6 @@ body {
     display: block;
   }
 
-  .menu-vertical li:hover {
-    background-color: rgb(29, 29, 29,0.5);
-    width: 100%;
-    
-  }
 
   .menu-vertical li a {
     display: block;
@@ -1107,12 +1101,7 @@ body {
   }
   
 
-  .grid a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 7px #8c8c8c, 0 0 10px #474747, 0 0 21px #888888,
-      0 0 82px rgb(255, 255, 255), 0 0 92px rgb(255, 255, 255),
-      0 0 151px rgb(255, 255, 255);
-  }
+
 
   .segundop img {
     height: 100%;
@@ -1135,10 +1124,7 @@ body {
     column-gap: 30px;
   }
 
-  .container2 a:hover {
-    background: 100px;
-  }
-
+ 
   .grid2 a {
 
     color: #fff;
@@ -1158,15 +1144,7 @@ body {
     margin: 0 auto;
   }
 
-  .item01:hover {
-    width: 350px;
-
-    color: rgb(255, 255, 255);
-    border: 1px solid transparent;
-    transition-property: all;
-    transition-duration: 0.5s;
-  }
-
+ 
   .item02 {
     background: url(../proyecto/imagenesproyecto/maousemarca.png) no-repeat center center;
     grid-column: 2/3;
@@ -1180,13 +1158,7 @@ body {
     margin: 0 auto;
   }
 
-  .item02:hover {
-    width: 350px;
-    color: rgb(255, 255, 255);
-    border: 1px solid transparent;
-    transition-property: all;
-    transition-duration: 0.5s;
-  }
+  
 
   .item03 {
     background: url(../proyecto/imagenesproyecto/audio.png) no-repeat center center;
@@ -1200,14 +1172,7 @@ body {
     transition-duration: 1s;
   }
 
-  .item03:hover {
-    width: 350px;
 
-    color: rgb(255, 255, 255);
-    border: 1px solid transparent;
-    transition-property: all;
-    transition-duration: 0.5s;
-  }
 
   .item04 {
     background: url(../proyecto/imagenesproyecto/camaralogo.png) no-repeat center center;
@@ -1222,14 +1187,7 @@ body {
     transition-duration: 1s;
   }
 
-  .item04:hover {
-    width: 350px;
 
-    color: rgb(255, 255, 255);
-    border: 1px solid transparent;
-    transition-property: all;
-    transition-duration: 0.5s;
-  }
 
   .item05 {
     background: url(../proyecto/imagenesproyecto/camaralogo.png) no-repeat center center;
@@ -1246,140 +1204,170 @@ body {
     transition-duration: 1s;
   }
 
-  .item05:hover {
-    width: 380px;
-
-    color: rgb(255, 255, 255);
-    border: 1px solid transparent;
-    transition-property: all;
-    transition-duration: 0.5s;
-  }
+ 
 
   .container3 {
     background-color: transparent;
     margin-left: 5%;
     width: 95%;
     height: 1000px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    
     column-gap: 10px;
     align-items: center;
     margin: 0 auto;
-    position: relative;
+    flex-wrap: wrap;
+ 
     
   }
-
-  .container3 a:hover {
-    background: 100px;
+  .contASK{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    width: 350px;
+    height: 220px;
+    margin: 0 auto;
+    text-align: center;
   }
 
-  .grid2 a {
+  
+
+  .grid2 h2 {
     color: #fff;
     text-decoration: none;
+    text-align: center;
+    font-size: 17px;
   }
+  .grid2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .cambiarColor{
+    background: url(../proyecto/imagenesproyecto/diadema2.png) no-repeat center center;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition-property: all;
+    transition-duration: 1s;
+  }
+
 
   .item001 {
     background: url(../proyecto/imagenesproyecto/DIADEMABLANCA.png) no-repeat center center;
-
     width: 300px;
     height: 300px;
-    grid-column: 1/2;
-    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     transition-property: all;
     transition-duration: 1s;
-    margin: 0 auto;
   }
 
-  .item001:hover {
-    width: 350px;
 
-    color: rgb(255, 255, 255);
-    border: 1px solid transparent;
+  .cambiarColorRaton {
+    background: url(../proyecto/imagenesproyecto/mouse22.png) no-repeat center center;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     transition-property: all;
-    transition-duration: 0.5s;
-    cursor: pointer;
+    transition-duration: 1s;
   }
+  
 
   .item002 {
     background: url(../proyecto/imagenesproyecto/COBRA-W.png) no-repeat center center;
-
     width: 300px;
     height: 300px;
-    grid-column: 2/3;
-    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     transition-property: all;
     transition-duration: 1s;
-    margin: 0 auto;
   }
 
-  .item002:hover {
-    width: 350px;
-
-    color: rgb(255, 255, 255);
-    border: 1px solid transparent;
+  
+  .cambiarColorTeclado {
+    background: url(../proyecto/imagenesproyecto/teclado22.png) no-repeat center center;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     transition-property: all;
-    transition-duration: 0.5s;
-    cursor: pointer;
+    transition-duration: 1s;
   }
+  
 
   .item003 {
     background: url(../proyecto/imagenesproyecto/HORUS-WHITE-FULL.png) no-repeat center center;
-
     width: 300px;
     height: 300px;
-    grid-column: 1/2;
-    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     transition-property: all;
     transition-duration: 1s;
-    margin: 0 auto;
   }
 
-  .item003:hover {
-    width: 350px;
-
-    color: rgb(255, 255, 255);
-    border: 1px solid transparent;
+ 
+  .cambiarColorTeclas{
+    background: url(../proyecto/imagenesproyecto/scarab-rosa-6.png) no-repeat center center;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     transition-property: all;
-    transition-duration: 0.5s;
-    cursor: pointer;
+    transition-duration: 1s;
   }
+
+
 
   .item004 {
-    background: url(../proyecto/imagenesproyecto/TECLAS.png) no-repeat center center;
-
+    background: url(../proyecto/imagenesproyecto/teclasblancas22.png) no-repeat center center;
     width: 300px;
     height: 300px;
-    grid-column: 2/3;
-    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     transition-property: all;
     transition-duration: 1s;
-    margin: 0 auto;
   }
 
-  .item004:hover {
-    width: 350px;
-
-    color: rgb(255, 255, 255);
-    border: 1px solid transparent;
-    transition-property: all;
-    transition-duration: 0.5s;
-    cursor: pointer;
-  }
+  
 
   .item005 {
     background: url(../proyecto/imagenesproyecto/TECLAS.png) no-repeat center center;
@@ -1397,13 +1385,7 @@ body {
     cursor: cell;
   }
 
-  .item005:hover {
-    width: 350px;
-    color: rgb(255, 255, 255);
-    border: 1px solid transparent;
-    transition-property: all;
-    transition-duration: 0.4s;
-  }
+  
   .producto{
     text-align: center;
     width: 700px;
@@ -1532,14 +1514,7 @@ body {
     cursor: pointer;
   }
 
-  .item-1:hover {
-    width: 450px;
-    border: 1px solid transparent;
-    transition-property: all;
-    transition-duration: 0.5s;
-    height: 450px;
-  }
-
+ 
   .item-1 a {
     text-decoration: none;
 
@@ -1569,14 +1544,7 @@ body {
     height: 400px;
   }
 
-  .item-2:hover {
-    width: auto;
-    border: 1px solid transparent;
-    transition-property: all;
-    transition-duration: 0.5s;
-    width: 450px;
-    height: 450px;
-  }
+  
 
   .itemm-2 img {
     width: 300px;
@@ -1637,14 +1605,7 @@ body {
     top: 200px;
   }
 
-  .item-3:hover {
-
-    border: 1px solid transparent;
-    transition-property: all;
-    transition-duration: 0.5s;
-    width: 450px;
-    height: 450px;
-  }
+ 
 
   h1 {
     text-align: center;
@@ -1737,10 +1698,7 @@ body {
     color: #fff;
   }
 
-  .formulario input:hover {
-    width: 200px;
-    height: 35px;
-  }
+ 
 
   .servicio img {
     width: 30px;
@@ -1804,9 +1762,7 @@ body {
     padding: 10px;
   }
 
-  .ult li a:hover {
-    color: rgb(243, 12, 27);
-  }
+  
 
   .ultimo h3 a {
     color: red;
@@ -1871,6 +1827,303 @@ body {
 }
 .header{
   display: none;
+}
+ *{
+        font-family: "Zen Dots", sans-serif;
+    }
+
+    #diadema{
+        display: none;
+        background: url(../proyecto/imagenesproyecto/ESTOOOOOOOO.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: aliceblue;
+        flex-direction: column;
+        width: 100%;
+        height: 600px;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+    }
+    
+    #containerDiadema,#containerMouse{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        border: solid 2px black;
+        width: 600px;
+        margin: 0 auto;
+    }
+    .botondia{
+      
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        font-size: 18px;
+        border-radius: 10px;
+        padding: 7px;
+        color: white;
+
+    }
+    
+    .gd{
+        width: 100%;
+        border: none;
+        
+    }
+    #diadema p{
+        width: 700px;
+        height: 300px;
+        margin: 0 auto;
+        text-align: center;
+        color: aliceblue;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.481);
+        border-radius: 10px;
+        padding: 15px;
+        
+    }
+    .botonvermasDiadema{
+      background-color: #0000005b;
+      border: none;
+      color: white;
+      width: 100px;
+      
+    }
+    .botonvermasDiadema:hover{
+      background-color: #0000005b;
+      border: none;
+      color: rgb(213, 213, 213);
+      width: 100px;
+      cursor: pointer;
+      font-size: 15px;
+      
+      
+    }
+    #Mouse{
+      display: none;
+      background: url(../proyecto/imagenesproyecto/wirelessssss.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      color: aliceblue;
+      flex-direction: column;
+      width: 100%;
+      height: 600px;
+      margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #Mouse p{
+    width: 700px;
+    height: 300px;
+    margin: 0 auto;
+    text-align: center;
+    color: aliceblue;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.481);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 20px;
+    
+}
+*{
+  font-family: "Zen Dots", sans-serif;
+}
+#containerbotonReciclaje{
+display: flex;
+}
+#botonInform{
+margin: 0 auto;
+text-align: center;
+background-color: #00000076;
+color: white;
+border: none;
+padding: 10px;
+cursor: pointer;
+}
+#botonInform:hover{
+background-color: #353535;
+border-radius: 10px;
+}
+#Reciclaje{
+display: none;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 0 auto;
+text-align: center;
+width: 70%;
+height: auto;
+
+}
+
+#Info{
+  display: none;
+  background: url(../proyecto/imagenesproyecto/GAMER-WALLPAPER-HD.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: aliceblue;
+  flex-direction: column;
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+#containerInfo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: solid 2px black;
+  width: 600px;
+  margin: 0 auto;
+}
+.botondia{
+
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 7px;
+  color: white;
+
+}
+.botondia:hover{
+  background-color: rgba(0, 0, 0, 0.291); 
+}
+.gd{
+  width: 100%;
+  border: none;
+  
+}
+#Info p{
+  width: 700px;
+  height: 300px;
+  margin: 0 auto;
+  text-align: center;
+  color: aliceblue;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.481);
+  border-radius: 10px;
+  padding: 15px;
+  
+}
+.botonvermasDiadema{
+background-color: #0000005b;
+border: none;
+color: white;
+width: 100px;
+
+}
+.botonvermasDiadema:hover{
+background-color: #0000005b;
+border: none;
+color: rgb(213, 213, 213);
+width: 100px;
+cursor: pointer;
+font-size: 15px;
+
+
+}
+#Info{
+display: none;
+background: url(../proyecto/imagenesproyecto/GAMER-WALLPAPER-HD.png);
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+color: aliceblue;
+flex-direction: column;
+width: 100%;
+height: auto;
+margin: 0 auto;
+text-align: center;
+justify-content: center;
+align-items: center;
+padding: 15px;
+}
+
+#Info p{
+width: 700px;
+height: auto;
+margin: 0 auto;
+text-align: center;
+color: aliceblue;
+border: none;
+background-color: rgba(0, 0, 0, 0.481);
+border-radius: 10px;
+padding: 15px;
+font-size: 20px;
+
+}
+
+.oculto {
+display: none;
+width: 80%;
+height: 500px;
+border: solid 2px white;
+background-color: #3e3e3ecc;
+position: fixed;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+z-index: 10;
+color: white;
+border: none;
+border-radius: 10px;
+left: 100px;
+text-align: center;
+transition-property: all;
+transition-duration: 1s;
+padding: 10px;
+margin: 0 auto;
+
+}
+.oculto,img{
+width: 450px;
+height: auto;
+margin: 0 auto;
+}
+#contPublicidad{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+left: 500px;
+}
+#contPublicidad p{
+width: 50%;
+height: auto;
+font-size: 17px;
+background-color: #00113fb1;
+border-radius: 10px;
+padding: 17px;
+}
+#contPublicidad button{
+background-color: #050505;
+border: none;
+border-radius: 5px;
+width: 100px;
+height: 60px;
+margin: 10px;
+color: white;
+font-size: 10px;
+}
+h6{
+font-size: 18px;
 }
 
 }
@@ -2110,10 +2363,8 @@ body {
 
         margin-left: 5%;
         width: 95%;
-        height: 350px;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: 1fr;
+        height: 400px;
+        display: flex;
         justify-content: center;
         align-items: center;
         column-gap: 10px;
@@ -2126,14 +2377,34 @@ body {
         background: 100px;
       }
 
-      .grid2 a {
+      .grid2 h2 {
         color: #fff;
         text-decoration: none;
+        text-align: center;
+        
+      }
+      .contASK{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: end;
+      }
+      .cambiarColor{
+        background: url(../proyecto/imagenesproyecto/diadema2.png) no-repeat center center;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition-property: all;
+        transition-duration: 1s;
       }
 
       .item001 {
         background: url(../proyecto/imagenesproyecto/DIADEMABLANCA.png) no-repeat center center;
-
         width: 300px;
         height: 300px;
         display: flex;
@@ -2147,6 +2418,38 @@ body {
       }
 
       .item001:hover {
+        width: 350px;
+
+        color: rgb(255, 255, 255);
+        border: 1px solid transparent;
+        transition-property: all;
+        transition-duration: 0.5s;
+        cursor: pointer;
+      }
+      .cambiarColor:hover {
+        width: 350px;
+
+        color: rgb(255, 255, 255);
+        border: 1px solid transparent;
+        transition-property: all;
+        transition-duration: 0.5s;
+        cursor: pointer;
+      }
+      .cambiarColorRaton {
+        background: url(../proyecto/imagenesproyecto/mouse22.png) no-repeat center center;
+
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition-property: all;
+        transition-duration: 1s;
+      }
+      .cambiarColorRaton:hover {
         width: 350px;
 
         color: rgb(255, 255, 255);
@@ -2180,6 +2483,29 @@ body {
         transition-duration: 0.5s;
         cursor: pointer;
       }
+      .cambiarColorTeclado {
+        background: url(../proyecto/imagenesproyecto/teclado22.png) no-repeat center center;
+
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition-property: all;
+        transition-duration: 1s;
+      }
+      .cambiarColorTeclado:hover {
+        width: 350px;
+
+        color: rgb(255, 255, 255);
+        border: 1px solid transparent;
+        transition-property: all;
+        transition-duration: 0.5s;
+        cursor: pointer;
+      }
 
       .item003 {
         background: url(../proyecto/imagenesproyecto/HORUS-WHITE-FULL.png) no-repeat center center;
@@ -2205,9 +2531,31 @@ body {
         transition-duration: 0.5s;
         cursor: pointer;
       }
+      .cambiarColorTeclas{
+        background: url(../proyecto/imagenesproyecto/scarab-rosa-6.png) no-repeat center center;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition-property: all;
+        transition-duration: 1s;
+      }
+      .cambiarColorTeclas:hover {
+        width: 350px;
+
+        color: rgb(255, 255, 255);
+        border: 1px solid transparent;
+        transition-property: all;
+        transition-duration: 0.5s;
+        cursor: pointer;
+      }
 
       .item004 {
-        background: url(../proyecto/imagenesproyecto/TECLAS.png) no-repeat center center;
+        background: url(../proyecto/imagenesproyecto/teclasblancas22.png) no-repeat center center;
 
         width: 300px;
         height: 300px;
@@ -2710,4 +3058,197 @@ body {
       /* #diadema{
         display: none;
       } */
+      *{
+        font-family: "Zen Dots", sans-serif;
+    }
+    #containerbotonReciclaje{
+      display: flex;
+    }
+    #botonInform{
+      margin: 0 auto;
+      text-align: center;
+      background-color: #00000076;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    #botonInform:hover{
+      background-color: #353535;
+      border-radius: 10px;
+    }
+    #Reciclaje{
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      text-align: center;
+      width: 70%;
+      height: auto;
+
+    }
+
+    #Info{
+        display: none;
+        background: url(../proyecto/imagenesproyecto/GAMER-WALLPAPER-HD.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: aliceblue;
+        flex-direction: column;
+        width: 100%;
+        height: 600px;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+    }
+    
+    #containerInfo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        border: solid 2px black;
+        width: 600px;
+        margin: 0 auto;
+    }
+    .botondia{
+      
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        font-size: 18px;
+        border-radius: 10px;
+        padding: 7px;
+        color: white;
+
+    }
+    .botondia:hover{
+        background-color: rgba(0, 0, 0, 0.291); 
+    }
+    .gd{
+        width: 100%;
+        border: none;
+        
+    }
+    #Info p{
+        width: 700px;
+        height: 300px;
+        margin: 0 auto;
+        text-align: center;
+        color: aliceblue;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.481);
+        border-radius: 10px;
+        padding: 15px;
+        
+    }
+    .botonvermasDiadema{
+      background-color: #0000005b;
+      border: none;
+      color: white;
+      width: 100px;
+      
+    }
+    .botonvermasDiadema:hover{
+      background-color: #0000005b;
+      border: none;
+      color: rgb(213, 213, 213);
+      width: 100px;
+      cursor: pointer;
+      font-size: 15px;
+      
+      
+    }
+    #Info{
+      display: none;
+      background: url(../proyecto/imagenesproyecto/GAMER-WALLPAPER-HD.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      color: aliceblue;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+  }
+
+  #Info p{
+    width: 700px;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    color: aliceblue;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.481);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 20px;
+    
+}
+
+.oculto {
+  display: none;
+  width: 80%;
+  height: 500px;
+  border: solid 2px white;
+  background-color: #3e3e3ecc;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  left: 100px;
+  text-align: center;
+  transition-property: all;
+   transition-duration: 1s;
+   padding: 10px;
+   margin: 0 auto;
+  
+}
+.oculto,img{
+  width: 450px;
+  height: auto;
+  margin: 0 auto;
+}
+#contPublicidad{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+  left: 500px;
+}
+#contPublicidad p{
+  width: 50%;
+  height: auto;
+  font-size: 17px;
+  background-color: #00113fb1;
+  border-radius: 10px;
+  padding: 17px;
+}
+#contPublicidad button{
+ background-color: #050505;
+ border: none;
+ border-radius: 5px;
+ width: 100px;
+ height: 60px;
+ margin: 10px;
+ color: white;
+ font-size: 10px;
+}
+h6{
+  font-size: 18px;
+}
+
  }

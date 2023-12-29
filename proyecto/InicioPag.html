@@ -14,6 +14,20 @@
 
 
 <body>
+    <div id="hamburguer">
+        
+    
+        <nav class="menu animate__animated animate__delay-5s" id="menu">
+            <button id="cerrarHambur" onclick="hamburguer()">X</button>
+            <ul>
+                <li><a href="InicioPag.html">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="puntosdeventa.html">Puntos de venta</a></li>
+                <li><a href="comunidad.html">Comunidad</a></li>
+                <li><a href="InicioPag.html">Asesor</a></li>
+            </ul>
+        </nav>
+    </div>
     <div  id="publicidad" class="oculto animate__animated animate__fadeInDown">
         <div id="contPublicidad">
         <h6>Diadema IrePro Edicion limitada</h6>
@@ -24,11 +38,11 @@
     </div>
 
     <section class="iml">
-
+       
         <header class="encabezado animate__animated animate__fadeInDown">
             
-            <div class="grid item1"><a href="InicioPag.html"><img src="../proyecto/imagenesproyecto/GAMLION.png" alt=""></a></div>
-
+            <div class="grid  item1"><a href="InicioPag.html"><img src="../proyecto/imagenesproyecto/GAMLION.png" alt=""></a></div>
+            
             
 
             <div class="grid item2">
@@ -44,14 +58,18 @@
                     <option value="Audio"></option>
                 </datalist>
             </div>
-                
+            <button onclick="hamburguer()" class="menu-hamburguesa animate__animated animate__delay-3s" id="menuHamburguesa">
+                <div class="barra"></div>
+                <div class="barra"></div>
+                <div class="barra"></div>
+            </button>
             
-            <div class="grid item3"><a href="InicioPag.html">Inicio</a></div>
-            <div class="grid item4"><a href="#productos">Productos</a></div>
-            <div class="grid item5"><a href="puntosdeventa.html">Puntos de venta</a></div>
-            <div class="grid item6"><a href="comunidad.html">Comunidad</a></div>
-            <div class="grid item7"><a href="InicioPag.html">Asesor</a></div>
-            
+            <div class="grid elimM item3"><a href="InicioPag.html">Inicio</a></div>
+            <div class="grid elimM item4"><a href="#productos">Productos</a></div>
+            <div class="grid elimM item5"><a href="puntosdeventa.html">Puntos de venta</a></div>
+            <div class="grid elimM item6"><a href="comunidad.html">Comunidad</a></div>
+            <div class="grid elimM item7"><a href="InicioPag.html">Asesor</a></div>
+       
 
         </header>
         <h1 class="titulop">BIENVENIDO A GAMLION</h1>
@@ -64,9 +82,14 @@
         </article>
     </section>
     <section id="productos" class="segundop">
+        <h5 id="soloCel">Materiales Recicables</h5>
+        <div id="eliminarcel">
+            
         <h1>MEJORES ACABADOS</h1>
         <p>Materiales reciclables y mas duraderos</p>
+        
         <div id="containerbotonReciclaje"><button id="botonInform" onclick="BotonReciclaje()">Mas informacion</button></div>
+    </div>
         
         <div id="Reciclaje">
             <h1>Acabados recicables para mejorar el ambiente</h1>
@@ -123,22 +146,23 @@
         
         
         <div class="item-1 gr"><a href="">Barra de sonido LionSound</a>
-            <p>Barra de sonido ultra potente disponible en todos los colores</p>
-            <div class="itemm-1"><img src="../proyecto/imagenesproyecto/DARKNET.png" alt="">
+            
+            <div class="itemm-1"><img src="../proyecto/imagenesproyecto/DARKNET.png" alt=""><p>Barra de sonido ultra potente disponible en todos los colores</p>
                 
                 
             </div>
         </div>
         <div class="item-2 gr"><a href="">Teclado LionPlus</a>
-            <p>Teclado mecanico con pad para descansar las muñecas</p>
-            <div class="itemm-2"><img src="../proyecto/imagenesproyecto/teladodescuento.png" alt="">
+            
+            <div class="itemm-2"><img src="../proyecto/imagenesproyecto/teladodescuento.png" alt=""><p>Teclado mecanico con pad para descansar las muñecas</p>
                 
             
             </div>
         </div>
         <div class="item-3 gr"><a href="">Combo LionPlus 378A</a>
-            <p>Combo Alambrico Ultra White Profesional</p>
+            
             <div class="itemm-3"><img src="../proyecto/imagenesproyecto/combo.3.png" alt="">
+                <p>Combo Alambrico Ultra White Profesional</p>
                 
             </div>
         </div>
@@ -165,15 +189,20 @@
                             <br>
                             <input type="email" id="mail" name="user_mail" placeholder="Correo Electronico" />
                         </li>
-                        <button onclick="formularioEnviado(event)" class="botonFormu">Enviar</button>
+                        <button id="mostrarAlerta" class="botonFormu">Enviar</button>
                         
 
                     </ul>
+                    
                 </form>
-                <div id="PublicidadEnviar" class="">
-                    <h5>Gracias por confiar en nosotros</h5>
-                    <p id="pp">Apenas tengamos noticias nuevas te estaremos enviando todo via correo</p>
+                <div class="modal" id="miModal">
+                    <div class="modal-contenido">
+                        <p id="aggpp"></p>
+                        <button id="enviarBtn">Enviar</button>
+                        <button id="cerrarBtn">Cerrar</button>
+                    </div>
                 </div>
+               
             </div>
         </div>
       
@@ -309,18 +338,50 @@
     }, 6000); 
 });
 
-    function formularioEnviado(){
-        let info = document.getElementById('PublicidadEnviar');
-        event.preventDefault();
+    // function formularioEnviado(){
+    //     let info = document.getElementById('PublicidadEnviar');
+    //     event.preventDefault();
+    //   info.style.display = (info.style.display === 'none') ? 'block' : 'none';
+    //   let valornombre = document.getElementById('name').value 
+    //   let p = document.getElementById('pp')
+    //   let mail = document.getElementById('mail').value
+
+    //   p.innerHTML = `Gracias ${valornombre} por confiar en nosotros, te enviaremos al correo ${mail},si el correo esta mal vuelve a ponerlo. <BR> Todas las semanas te estaremos actualizando para que estes al tanto con nuestros productos y eventos.`
+
+      
+    // }
+
+    document.getElementById("mostrarAlerta").addEventListener("click", function(event) {
+        let agrP = document.getElementById('aggpp')
+    let valornombre = document.getElementById('name').value 
+    let mail = document.getElementById('mail').value
+    agrP.innerHTML=`Gracias ${valornombre} por confiar en nosotros, te estaremos enviando noticias y descuentos para que estes al tanto, pero antes de todo el correo ${mail} si esta bien escrito para que no te pierdas de nada¡`
+    event.preventDefault();
+    document.getElementById("miModal").style.display = "block";
+});
+
+document.getElementById("cerrarBtn").addEventListener("click", function(event) {
+    console.log(cerrarBtn)
+    
+    event.preventDefault();
+    document.getElementById("miModal").style.display = "none";
+});
+
+document.getElementById("enviarBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    
+    // Aquí puedes agregar la lógica para enviar
+    // Puedes agregar código adicional según tus necesidades
+    document.getElementById("miModal").style.display = "none";
+});
+
+function hamburguer() {
+      let info = document.getElementById('menu');
       info.style.display = (info.style.display === 'none') ? 'block' : 'none';
-      let valornombre = document.getElementById('name').value 
-      let p = document.getElementById('pp')
-      let mail = document.getElementById('mail').value
-
-      p.innerHTML = `Gracias ${valornombre} por confiar en nosotros, te enviaremos al correo ${mail},si el correo esta mal vuelve a ponerlo. <BR> Todas las semanas te estaremos actualizando para que estes al tanto con nuestros productos y eventos.`
-
+      const agglist = document.getElementById('')
+      const p = document.getElementById('menu')
       
-      
+
     }
    
     

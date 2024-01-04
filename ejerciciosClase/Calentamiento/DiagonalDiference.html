@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function sumDiagonales(data){
+            const length = data.length;
+            let diagonalPrim = 0;
+            let diagonalSec = 0;
+
+            for (let i = 0; i < length; i++) {
+                diagonalPrim += data[i][i];
+                diagonalSec += data[i][length -1 -i];
+                
+            }
+            const diferencia = diagonalPrim-diagonalSec
+
+            return {diagonalPrim,diagonalSec,diferencia}
+        }
+
+        const data=[
+            [1,2,3,5],
+            [4,5,6,4],
+            [7,8,7,3],
+            [6,4,5,1]
+        ];
+        
+
+        const result = sumDiagonales(data);
+        console.table(result)
+    </script>
+    
+</body>
+</html>

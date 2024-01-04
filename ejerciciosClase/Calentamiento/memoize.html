@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        
+        const action = ['call','call','callbad','call','callbad']
+        const values = [[2,2],[2,2],[],[1,2],[],[4,5]]
+        
+        function calcsum(){
+            const resSum = [];
+           
+            for (let i = 0; i < values.length; i++) {
+            const pos1  = values[i][0]
+            const pos2 = values[i][1]
+            const long = values[i][i]
+            const sumar = pos1+pos2
+            resSum.push(sumar)
+               
+                }
+                
+                console.table(resSum) 
+            
+            console.log(values)
+            
+
+        }
+        calcsum()
+       
+
+
+
+
+    </script>
+</body>
+</html>

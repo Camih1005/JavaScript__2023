@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    body{
+        transition: background-color 0.5s;
+    }
+
+</style>
+<body>
+    <button id="changecolorButton">CAMBIAR COLOR</button>
+    <INput type="text" id="miInput" value="Texto aqui" placeholder="Agregue texto"></INput>
+    <INput type="text" id="miCampoDeTexto" value="Texto aqui" placeholder="Agregue texto"></INput>
+    <INput type="text" id="miCampoDeTexto2" value="Texto aqui" placeholder="Agregue texto"></INput>
+   <img id="miCampoDeTexto3" src="https://img.freepik.com/foto-gratis/resumen-bombilla-creativa-sobre-fondo-azul-brillante-ia-generativa_188544-8090.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1704326400&semt=sph" alt="img.png">
+    <script>
+
+        let miInput = document.getElementById('miInput');
+        miInput.setAttribute('ondblclick','alert("Doble click en el texto")')
+        // const letters = '0123456789ABCDEF'
+        // const button = document.getElementById('changecolorButton')
+        // const changeBackgruondColor = () =>
+        // document.body.style.backgroundColor = getRandomColor();
+
+        // const getRandomColor = () => Array(6).fill('').reduce(
+        //     p=>p += letters[Math.floor(Math.random()*16)],'#'
+        // );
+        // button.setAttribute('onclick','changeBackgruondColor()')
+
+        const letters = '0123456789ABCDEF'
+        const changeBackgruondColor = () =>
+        document.body.style.backgroundColor = getRandomColor();
+
+        const getRandomColor = () => Array(6).fill('').reduce(
+            p=>p += letters[Math.floor(Math.random()*16)],'#'
+        );
+        let miCambio = document.getElementById('miCampoDeTexto');
+        miCambio.setAttribute('onchange','changeBackgruondColor()')
+
+
+        let miCambio2 = document.getElementById('miCampoDeTexto2');
+        miCambio2.setAttribute('onkeypress','changeBackgruondColor()')
+
+        let miCambio3 = document.getElementById('miCampoDeTexto3');
+        miCambio3.setAttribute('onmouseover','changeBackgruondColor()')
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+
+    #contenedortotal{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        flex-direction: column;
+        border-radius: 10px;
+        background-color: rgb(255, 208, 0);
+        height: 300px;
+        width: 80%;
+
+    }
+    #contenedorBotones{
+        margin: 0 auto;
+        text-align: center;
+    }
+    #aumentar{
+        border: none;
+        background-color: blue;
+        border-radius: 5px;
+        width: 80px;
+        height: 30px;
+        color: white;
+        box-shadow: 3px 2px 2px 2px black;
+        cursor: pointer;
+    }
+    #disminuir{
+        border: none;
+        background-color: rgb(255, 0, 0);
+        border-radius: 5px;
+        width: 80px;
+        height: 30px;
+        color: white;
+        box-shadow: 3px 2px 2px 2px black;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+   
+
+</style>
+<body>
+    <div id="contenedortotal">
+        <h1>CONTADOR</h1>
+<div id="contenedorBotones">
+    <button id="aumentar">Aumentar</button>
+    <button id="disminuir">Disminuir</button>
+    <p id="DatosContador">CONTADOR : 0 </p>
+</div>
+</div>
+    <script>
+
+        ves = 0
+        let p = document.getElementById('DatosContador')
+        let cont= document.getElementById('aumentar');
+        let contMenos = document.getElementById('disminuir')
+        cont.addEventListener('click',()=>{
+            ves ++
+            p.textContent= `CONTADOR : ${ves}`
+        })
+        
+       
+        contMenos.addEventListener('click',()=>{
+            if(ves > 0){
+                ves --
+            }
+            
+            p.textContent= `CONTADOR : ${ves}`
+        })
+
+        
+
+    </script>
+</body>
+</html>

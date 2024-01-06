@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .tabla {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 400px;
+        border: double 1px black;
+        margin: 0 auto;
+        box-shadow: 3px 3px 3px 3px;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .boton {
+        margin: 20px;
+        box-shadow: 1px 1px 1px 1px;
+        color: rgb(255, 0, 0);
+        border: none;
+        border-radius: 5px;
+        width: 100px;
+        height: 40px;
+    }
+
+    .titulo {
+        font-size: 20px;
+        color: red;
+    }
+
+    .cacas {
+        font-size: 16px;
+    }
+
+    .caja {
+
+        display: flex;
+    }
+</style>
+
+<body>
+    <div class="tabla">
+        <h1 class="titulo">Pasar centigrados a fahrenheit</h1>
+        <form class="form" onsubmit="return false">
+            <h1 class="cacas">Grados centigrados</h1>
+            <input type="number" id="centigrados" placeholder="Grados centigrados">
+            <hr>
+            <h1 class="cacas">Grados fahrenheit</h1>
+            <input type="number" id="fahrenheit" placeholder="grados fahrenheit">
+            <hr>
+
+        </form>
+        <div class="caja">
+            <button id="boton" class="boton"> RESULTADO </button>
+            
+        </div>
+    </div>
+    <script>
+
+
+       
+        const centigrados = document.getElementById('centigrados');
+        const boton = document.getElementById('boton')
+        const FH = document.getElementById('fahrenheit');
+
+        boton.addEventListener('click',()=>{
+            
+            const CEN = centigrados.value;
+            const fh = FH.value;
+            if(FH == '' & centigrados != ''){
+                const resultado = CEN * 9 / 5 + 32
+                fh = resultado
+                centigrados.style.backgroundColor = '#feff64'
+                FH.style.backgroundColor = '#71ff74'
+                
+            }
+
+            
+            if(CEN == ''& fh==''){
+                alert('estan vacios los espcios')
+            }
+            if(fh!= '' & CEN == ''){
+               const resul = (fh - 32) * 5 / 9
+               CEN.value= resul
+
+
+            }
+        
+            
+        })
+        centigrados.addEventListener('mouseover',()=>{
+            centigrados.style.backgroundColor = '#feff64'
+            FH.style.backgroundColor = '#9dd2fd'
+
+        })
+        centigrados.addEventListener('mouseout',()=>{
+            centigrados.style.backgroundColor = ''
+            FH.style.backgroundColor = ''
+        })
+        FH.addEventListener('mouseover',()=>{
+            FH.style.backgroundColor = '#feff64'
+            centigrados.style.backgroundColor = '#9dd2fd'
+        })
+        FH.addEventListener('mouseout',()=>{
+            FH.style.backgroundColor = ''
+            centigrados.style.backgroundColor = ''
+        })
+
+
+
+
+
+
+
+        function Farenh() {
+            const faren = document.getElementById('final')
+            const userInput2 = faren.value;
+            resul = (userInput2 - 32) * 5 / 9
+            const resultadoInput = document.getElementById('numero1');
+            const resul1 = Number(resul)
+            resultadoInput.value = resul1.toFixed(1)
+        }
+    </script>
+</body>
+
+</html>

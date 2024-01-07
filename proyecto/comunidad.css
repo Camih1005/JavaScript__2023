@@ -1047,12 +1047,12 @@ h3{
 .video1{
     margin: 0 auto;
     height: 300px;
-    width: 600px;
+    width: 500px;
 }
 .video1:hover{
     margin: 0 auto;
     height: 320px;
-    width: 480px;
+    width: 600px;
     transition-duration: 0.5s;
 }
 

@@ -1,0 +1,17 @@
+[{
+    "modelo": "ford mustang",
+    "produccion": 2010,
+    "millaje": 12000
+},
+
+{
+    "modelo": "Honda accord",
+    "produccion": 2021,
+    "millaje": 4560
+},
+
+{
+    "modelo": "volskwagen Golf",
+    "produccion": 2016,
+    "millaje": 58200
+}]

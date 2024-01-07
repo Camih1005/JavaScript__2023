@@ -14,6 +14,45 @@
 
 
 <body>
+    <div id="IniciarSecion">
+        <button id="botonInicio">&#128100
+            
+        </button>
+        
+    </div>
+    <div id="CartelInicioSecion" class="an animate__animated animate__fadeInDown ">
+        <div id="dentroDelInicio">
+            <button id="cerrarInicio">X</button>
+        <h1>Iniciar Sesion</h1>
+        
+        <label for="NombreUsuario" id="Usuario">Usuario</label>
+        <input id="inputIngresar" type="text">
+        <label for="Contraseña" id="Contraseña">Contraseña</label>
+        <input id="Inputcontraseña" id type="password">
+        <button id="ingresar" onclick="">Ingresar</button>
+        
+        <button id="registrarse" >Registrarse</button>
+        <a href="">Olvide la contraeña</a>
+    </div>
+    </div>
+    
+
+
+
+
+    <div id="contenedorRegistro">
+    <div id="dentroDelregistro">
+        <button id="cerrarInicio">X</button>
+    <h1>Registrase</h1>
+    
+    <label for="NombreUsuario" id="Usuario">Ingrese Usuario a registrar</label>
+    <input id="inputRegistrar" type="text">
+    <label for="Contraseña" id="Contraseña">Ingrese contraseña nueva</label>
+    <input id="InputcontraseñaR" type="password">
+    <button id="RegistrarUS" onclick="">Registrarse</button>
+    
+</div>
+</div>
     <div id="hamburguer">
         
     
@@ -324,19 +363,19 @@
         colorDia.classList.add('item004')
         
     }
-    document.addEventListener("DOMContentLoaded", function() {
-    let publicidad = document.getElementById("publicidad");
-    let cerrarBtn = document.getElementById("cerrarBtn");
+//     document.addEventListener("DOMContentLoaded", function() {
+//     let publicidad = document.getElementById("publicidad");
+//     let cerrarBtn = document.getElementById("cerrarBtn");
 
 
-    cerrarBtn.addEventListener("click", function() { 
-        publicidad.style.display = "none";
-    });
+//     cerrarBtn.addEventListener("click", function() { 
+//         publicidad.style.display = "none";
+//     });
 
-    setTimeout(function() {
-        publicidad.style.display = "block";
-    }, 6000); 
-});
+//     setTimeout(function() {
+//         publicidad.style.display = "block";
+//     }, 6000); 
+// });
 
     // function formularioEnviado(){
     //     let info = document.getElementById('PublicidadEnviar');
@@ -383,8 +422,133 @@ function hamburguer() {
       
 
     }
+    function cambiarcolor(){
+        inicioSecion.style.filter = 'invert(0)'
+        inicioSecion.style.width = '80px'
+        inicioSecion.style.height = '40px'
+        inicioSecion.textContent= 'iniciar secion'
+        inicioSecion.style.transition = '0.5s ease-out'
+        inicioSecion.style.backgroundColor = 'black'
+        inicioSecion.style.color = 'white'
+        
+       
+
+        
+    }
+    function cambiarcolor2(){
+        inicioSecion.style.filter = 'invert(0)'
+         inicioSecion.style.width = ''
+        inicioSecion.style.height = ''
+        inicioSecion.innerHTML= '&#128100'
+        inicioSecion.style.transition = '0.5s ease-out'
+     
+        
+
+    }
+   
+    const inicioSecion = document.getElementById('botonInicio')
+
+    inicioSecion.addEventListener('mouseover',cambiarcolor)
+    inicioSecion.addEventListener('mouseout',cambiarcolor2)
+
+///
+    const desplegarInicio = document.getElementById('CartelInicioSecion');
+
+    function AbrirInicio() {
+    desplegarInicio.style.display = (desplegarInicio.style.display === 'none') ? 'flex' : 'none';
+}
+
+    const inicio = document.getElementById('botonInicio');
+    inicio.addEventListener('click', AbrirInicio);
+
+
+    //cerrar incio
+
+    const CerrarInicio = document.getElementById('CartelInicioSecion');
+
+    function Cerrar() {
+        CerrarInicio.style.display = (CerrarInicio.style.display === 'none') ? 'flex' : 'none';
+}
+
+    const cerrar = document.getElementById('cerrarInicio');
+    cerrar.addEventListener('click', Cerrar);
+
+
    
     
+   // document.addEventListener("DOMContentLoaded", function() {
+//     let publicidad = document.getElementById("publicidad");
+//     let cerrarBtn = document.getElementById("cerrarBtn");
+
+
+//     cerrarBtn.addEventListener("click", function() { 
+//         publicidad.style.display = "none";
+//     });
+
+
+// Función para iniciar sesión
+function iniciarSesion() {
+    const loginUsername = document.getElementById('').value;
+    const loginPassword = document.getElementById('').value;
+
+    
+
+    if (loginUsername && loginPassword) {
+        // Obtener datos de usuarios registrados
+        const existingData = localStorage.getItem('usuarios');
+        const usuarios = existingData ? JSON.parse(existingData) : [];
+
+        // Verificar si el usuario y la contraseña son correctos
+        const usuarioValido = usuarios.find(user => user.username === loginUsername && user.password === loginPassword);
+
+        if (usuarioValido) {
+            alert('¡Inicio de sesión exitoso!');
+        } else {
+            alert('Nombre de usuario o contraseña incorrectos.');
+        }
+    } else {
+        alert('Por favor, complete todos los campos.');
+    }
+}
+
+function registrar() {
+    const username = document.getElementById('').value;
+    const password = document.getElementById('').value;
+
+    if (username && password) {
+        // Obtener datos existentes o inicializar si es la primera vez
+        const existingData = localStorage.getItem('usuarios');
+        const usuarios = existingData ? JSON.parse(existingData) : [];
+
+        // Verificar si el usuario ya existe
+        const usuarioExistente = usuarios.find(user => user.username === username);
+        if (usuarioExistente) {
+            alert('¡El nombre de usuario ya está en uso!');
+        } else {
+            // Agregar nuevo usuario
+            usuarios.push({ username, password });
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+            alert('¡Registro exitoso!');
+        }
+    } else {
+        alert('Por favor, complete todos los campos.');
+    }
+}
+    const ValidarRegistro = document.getElementById('registrarse')
+    ValidarRegistro.addEventListener('click',iniciarSesion)
+
+
+
+    function RegistrarCartel() {
+    ValidarRegistro.style.display = (ValidarRegistro.style.display === 'none') ? 'flex' : 'none';
+    CerrarInicio.style.display = (CerrarInicio.style.display === 'none') ? 'flex' : 'none';
+}
+
+    const registrarBoton = document.getElementById('registrarse');
+    registrarBoton.addEventListener('click',RegistrarCartel);
+  
+
 
 
 </script>

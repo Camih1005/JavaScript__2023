@@ -29,27 +29,35 @@
         <input id="inputIngresar" type="text">
         <label for="Contraseña" id="Contraseña">Contraseña</label>
         <input id="Inputcontraseña" id type="password">
-        <button id="ingresar" onclick="">Ingresar</button>
+        <button id="ingresar" onclick="iniciarSesion()">Ingresar</button>
         
         <button id="registrarse" >Registrarse</button>
         <a href="">Olvide la contraeña</a>
     </div>
     </div>
     
+    <div id="InicioCorrecto">
 
+        <h1>Inicio exitoso</h1>
+        <p id="iniciosesionPP">
+        </p>
+        <button>Entendido</button>
+        <button><a href="../proyecto/formulario.html">Ir al formulario</a></button>
+
+    </div>
 
 
 
     <div id="contenedorRegistro">
     <div id="dentroDelregistro">
-        <button id="cerrarInicio">X</button>
+        <button id="cerrarInicioR">X</button>
     <h1>Registrase</h1>
     
     <label for="NombreUsuario" id="Usuario">Ingrese Usuario a registrar</label>
     <input id="inputRegistrar" type="text">
     <label for="Contraseña" id="Contraseña">Ingrese contraseña nueva</label>
     <input id="InputcontraseñaR" type="password">
-    <button id="RegistrarUS" onclick="">Registrarse</button>
+    <button id="RegistrarUS">Registrarse</button>
     
 </div>
 </div>
@@ -487,9 +495,12 @@ function hamburguer() {
 
 
 // Función para iniciar sesión
+
+
+
 function iniciarSesion() {
-    const loginUsername = document.getElementById('').value;
-    const loginPassword = document.getElementById('').value;
+    const loginUsername = document.getElementById('inputIngresar').value;
+    const loginPassword = document.getElementById('Inputcontraseña').value;
 
     
 
@@ -502,7 +513,17 @@ function iniciarSesion() {
         const usuarioValido = usuarios.find(user => user.username === loginUsername && user.password === loginPassword);
 
         if (usuarioValido) {
-            alert('¡Inicio de sesión exitoso!');
+            const nombreUsuariovalor = document.getElementById('inputIngresar').value
+            const InicioP = document.getElementById('iniciosesionPP')
+            InicioP.innerHTML = `Bienvenido ${nombreUsuariovalor} Acabas de iniciar sesion, espero tengas una buena experiencia
+            GAMLION es la revolucion en perifericos, solo vendemos al por mayor para pequeñas y grandes tiendas, si quieres ser parte de nosotros, dale click al boton de FORMULARIO para hacer comprar al por mayor`
+            const InicioExitoso = document.getElementById('InicioCorrecto')
+            desplegarInicio.style.display = (desplegarInicio.style.display === 'none') ? 'flex' : 'none';
+
+            setTimeout(function() {
+         InicioExitoso.style.display = "flex";
+         }, 1000); 
+
         } else {
             alert('Nombre de usuario o contraseña incorrectos.');
         }
@@ -512,8 +533,8 @@ function iniciarSesion() {
 }
 
 function registrar() {
-    const username = document.getElementById('').value;
-    const password = document.getElementById('').value;
+    const username = document.getElementById('inputRegistrar').value;
+    const password = document.getElementById('InputcontraseñaR').value;
 
     if (username && password) {
         // Obtener datos existentes o inicializar si es la primera vez
@@ -535,18 +556,34 @@ function registrar() {
         alert('Por favor, complete todos los campos.');
     }
 }
-    const ValidarRegistro = document.getElementById('registrarse')
-    ValidarRegistro.addEventListener('click',iniciarSesion)
+    const ValidarRegistro = document.getElementById('RegistrarUS')
+    ValidarRegistro.addEventListener('click',registrar)
 
 
+    const CartelR = document.getElementById('contenedorRegistro')
+
+    const loginUsername = document.getElementById('inputIngresar').value;
+    const loginPassword = document.getElementById('Inputcontraseña').value;
 
     function RegistrarCartel() {
-    ValidarRegistro.style.display = (ValidarRegistro.style.display === 'none') ? 'flex' : 'none';
+    CartelR.style.display = (CartelR.style.display === 'none') ? 'flex' : 'none';
     CerrarInicio.style.display = (CerrarInicio.style.display === 'none') ? 'flex' : 'none';
-}
+    if(loginUsername=='' && loginPassword == ''){
+     CerrarInicio.style.display = (CerrarInicio.style.display === 'none') ? 'flex' : 'none'
+    }
+    }
+   const registrarBoton = document.getElementById('registrarse');
+   registrarBoton.addEventListener('click',RegistrarCartel);
+    
 
-    const registrarBoton = document.getElementById('registrarse');
-    registrarBoton.addEventListener('click',RegistrarCartel);
+   
+   function CerrarR() {
+    CartelR.style.display = (CartelR.style.display === 'none') ? 'flex' : 'none';
+}
+    
+
+    const cerrarRegistro = document.getElementById('cerrarInicioR')
+    cerrarRegistro.addEventListener('click', CerrarR);
   
 
 

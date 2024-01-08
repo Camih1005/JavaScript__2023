@@ -77,9 +77,6 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
     #Productsss{
       display: none;
     }
-    #my-form-status{
-      font-size: 10px;
-    }
 @media (max-width: 768px){
 .container1 {
     background:url(../proyecto/imagenesproyecto/buslion.png) no-repeat center;

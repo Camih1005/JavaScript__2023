@@ -22,7 +22,7 @@
     </div>
     <div id="CartelInicioSecion" class="an animate__animated animate__fadeInDown ">
         <div id="dentroDelInicio">
-            <button id="cerrarInicio">X</button>
+            
         <h1>Iniciar Sesion</h1>
         
         <label for="NombreUsuario" id="Usuario">Usuario</label>
@@ -32,25 +32,27 @@
         <button id="ingresar" onclick="iniciarSesion()">Ingresar</button>
         
         <button id="registrarse" >Registrarse</button>
+        <button id="cerrarInicio">Cerrar</button>
         <a href="">Olvide la contraeña</a>
     </div>
     </div>
-    
     <div id="InicioCorrecto">
+    <div id="cacasInicio" >
 
         <h1>Inicio exitoso</h1>
         <p id="iniciosesionPP">
         </p>
-        <button>Entendido</button>
+        <button id="Entendido">Entendido</button>
         <button><a href="../proyecto/formulario.html">Ir al formulario</a></button>
 
     </div>
+</div>
 
 
 
     <div id="contenedorRegistro">
     <div id="dentroDelregistro">
-        <button id="cerrarInicioR">X</button>
+        
     <h1>Registrase</h1>
     
     <label for="NombreUsuario" id="Usuario">Ingrese Usuario a registrar</label>
@@ -58,6 +60,7 @@
     <label for="Contraseña" id="Contraseña">Ingrese contraseña nueva</label>
     <input id="InputcontraseñaR" type="password">
     <button id="RegistrarUS">Registrarse</button>
+    <button id="cerrarInicioR">Cerrar</button>
     
 </div>
 </div>
@@ -129,7 +132,7 @@
         </article>
     </section>
     <section id="productos" class="segundop">
-        <h5 id="soloCel">Materiales Recicables</h5>
+        <h5 id="soloCel">Materiales Recicables y mas duraderos, con alta calidad.</h5>
         <div id="eliminarcel">
             
         <h1>MEJORES ACABADOS</h1>
@@ -268,12 +271,16 @@
                 </ul>
 
             </div>
-            <h3><a href="">Terminos y condiciones</a></h3>
-            <h4><a href="">Cookies</a></h4>
-            <h5><a href="">GamLion2023℗</a></h5>
+            
+            
         </div>
+        
     </footer>
-
+    <div id="cockies">
+        <h3><a href="">Terminos y condiciones</a></h3>
+    <h4><a href="">Cookies</a></h4>
+    <h5><a href="">GamLion2023℗</a></h5>
+    </div>
 </div>
 
 <script>
@@ -519,6 +526,10 @@ function iniciarSesion() {
             GAMLION es la revolucion en perifericos, solo vendemos al por mayor para pequeñas y grandes tiendas, si quieres ser parte de nosotros, dale click al boton de FORMULARIO para hacer comprar al por mayor`
             const InicioExitoso = document.getElementById('InicioCorrecto')
             desplegarInicio.style.display = (desplegarInicio.style.display === 'none') ? 'flex' : 'none';
+            const inicioSecion = document.getElementById('botonInicio')
+            inicioSecion.innerHTML = nombreUsuariovalor
+            inicioSecion.style.display = 'none'
+
 
             setTimeout(function() {
          InicioExitoso.style.display = "flex";
@@ -584,6 +595,12 @@ function registrar() {
 
     const cerrarRegistro = document.getElementById('cerrarInicioR')
     cerrarRegistro.addEventListener('click', CerrarR);
+
+    const botonEntendido = document.getElementById('Entendido')
+    botonEntendido.addEventListener('click',()=>{
+        const InicioExitoso = document.getElementById('InicioCorrecto')
+        InicioExitoso.style.display = (InicioExitoso.style.display === 'none') ? 'flex' : 'none'; 
+    })
   
 
 

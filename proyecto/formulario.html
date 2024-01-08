@@ -53,18 +53,26 @@
         Estaremos felices de ponerte en contacto rápidamente con las personas idóneas de tu zona para que se comuniquen contigo en la brevedad.
         </p></div>
 <section class="form-register fort it1">
-    <h4>Formulario Registro</h4>
-    <input class="controls" type="text" name="nombres" id="nombres" placeholder="Nombres">
-    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
-    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Pais">
-    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ciudad">
-    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Telefono Ej (3156799966)">
-    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Nombre De La Empresa">
-    <input class="controls" type="email" name="correo" id="correo" placeholder="Correo Electronico">
-    <input class="controls descripcion" type="text" name="correo" id="correo" placeholder="Escribe tu propuesta e inquietudes">
-    <p><a href="#">Terminos y Condiciones</a></p>
-    <input class="botons" type="submit" value="Enviar formulario">
-    
+    <form id="my-form" action="https://formspree.io/f/mwkgkdzq" method="POST">
+        <label>Nombre completo:</label>
+        <input type="text" name="Nombre Completo" />
+        <label>Pais:</label>
+        <input type="text" name="Pais" />
+        <label>Ciudad:</label>
+        <input type="text" name="Ciudad" />
+        <label>Telefono:</label>
+        <input type="number" name="Telefono" placeholder="+57" />
+        <label>Nombre de la empresa:</label>
+        <input type="text" name="Nombre de la Empresa" />
+        <label>Email:</label>
+        <input type="email" name="Correo Electronico" />       
+        <label>Por que quieres ser parte de nosotros?</label>
+        <input type="text" name="Por que quieres ser parte de nosotros?" id="TextoGrande"/>
+        <button id="my-form-button">Enviar Formulario</button>
+        <p id="my-form-status"></p>
+        <p id="Productsss">PRODUCTOS PARA DISTRIBUIDORES:</p>
+
+      </form>
   </section>
 
 </section>
@@ -83,7 +91,7 @@
         </div>
         
 
-    </div>
+    </div> 
 </section>
 <footer class="finall">
     <h3><a href="">Terminos y condiciones</a></h3>
@@ -92,7 +100,42 @@
     <div></div>
     
     </footer>
+    <script>
+
+var form = document.getElementById("my-form");
     
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = 'Revisa el correo de confirmacion <br> <a href="../proyecto/imagenesproyecto/PROYECTO PITCH 2024.pdf" download="Pdf">Descargar PDF de Productos</a>';
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! Ha habido un problema al enviar el formulario"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! Ha habido un problema al enviar el formulario"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+
+
+
+    </script>
 
     
 </body>

@@ -98,6 +98,76 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
   color: #ffffff;
   text-decoration: none;
 }
+#cerrarHambur{
+  background-color: #ff0000c1;
+  color: #000000;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.menu-hamburguesa {
+  cursor: pointer;
+  padding: 15px;
+  background-color: #00000049;
+  border: none;
+  margin-left: 150px;
+ 
+}
+
+.barra {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+  
+ 
+}
+.grid{
+  display: none;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #212121f5;
+  padding: 15px;
+  box-sizing: border-box;
+  z-index: 30;
+  
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu li {
+  margin-bottom: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+}
+.elimM{
+  display: none;
+}
 
 
 .encabezado{

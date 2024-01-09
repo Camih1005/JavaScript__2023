@@ -8,33 +8,52 @@
     <title>formulario</title>
 </head>
 <body>
+  <div id="hamburguer">
+        
+    <nav class="menu animate__animated animate__delay-5s" id="menu">
+        <button id="cerrarHambur" onclick="hamburguer()">X</button>
+        <ul>
+            <li><a href="InicioPag.html">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="puntosdeventa.html">Puntos de venta</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="InicioPag.html">Asesor</a></li>
+        </ul>
+    </nav>
+</div>
+    
+|  <header class="encabezado animate__animated animate__fadeInDown">
+            
+  <div class="grid  item1"><a href="InicioPag.html"><img src="../proyecto/imagenesproyecto/GAMLION.png" alt=""></a></div>
+  
+  
 
-    
-|   <header class="encabezado animate__animated animate__fadeInDown">
-        
-    <div class="grid item1 animate__animated animate__fadeInBottomRight"><a href="InicioPag.html"><img src="../proyecto/imagenesproyecto/GAMLION.png" alt=""></a></div>
-    
-    <div class="grid item2">
-        <label for="buscar"></label>
-        <input list="buscar" id="buscar" placeholder="Buscar 🔎" name="buscar">
-        </div>
-       
-        
-        
-        <datalist id="hola">
-            <option value="Teclados"></option>
-            <option value="Ratones"></option>
-            <option value="Camaras Web"></option>
-            <option value="Teclas"></option>
-            <option value="Audio"></option>
-        </datalist>
-    </div>
-    <div class="grid item3"><a href="InicioPag.html">Inicio</a></div>
-    <div class="grid item4"><a href="InicioPag.html">Productos</a></div>
-    <div class="grid item5"><a href="puntosdeventa.html">Puntos de venta</a></div>
-    <div class="grid item6"><a href="comunidad.html">Comunidad</a></div>
-    <div class="grid item7"><a href="InicioPag.html">Asesor</a></div>
-    
+  <div class="grid item2">
+      <label for="buscar"></label>
+      <input list="hola" id="buscar" placeholder="Buscar 🔎" name="buscar">
+      
+      
+      <datalist id="hola">
+          <option value="Teclados"></option>
+          <option value="Ratones"></option>
+          <option value="Camaras Web"></option>
+          <option value="Teclas"></option>
+          <option value="Audio"></option>
+      </datalist>
+  </div>
+  <button onclick="hamburguer()" class="menu-hamburguesa animate__animated animate__delay-3s" id="menuHamburguesa">
+      <div class="barra"></div>
+      <div class="barra"></div>
+      <div class="barra"></div>
+  </button>
+  
+  <div class="grid elimM item3"><a href="InicioPag.html">Inicio</a></div>
+  <div class="grid elimM item4"><a href="#productos">Productos</a></div>
+  <div class="grid elimM item5"><a href="puntosdeventa.html">Puntos de venta</a></div>
+  <div class="grid elimM item6"><a href="comunidad.html">Comunidad</a></div>
+  <div class="grid elimM item7"><a href="InicioPag.html">Asesor</a></div>
+
+
 </header>
 <section class="container1 animate__fadeInBottomRight">
     <div>
@@ -133,7 +152,14 @@ var form = document.getElementById("my-form");
     }
     form.addEventListener("submit", handleSubmit)
 
+    function hamburguer() {
+      let info = document.getElementById('menu');
+      info.style.display = (info.style.display === 'none') ? 'block' : 'none';
+      const agglist = document.getElementById('')
+      const p = document.getElementById('menu')
+      
 
+    }
 
     </script>
 

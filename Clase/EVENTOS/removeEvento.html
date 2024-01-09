@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="boton">CLICK ACA</button>
+    <Div id="div"><h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore minus quas eveniet, tenetur et dolorum similique exercitationem corrupti suscipit, consequuntur sit rem unde amet modi nihil iure fuga. Laborum, unde.</h1></Div>
+
+    <script>
+
+        const boton = document.getElementById('boton')
+        const div = document.getElementById('div')
+
+        function elimElem(){
+            alert('clickeaste el div');
+            boton.removeEventListener('click',aparecer)
+        }
+        function aparecer(){
+            alert('clickeaste el boton')
+        }
+        boton.addEventListener('click',aparecer)
+        div.addEventListener('click',elimElem)
+
+    </script>
+</body>
+</html>

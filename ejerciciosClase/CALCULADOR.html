@@ -36,9 +36,8 @@
     #input{
         grid-column: 1/5 ;
         grid-row: 1/1;
-        background-color: rgba(0, 0, 0, 0.548);
-        color: aliceblue;
         font-size: 35px;
+        z-index: 10;
     }
     #mas{
         grid-column: 1/2;
@@ -118,35 +117,39 @@
 
     <section id="container">
         <div id="calculadora">
-            <input id="input" type="number">
+            <p id="input"></p>
 
-            <button class="M" value="+" id="mas">+</button>
-            <button class="M" value="-" id="menos">-</button>
-            <button class="M" value="*" id="por">x</button>
-            <button class="M" value="/" id="division">/</button>
-            <button class="M"  value="9" id="N9">9</button>
-            <button class="M" value="8" id="N8">8</button>
-            <button class="M"  value="7" id="N7">7</button>
-            <button class="M"  value="6" id="N6">6</button>
-            <button class="M"  id="N5">5</button>
-            <button class="M"  id="N4">4</button>
-            <button class="M"  id="N3">3</button>
-            <button class="M"  id="N2">2</button>
-            <button class="M"  id="N1">1</button>
-            <button class="M"  id="N0">0</button>
-            <button class="M"  id="punto">.</button>
-            <button class="M"  id="C">AC</button>
-            <button class="M"  id="igual">=</button>
+            <button class="M" value="+" id="caca">+</button>
+            <button class="M" value="-" id="caca">-</button>
+            <button class="M" value="*" id="caca">x</button>
+            <button class="M" value="/" id="caca">/</button>
+            <button class="M"  value="9" id="caca">9</button>
+            <button class="M" value="8" id="caca">8</button>
+            <button class="M"  value="7" id="caca">7</button>
+            <button class="M"  value="6" id="caca">6</button>
+            <button class="M" value="5" id="caca">5</button>
+            <button class="M" value="4" id="caca">4</button>
+            <button class="M"  value="3" id="caca">3</button>
+            <button class="M"  value="2" id="caca">2</button>
+            <button class="M"  value="1" id="caca">1</button>
+            <button class="M"  value="0" id="caca">0</button>
+            <button class="M"  value="." id="caca">.</button>
+            <button class="M"   id="caca">AC</button>
+            <button class="M" value="=" id="igual">=</button>
         </div>
     </section>
     <script>
         
-
         const input = document.getElementById('input')
-        const Poner= document.getElementById('N9')
-        const valorBotones = Poner.value
+        const n1  = document.querySelectorAll('.M')
+        const valor = n1.value
+        console.log(valor)
+        function cacas(){
+            
+        }
 
-       console.log(valorBotones)
+      
+       
 
     </script>
 </body>

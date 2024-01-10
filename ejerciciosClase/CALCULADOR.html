@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    #container{
+        
+        width: 500px;
+        height: 700px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+
+    }
+    #calculadora{
+        width: 500px;
+        height: 700px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 0;
+        border: solid black 1px;
+        box-shadow: 2px 2px 2px 2px grey;
+    }
+    button{
+        border: none;
+        background-color: rgba(177, 177, 177, 0.411);
+    }
+    button:hover{
+        background-color: aliceblue;
+    }
+    #input{
+        grid-column: 1/5 ;
+        grid-row: 1/1;
+        background-color: rgba(0, 0, 0, 0.548);
+        color: aliceblue;
+        font-size: 35px;
+    }
+    #mas{
+        grid-column: 1/2;
+        grid-row: 2/3; 
+    }
+    #menos{
+        grid-column: 2/3 ;
+        grid-row: 2/3;
+    }
+    #por{
+        grid-column: 3/4 ;
+        grid-row: 2/3;
+    }
+    #division{
+        grid-column: 4/5 ;
+        grid-row: 2/3;
+    }
+    #N9{
+        grid-column: 3/4;
+        grid-row: 3/4;
+    }
+    #N8{
+        grid-column: 2/3 ;
+        grid-row: 3/4;
+    }
+    #N7{
+        grid-column: 1/2 ;
+        grid-row: 3/4;
+    }
+    #N6{
+        grid-column: 3/4;
+        grid-row: 4/5;
+    }
+    #N5{
+        grid-column: 2/3 ;
+        grid-row: 4/5;
+    }
+    #N4{
+        grid-column: 1/2 ;
+        grid-row: 4/5;
+    }
+    #N3{
+        grid-column: 3/4 ;
+        grid-row: 5/6;
+    }
+    #N2{
+        grid-column: 2/3 ;
+        grid-row: 5/6;
+    }
+    #N1{
+        grid-column: 1/2 ;
+        grid-row: 5/6;
+    }
+    #N0{
+        grid-column: 1/2 ;
+        grid-row: 6/7;
+    }
+    #punto{
+        grid-column: 2/3 ;
+        grid-row: 6/7;
+    }
+    #C{
+        grid-column: 3/4 ;
+        grid-row: 6/7;
+    }
+    #igual{
+        grid-column: 4/5 ;
+        grid-row: 3/7;
+        background-color: rgba(255, 136, 0, 0.705);
+    }
+    
+    
+
+
+</style>
+<body>
+
+    <section id="container">
+        <div id="calculadora">
+            <input id="input" type="number">
+
+            <button class="M" value="+" id="mas">+</button>
+            <button class="M" value="-" id="menos">-</button>
+            <button class="M" value="*" id="por">x</button>
+            <button class="M" value="/" id="division">/</button>
+            <button class="M"  value="9" id="N9">9</button>
+            <button class="M" value="8" id="N8">8</button>
+            <button class="M"  value="7" id="N7">7</button>
+            <button class="M"  value="6" id="N6">6</button>
+            <button class="M"  id="N5">5</button>
+            <button class="M"  id="N4">4</button>
+            <button class="M"  id="N3">3</button>
+            <button class="M"  id="N2">2</button>
+            <button class="M"  id="N1">1</button>
+            <button class="M"  id="N0">0</button>
+            <button class="M"  id="punto">.</button>
+            <button class="M"  id="C">AC</button>
+            <button class="M"  id="igual">=</button>
+        </div>
+    </section>
+    <script>
+        
+
+        const input = document.getElementById('input')
+        const Poner= document.getElementById('N9')
+        const valorBotones = Poner.value
+
+       console.log(valorBotones)
+
+    </script>
+</body>
+</html>

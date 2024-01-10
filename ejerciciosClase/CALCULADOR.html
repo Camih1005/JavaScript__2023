@@ -150,7 +150,7 @@
                     try {
                         input.value = eval(input.value);
                     } catch (error) {
-                        input.value = 'Error';
+                        input.value = ('Error': error);
                     }
                 } else if (buttonText === 'AC') {
                     input.value = '';

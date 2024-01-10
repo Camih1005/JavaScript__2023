@@ -99,7 +99,7 @@
         grid-column: 2/3 ;
         grid-row: 6/7;
     }
-    #C{
+    #AC{
         grid-column: 3/4 ;
         grid-row: 6/7;
     }
@@ -134,14 +134,15 @@
             <button class="M"  value="1" id="N1">1</button>
             <button class="M"  value="0" id="N0">0</button>
             <button class="M"  value="." id="punto">.</button>
-            <button class="M"   id="C">AC</button>
+            <button class="M"   id="AC">AC</button>
+            <button class="M" id="A">A</button>
             <button class="M" value="=" id="igual">=</button>
         </div>
     </section>
     <script>
         const input = document.getElementById('input');
         const buttons = document.querySelectorAll('.M');
-
+        const list = []
         buttons.forEach(button => {
             button.addEventListener('click', function() {
                 const buttonText = button.value;
@@ -149,16 +150,31 @@
                 if (buttonText === '=') {
                     try {
                         input.value = eval(input.value);
+                        list.push(input.value)
+
                     } catch (error) {
-                        input.value = ('Error': error);
+                        input.value = ('Error' + error);
                     }
-                } else if (buttonText === 'AC') {
-                    input.value = '';
                 } else {
                     input.value += buttonText;
                 }
             });
         });
+
+        function Eliminar(){
+                input.value = ''
+        }
+
+        const elim = document.getElementById('AC')
+        elim.addEventListener('click',Eliminar)
+
+        function EliminarUlt(){
+            input.value = input.value.slice(0,-1)
+
+            
+        }
+        const A = document.getElementById('A')
+        A.addEventListener('click',EliminarUlt)
     </script>
 </body>
 </html>

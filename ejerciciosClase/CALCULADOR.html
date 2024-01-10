@@ -117,40 +117,48 @@
 
     <section id="container">
         <div id="calculadora">
-            <p id="input"></p>
+            <input id="input" type="text">
 
-            <button class="M" value="+" id="caca">+</button>
-            <button class="M" value="-" id="caca">-</button>
-            <button class="M" value="*" id="caca">x</button>
-            <button class="M" value="/" id="caca">/</button>
-            <button class="M"  value="9" id="caca">9</button>
-            <button class="M" value="8" id="caca">8</button>
-            <button class="M"  value="7" id="caca">7</button>
-            <button class="M"  value="6" id="caca">6</button>
-            <button class="M" value="5" id="caca">5</button>
-            <button class="M" value="4" id="caca">4</button>
-            <button class="M"  value="3" id="caca">3</button>
-            <button class="M"  value="2" id="caca">2</button>
-            <button class="M"  value="1" id="caca">1</button>
-            <button class="M"  value="0" id="caca">0</button>
-            <button class="M"  value="." id="caca">.</button>
-            <button class="M"   id="caca">AC</button>
+            <button class="M" value="+" id="mas">+</button>
+            <button class="M" value="-" id="menos">-</button>
+            <button class="M" value="*" id="por">x</button>
+            <button class="M" value="/" id="division">/</button>
+            <button class="M"  value="9" id="N9">9</button>
+            <button class="M" value="8" id="N8">8</button>
+            <button class="M"  value="7" id="N7">7</button>
+            <button class="M"  value="6" id="N6">6</button>
+            <button class="M" value="5" id="N5">5</button>
+            <button class="M" value="4" id="N4">4</button>
+            <button class="M"  value="3" id="N3">3</button>
+            <button class="M"  value="2" id="N2">2</button>
+            <button class="M"  value="1" id="N1">1</button>
+            <button class="M"  value="0" id="N0">0</button>
+            <button class="M"  value="." id="punto">.</button>
+            <button class="M"   id="C">AC</button>
             <button class="M" value="=" id="igual">=</button>
         </div>
     </section>
     <script>
-        
-        const input = document.getElementById('input')
-        const n1  = document.querySelectorAll('.M')
-        const valor = n1.value
-        console.log(valor)
-        function cacas(){
-            
-        }
+        const input = document.getElementById('input');
+        const buttons = document.querySelectorAll('.M');
 
-      
-       
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const buttonText = button.value;
 
+                if (buttonText === '=') {
+                    try {
+                        input.value = eval(input.value);
+                    } catch (error) {
+                        input.value = 'Error';
+                    }
+                } else if (buttonText === 'AC') {
+                    input.value = '';
+                } else {
+                    input.value += buttonText;
+                }
+            });
+        });
     </script>
 </body>
 </html>

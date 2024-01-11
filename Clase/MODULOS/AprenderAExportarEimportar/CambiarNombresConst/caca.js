@@ -1,0 +1,1 @@
+export const multiplicar = 8*2

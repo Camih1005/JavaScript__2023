@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<title>Rick y Morty</title>
+<link rel="stylesheet" href="rickymorty.css">
+</head>
+<body>
+<h1>Personajes</h1>
+<div id="cacas"></div>
+
+<main>
+</main>
+<script>
+
+function mostrarJSON(elemHTML) {
+    fetch("https://rickandmortyapi.com/api/character")
+    .then(data => data.json())
+    .then(data2 => {
+        console.table(data2);
+
+        dibujarTabla(elemHTML, data2);
+    })
+}
+
+function dibujarTabla(elemHTML, datos) {
+    let tabla = "";
+    for(let valor of datos) {
+        tabla += `
+            <tr>
+                <td>${valor.Nombre}</td> 
+                <td>${valor.Team}</td>
+                <td class="valedad">${valor.Edad}</td> 
+                <td class="tdimg">
+                    <img 
+                        src = '${valor.Sexo === "M" ? "hombre.png": "mujer.png" }'
+                        class="imgsexo"
+                    />
+                </td>   
+            </tr>`
+    }
+    elemHTML.innerHTML= tabla;
+}
+
+function mostrarTexto(elemHTML) {
+    console.log("function mostrarTexto")
+    fetch("datos.csv")
+    .then(data => data.text())
+    .then(dat => {
+        console.table(dat);
+        elemHTML.innerHTML = dat;
+    })
+    .catch(error => {
+        console.error("Ha ocurrido un error. \n", error.message);
+    })
+    .finally(() => {
+        console.log("Ha terminado el consumo de la API");
+    })
+}
+</script>
+
+</body>
+</html>

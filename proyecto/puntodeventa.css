@@ -22,6 +22,17 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
       animation-range: entry 1% cover 30%;
       animation-fill-mode: both;
     }
+    body::-webkit-scrollbar {
+      width: 12px;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+      background-image: url(../proyecto/imagenesproyecto/cacacaca.gif);
+      background-size: cover;
+      background-position: center;
+      border-radius: 5px;
+      filter: invert(2);
+    }
 @media (max-width: 768px) {
 
 

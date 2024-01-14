@@ -12,36 +12,49 @@
 </head>
 <body> 
     
-     <section class="iml">
+    <section class="iml">
+       
+        <header class="encabezado animate__animated animate__fadeInDown">
+            
+            <div class="grid  item1"><a href="InicioPag.html"><img src="../proyecto/imagenesproyecto/GAMLION.png" alt=""></a></div>
+            
+            
 
-
-    <header class="encabezado animate__animated animate__fadeInDown">
-        
-        <div class="grid item1"><a href="InicioPag.html"><img src="../proyecto/imagenesproyecto/GAMLION.png" alt=""></a></div>
-        
-        <div class="grid item2">
-            <label for="buscar"></label>
-            <input list="buscar" id="buscar" placeholder="Buscar 🔎" name="buscar">
+            <div class="grid item2">
+                <label for="buscar"></label>
+                <input list="hola" id="buscar" placeholder="Buscar 🔎" name="buscar">
+                
+                
+                <datalist id="hola">
+                    <option value="Teclados"></option>
+                    <option value="Ratones"></option>
+                    <option value="Camaras Web"></option>
+                    <option value="Teclas"></option>
+                    <option value="Audio"></option>
+                </datalist>
             </div>
-         
+            <button onclick="hamburguer()" class="menu-hamburguesa animate__animated animate__delay-3s" id="menuHamburguesa">
+                <div class="barra"></div>
+                <div class="barra"></div>
+                <div class="barra"></div>
+            </button>
             
-            
-            <datalist id="hola">
-                <option value="Teclados"></option>
-                <option value="Ratones"></option>
-                <option value="Camaras Web"></option>
-                <option value="Teclas"></option>
-                <option value="Audio"></option>
-            </datalist>
-        </div>
-        
-        
-        <div class="grid item3"><a href="InicioPag.html">Inicio</a></div>
-        <div class="grid item4"><a href="InicioPag.html">Productos</a></div>
-        <div class="grid item5"><a href="puntosdeventa.html">Puntos de venta</a></div>
-        <div class="grid item6"><a href="comunidad.html">Comunidad</a></div>
-        <div class="grid item7"><a href="InicioPag.html">Asesor</a></div>
-    </header>
+            <div class="grid elimM item3"><a href="InicioPag.html">Inicio</a></div>
+            <div class="grid elimM item4"><a href="#productos">Productos</a></div>
+            <div class="grid elimM item5"><a href="puntosdeventa.html">Puntos de venta</a></div>
+            <div class="grid elimM item6"><a href="comunidad.html">Comunidad</a></div>
+            <div class="grid elimM item7"><a href="InicioPag.html">Asesor</a></div>
+       
+
+        </header>
+        <h1 class="titulop">BIENVENIDO A GAMLION</h1>
+        <article class="container2 animate__animated animate__fadeInUp">
+            <div class="grid2 item01"><a href="">Teclados</a></div>
+            <div class="grid2 item02"><a href="">Ratones</a></div>
+            <div class="grid2 item03"><a href="">Audio</a></div>
+            <div class="grid2 item04"><a href="">Camaras</a></div>
+
+        </article>
     </section>
     <div class="texto">
     <h1>COMUNIDAD GAMELION</h1>
@@ -125,5 +138,19 @@
         <h5><a href="">GamLion2023℗</a></h5>
         
         </footer>
+
+
+        <script>
+
+function hamburguer() {
+      let info = document.getElementById('menu');
+      info.style.display = (info.style.display === 'none') ? 'block' : 'none';
+      const agglist = document.getElementById('')
+      const p = document.getElementById('menu')
+      
+
+    }
+
+        </script>
 </body>
 </html>

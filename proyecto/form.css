@@ -98,6 +98,13 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
   color: #ffffff;
   text-decoration: none;
 }
+
+.grid{
+  display: flex;
+}
+.elimM{
+  display: none;
+}
 #cerrarHambur{
   background-color: #ff0000c1;
   color: #000000;
@@ -109,38 +116,36 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
 
 .menu-hamburguesa {
   cursor: pointer;
-  padding: 15px;
-  background-color: #00000049;
+  padding: 5px;
+  background-color: #70707049;
   border: none;
   margin-left: 150px;
+  border-radius: 5px;
+  z-index: 60;
  
 }
 
 .barra {
   width: 30px;
   height: 3px;
-  background-color: #333;
+  background-color: #000000;
   margin: 6px 0;
+  z-index: 60;
   
  
-}
-.grid{
-  display: none;
 }
 
 .menu {
   display: none;
   flex-direction: column;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: absolute;
   height: 100%;
   width: 100%;
   background-color: #212121f5;
   padding: 15px;
   box-sizing: border-box;
-  z-index: 30;
+  z-index: 60;
   
 }
 
@@ -164,10 +169,6 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
   font-size: 12px;
 }
 
-
-.elimM{
-  display: none;
-}
 
 
 .encabezado{
@@ -350,12 +351,7 @@ width: 80px;
   #soloCel{
     display: none;
   }
-  #hamburguer{
-    display: none;
-  }
-  #menuHamburguesa{
-    display: none;
-  }
+ 
 }
 
 @media (min-width: 768px) and (max-width:1024px){

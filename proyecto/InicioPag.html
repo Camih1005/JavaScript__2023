@@ -109,7 +109,7 @@
                     <option value="Audio"></option>
                 </datalist>
             </div>
-            <button onclick="hamburguer()" class="menu-hamburguesa animate__animated animate__delay-3s" id="menuHamburguesa">
+            <button class="menu-hamburguesa animate__animated animate__delay-3s" id="menuHamburguesa">
                 <div class="barra"></div>
                 <div class="barra"></div>
                 <div class="barra"></div>
@@ -443,6 +443,8 @@ function hamburguer() {
       
 
     }
+    const barraMenu = document.getElementById('menuHamburguesa')
+    barraMenu.addEventListener('click',hamburguer)
     function cambiarcolor(){
         inicioSecion.style.filter = 'invert(0)'
         inicioSecion.style.width = '80px'

@@ -1,0 +1,70 @@
+<body>
+    <header class="header-section">
+      <a href="index.html" class="site-logo">
+        <img src="img/logo_cupula.png" alt="">
+      </a>
+    </header>
+    <section class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="hs-text">
+              <h4>Compra tu entrada para este MEGA EVENTO;
+                rápido, sin fila, sin demoras, sin complicaciones</h4><br>
+            </div>
+          </div>
+          <div class="col-lg-6 ">
+            <form id="form" class="hero-form" method="post" action="datos.php">
+              <p>Completa el Siguiente Formulario</p><br>
+              <input id="nombre" type="text" name="nombre" placeholder="Nombres Completos" pattern="[a-zA-Z\s]{2,254}" required>
+              <input id="edad" type="text" name="edad" placeholder="Edad" required pattern="([1-9])([8-9])|([2-9])([0-9])" maxlength="2">
+              <input id="celular" type="tel" name="celular" placeholder="Numero whatsapp" pattern="[0-9]{9}" maxlength="9" required>
+              <span class="titulo"> Zona:</span>
+              <input class="radio" id="zona" type="radio" name="zona" value="GENERAL"><span>General</span>
+              <input class="radio" id="zona" type="radio" name="zona" value="VIP"><span>VIP</span>
+              <input class="radio" id="zona" type="radio" name="zona" value="BOX"><span>BOX</span><br>
+              <span class="titulo">N° Entradas </span><select id="entrada" name="entrada">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select> <br>
+              <button id="btnVentana" class="site-btn" type="button" onclick="ventanaModal()"> PRECIO </button>
+              <!--Haciendo el pop up -->
+              <div id="ventana" class="ventana-body">
+                <div class="col-12">
+                  <p>¿Como deseas pagar?</p>
+                </div>
+                <div class="col-7 imagen">
+                  <img class="popup" src="img/popup.png" alt="">
+                </div>
+                <div class="col-3 pago">
+                  <input class="radio" id="pago" type="radio" name="pago" value="EFECTIVO"> <span>Efectivo</span><br>
+                  <input class="radio" id="pago" type="radio" name="pago" value="PAY PAL"> <span>Pay Pal</span> <br>
+                  <input class="radio" id="pago" type="radio" name="pago" value="PAGO ELECTRONICO"> <span>Cuenta Bancaria</span> <br>
+                  <button class="site-btn" type="submit" name="button">Reservar</button>
+                  <button id="btnCerrar" class="site-btn" type="button" name="button" onclick="cerrarModal()">Atras</button>
+                </div>
+              </div>
+          </div>
+          </form>
+        </div>
+      </div>
+      </div>        
+      <script type="text/javascript">
+        function ventanaModal() {
+          var ventana = document.getElementById('ventana'),
+            btnVentana = document.getElementById('btnVentana');
+          btnVentana.addEventListener('click', function() {
+            ventana.classList.add('active');
+          });
+        }
+        function cerrarModal() {
+          var ventana = document.getElementById('ventana'),
+            btnCerrar = document.getElementById('btnCerrar');
+          btnCerrar.addEventListener('click', function() {
+            ventana.classList.remove('active');
+          });
+        }
+      </script>
+  </body>

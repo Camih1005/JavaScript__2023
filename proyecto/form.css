@@ -6,7 +6,8 @@ body{
 }
 *{
     margin: 0;
-  
+    font-family: "Zen Dots", sans-serif;
+
 }
 @keyframes show {
   from {
@@ -42,10 +43,11 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
       gap: 17px;
       text-align: center;
     }
+   
 
     #my-form input {
       height: 40px;
-      width: 250px;
+      width: 200px;
       border-radius: 20px;
       border: none;
       transition-duration: 0.3s;
@@ -77,10 +79,33 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
     #Productsss{
       display: none;
     }
+    #cockies{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      font-size: 6px;
+      text-align: center;
+      height: 60px;
+      width: 80%;
+      gap: 13px;
+      margin: 0 auto;
+      color: red;
+     } 
+     #cockies a{
+      color: red;
+      font-size: 12px;
+     }
 @media (max-width: 768px){
+
+body{
+  display: flex;
+  flex-direction: column;
+}
 .container1 {
     background:url(../proyecto/imagenesproyecto/buslion.png) no-repeat center;
     background-size: cover;
+    background-position: center;
     height: 400px;
     width: 100%;
     display: flex;
@@ -90,9 +115,10 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
 }
 .container1 h1{
     color: rgb(255, 255, 255);
-    width: 250px;
-    font-size: 35px;
-    margin-left: 30px;
+    width: 200px;
+    font-size: 28px;
+    padding:15px;
+   
 }
 .grid a{
   color: #ffffff;
@@ -221,11 +247,15 @@ width: 80px;
   .quieres p{
     color: #fff;
     margin-top: 90px;
-    margin-left: 30px;
-    font-size: 20px ;
+    text-align: center;
+    font-size: 16px ;
+  }
+  form input{
+    width: 100px;
+    
   }
   .form-register {
-    width: 350px;
+    width: 250px;
     background: #6c6c6c64;
     padding: 30px;
     margin: auto;
@@ -235,6 +265,7 @@ width: 80px;
     color: white;
     box-shadow: 4px 4px 4px #292929;
     height: 650px;
+    
   }
   
   .form-register h4 {
@@ -640,6 +671,8 @@ width: 80px;
     
     }
     @media(min-width:1024px) {
+    
+    
         .container1 {
             background:url(../proyecto/imagenesproyecto/buslion.png) no-repeat center;
             background-size: cover;

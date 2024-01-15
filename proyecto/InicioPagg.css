@@ -373,19 +373,18 @@ label{
 
    
     
-    .encabezado{
-      position: fixed;
-      display: flex;
-      flex-direction: row;
-      width: 95%;
-      border-color: transparent transparent gray transparent;
-      justify-content: space-around;
-      align-items: center;
-      margin: 0 auto;
-      height: auto;
-      z-index: 5;
-      padding: 10px;
-      
+  .encabezado{
+    
+    display: flex;
+    width: 95%;
+    border-color: transparent transparent gray transparent;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    border-style: solid;
+    height: 140px;
+    flex-wrap: wrap;
+    
   
   }
   

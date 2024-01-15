@@ -752,19 +752,78 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
     align-items: center;
   }
 
+  #buscar{
+    height: 30px;
+    font-size: 10px;
+  }
+  #buscar:hover{
+    width: 160px;
+  }
+
 
   .encabezado {
+    margin: 20px;
+    background-color: transparent;
+    margin-left: 30px;
+
+    width: 95%;
+    height: 80px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    margin: auto;
-    width: 95%;
+    grid-template-rows: 1fr;
     justify-content: center;
     align-items: center;
-    border-color: transparent transparent gray transparent;
-    margin-top: 15px;
-    font-size: 20px;
+    column-gap: 10px;
+    align-items: center;
+  }
 
+  .encabezado .lista a {
+    color: rgb(164, 164, 164);
+    text-decoration: none;
+    border: solid black 1px;
+    margin: 5px;
+  }
 
+  .grid img {
+   width: 80px;
+  }
+
+  .item2 input {
+    color: #2b4c85;
+  }
+
+  .grid a {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    color: rgb(192, 192, 192);
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    transition: ease-in-out 0.5s;
+    
+  }
+
+  .item3 {
+    padding: 0px;
+  }
+
+  .item5 {
+    width: auto;
+    padding: auto;
+  }
+
+  .item4 {
+    padding: 0px;
+    width: auto;
+  }
+
+  .grid a:hover {
+    color: #ffffffb0;
+    text-shadow: 0 0 7px #8c8c8c, 0 0 10px #474747, 0 0 21px #888888,
+      0 0 82px rgb(255, 255, 255), 0 0 92px rgb(255, 255, 255),
+      0 0 151px rgb(255, 255, 255);
+      transition: ease-out 0.5s;
   }
 
   .grid a:hover {

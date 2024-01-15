@@ -23,11 +23,99 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
       animation-range: entry 1% cover 30%;
       animation-fill-mode: both;
     }
+    video{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      max-height: 100vh;
+      position: absolute;
+    }
+  
 
 
 
  @media (max-width: 768px){
+  .vender2{
+    display: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .grid{
+    display: none;
+  }
+  .elimM a{
+    display: none;
+  }
+  #buscar{
+    display: none;
+  }
+  #cerrarHambur{
+    background-color: #ff0000c1;
+    color: #000000;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+
+  .menu-hamburguesa {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #70707049;
+    border: none;
+    
+    border-radius: 5px;
+   
+}
+
+.barra {
+    width: 30px;
+    height: 3px;
+    background-color: #000000;
+    margin: 6px 0;
   
+    
+   
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #212121f5;
+    padding: 15px;
+    box-sizing: border-box;
+    z-index: 60;
+    
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu li {
+    margin-bottom: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
 
         body{
         background-color: black;
@@ -38,13 +126,11 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
         box-sizing: border-box;
         
     }
-    .encabezado{
-      display: flex;
-      justify-content: space-between;
-    }
+  
    .vr1,.vr2,.vr3{
     width: 400px;
    }
+   
     
  
          .iml {
@@ -80,19 +166,24 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
     }
    
     .encabezado{
-    
+      position: fixed;
       display: flex;
+      flex-direction: row;
       width: 95%;
       border-color: transparent transparent gray transparent;
       justify-content: space-around;
       align-items: center;
       margin: 0 auto;
-      border-style: solid;
-      height: 140px;
-      flex-wrap: wrap;
+      height: auto;
+      z-index: 5;
+      padding: 10px;
+      left: 40%;
+      gap: 60px;
       
   
   }
+  
+
   .grid a:hover {
       color: #ffffff;
       text-shadow: 0 0 7px #8c8c8c, 0 0 10px #474747, 0 0 21px #888888,
@@ -103,13 +194,14 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
       grid-column: 1/2;
     }
     .grid img{
-        width: 100px;
+        width: 70px;
        
     }
     .grid{
       display: flex;
-      justify-content: center;
-      align-items: center;
+      
+      flex-direction: row;
+      margin: 0 auto;
     }
     .item2 input{
     width: 80px;
@@ -121,21 +213,7 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
     .itemimgg{
       display: none;
     }
-    .item3{
-      grid-column: 3/4;
-    }
-    .item4{
-      grid-column: 4/5;
-    }
-    .item5{
-      grid-column: 5/6;
-    }
-    .item6{
-      grid-column: 6/7;
-    }
-    .item7{
-      grid-column: 7/8;
-    }
+    
     .grid a{
       color: white;
       text-decoration: none;
@@ -152,9 +230,14 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
        font-size: 45px;
     }
     .mapa h2{
-        font-size: 15px;
+        font-size: 12px;
         margin-left: 30px;
         margin-top: 60px;
+    }
+    .mapa{
+      position: relative;
+      top: -60px;
+      
     }
     .texto button{
         font-family: "Zen Dots", sans-serif;
@@ -193,6 +276,7 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
     .video1{
         margin: 0 auto;
         height: 1000px;
+        width: auto;
     }
     .vender h3{
         margin: 20px;
@@ -856,6 +940,15 @@ label::marker {
 .header{
     display: none;
 }
+#hamburguer{
+  display: none;
+}
+#menuHamburguesa{
+  display: none;
+}
+#soloCel{
+  display: none;
+}
 
 
 
@@ -1259,7 +1352,15 @@ align-items: center;
     animation-range: entry 1% cover 30%;
     animation-fill-mode: both;
   }
-  
+  #hamburguer{
+    display: none;
+  }
+  #menuHamburguesa{
+    display: none;
+  }
+  #soloCel{
+    display: none;
+  }
 
 }
 

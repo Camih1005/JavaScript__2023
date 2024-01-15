@@ -178,6 +178,7 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
       height: auto;
       z-index: 5;
       padding: 10px;
+      left: 40%;
       gap: 60px;
       
   

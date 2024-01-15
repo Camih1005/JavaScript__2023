@@ -1,4 +1,4 @@
-import { post } from "../models/post.js";
+import { post } from "./../models/post.js";
 import { get } from "./../models/get.js";
 import { put } from "./../models/put.js";
 import { delet } from "./../models/delete.js";

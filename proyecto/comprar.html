@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="comprar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>formulario</title>
 </head>
@@ -59,41 +59,42 @@
 </header>
 <section class="container1 animate__fadeInBottomRight">
     <div>
-        <h1 class="animate__animated animate__fadeInLeftBig">¿QUIERES SER DISTRIBUIDOR?</h1> 
+        <h1 class="animate__animated animate__fadeInLeftBig">GAMLION PRODUCTOS</h1> 
      </div>
 </section>
-<section class="quieres animate__animated animate__fadeInLeftBig">
-    <div><h1>¿QUIERES TRABAJAR CON NOSOTROS? </h1>
-        <p>Si tienes una tienda física o virtual y te interesa comercializar GAMELION en tu ciudad o región, te invitamos a que completes el formulario y compartas con nosotros tu propuesta o tus inquietudes. <br>
-            Estaremos felices de ponerte en contacto rápidamente con las personas idóneas de tu zona para que se comuniquen contigo en la brevedad.
-            </p></div>
+<div class="contenedorProductos">
+    <!--CONTENEDOR TECLADOS-->
+<section class="$teclado animate__animated animate__fadeInLeftBig">
+   <h1>TECLADOS</h1>
+   <section id="teclados"></section>
 </section>
-<section class="container2">
-<div class="fort it2"><h1>¿QUIERES SER DISTRIBUIDOR OFICIAL DE GAMELION Y AUMENTAR TUS INGRESOS? </h1>
-    <p>Si tienes una tienda física o virtual y te interesa comercializar GAMELION en tu ciudad o región, te invitamos a que completes el formulario y compartas con nosotros tu propuesta o tus inquietudes. <br>
-        Estaremos felices de ponerte en contacto rápidamente con las personas idóneas de tu zona para que se comuniquen contigo en la brevedad.
-        </p></div>
-<section class="form-register fort it1">
-    <form id="my-form" action="https://formspree.io/f/mwkgkdzq" method="POST">
-        <label>Nombre completo:</label>
-        <input type="text" name="Nombre Completo" />
-        <label>Pais:</label>
-        <input type="text" name="Pais" />
-        <label>Ciudad:</label>
-        <input type="text" name="Ciudad" />
-        <label>Telefono:</label>
-        <input type="number" name="Telefono" placeholder="+57" />
-        <label>Nombre de la empresa:</label>
-        <input type="text" name="Nombre de la Empresa" />
-        <label>Email:</label>
-        <input type="email" name="Correo Electronico" />       
-        <label>Por que quieres ser parte de nosotros?</label>
-        <input type="text" name="Por que quieres ser parte de nosotros?" id="TextoGrande"/>
-        <button id="my-form-button">Enviar Formulario</button>
-        <p id="my-form-status"></p>
-        <p id="Productsss">PRODUCTOS PARA DISTRIBUIDORES:</p>
+<!--CONTENEDOR MOUSE-->
+<section class="$mouse animate__animated animate__fadeInLeftBig">
+<h1>MOUSE</h1>
+<section id="mouse" ></section>
+</section>
+<!--CONTENEDOR AUDIOS-->
+<section class="$audio animate__animated animate__fadeInLeftBig">
+    <h1>AUDIO</h1>
+    <section id="audio" ></section>
+    </section>
+<!--CONTENEDOR MONITORES-->
+    <section class="$monitor animate__animated animate__fadeInLeftBig">
+        <h1>MONITORES</h1>
+        <section id="monitor" ></section>
+        </section>
+<!--CONTENEDOR PADS-->
+        <section class="$pads animate__animated animate__fadeInLeftBig">
+            <h1>PADS</h1>
+            <section id="pads" ></section>
+            </section>
 
-      </form>
+          
+</div>
+<section class="container2">
+
+<section >
+
   </section>
 
 </section>
@@ -124,36 +125,6 @@
   </div>
     <script>
 
-var form = document.getElementById("my-form");
-    
-    async function handleSubmit(event) {
-      event.preventDefault();
-      var status = document.getElementById("my-form-status");
-      var data = new FormData(event.target);
-      fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          status.innerHTML = "Thanks for your submission!";
-          form.reset()
-        } else {
-          response.json().then(data => {
-            if (Object.hasOwn(data, 'errors')) {
-              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-            } else {
-              status.innerHTML = "Oops! There was a problem submitting your form"
-            }
-          })
-        }
-      }).catch(error => {
-        status.innerHTML = "Oops! There was a problem submitting your form"
-      });
-    }
-    form.addEventListener("submit", handleSubmit)
 
     function hamburguer() {
       let info = document.getElementById('menu');
@@ -163,6 +134,73 @@ var form = document.getElementById("my-form");
       
 
     }
+
+const formu = document.querySelector("form");
+
+formu.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  controlador(formu, e, "skills");
+
+  e.stopPropagation();
+});
+
+    function post(url, objeto) {
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(objeto),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+}
+// import { get } from "./../models/get.js";
+// import { put } from "./../models/put.js";
+// import { delet } from "./../models/delete.js";
+
+// import { llenarFormulario, llenarSelect } from "./../views/utils.js";
+
+function controlador(formu, event, entidad, elemformu) {
+  const URL = "http://localhost:4000/";
+  let url = "";
+  
+  const datos = formu !== null ? Object.fromEntries(new FormData(formu)) : null;
+  const value = event.target.value;
+
+  switch (value) {
+    case "Agregar":
+      url = URL + entidad;
+      post(url, datos);
+      formu.reset();
+      break;
+    case "CARGARSELECT":
+    case "Buscar":
+      url = `${URL}${entidad}/${datos !== null ? datos.id : ""}`;
+      get(url, formu).then((data) => {
+        // Utilizar los datos obtenidos
+        if (formu !== null) llenarFormulario(formu, data);
+        else if (value === "CARGARSELECT") llenarSelect(data, elemformu);
+      });
+      break;
+    case "Modificar":
+      url = URL + entidad + `/${datos.id}`;
+      put(url, datos);
+      //formu.reset
+      break;
+    case "Borrar":
+      url = URL + entidad + `/${datos.id}`;
+      delet(url);
+      formu.reset;
+      break;
+  }
+}
 
     </script>
 

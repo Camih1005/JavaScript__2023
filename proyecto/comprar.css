@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Zen+Dots&display=swap");
 
 body{
@@ -33,52 +34,10 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
       animation-fill-mode: both;
     }
 
-    #my-form{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-      gap: 17px;
-      text-align: center;
-    }
    
-
-    #my-form input {
-      height: 40px;
-      width: 200px;
-      border-radius: 20px;
-      border: none;
-      transition-duration: 0.3s;
-      cursor: text;
-      background-color: rgba(255, 0, 0, 0.3);
-      color: #fff;
-      list-style: none;
-    }
-    #my-form input:hover{
-      width: 260px;
-      transition-duration: 0.3s;
-      
-    }
-    #my-form button{
-      margin: 0 auto;
-      text-align: center;
-      background-color: #00000076;
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 20px;
-    }
-    #TextoGrande{
-      height: 100px;
-    }
    
     
-    #Productsss{
-      display: none;
-    }
+ 
     #cockies{
       display: flex;
       align-items: center;
@@ -96,11 +55,15 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
       color: red;
       font-size: 12px;
      }
+     .contenedorProductos,h1{
+      color: red;
+      margin: 20px;
+     }
 @media (max-width: 768px){
 
 
 .container1 {
-    background:url(../proyecto/imagenesproyecto/buslion.png) no-repeat center;
+    background:url(../proyecto/imagenesproyecto/Megamenu-General-1500x1182-1.jpg) no-repeat center;
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -240,28 +203,7 @@ width: 80px;
     text-align: center;
     font-size: 16px ;
   }
-  form input{
-    width: 100px;
-    
-  }
-  .form-register {
-    width: 250px;
-    background: #6c6c6c64;
-    padding: 30px;
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 4px;
-    font-family: 'calibri';
-    color: white;
-    box-shadow: 4px 4px 4px #292929;
-    height: 650px;
-    
-  }
-  
-  .form-register h4 {
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
+ 
   
   .controls {
     width: 95%;
@@ -277,32 +219,7 @@ width: 80px;
     
     
   } 
-  .form-register p {
-    height: 40px;
-    text-align: center;
-    font-size: 18px;
-    line-height: 40px;
-  }
-  
-  .form-register a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .form-register a:hover {
-    color: white;
-    text-decoration: underline;
-  }
-  
-  .form-register .botons {
-    width: 100%;
-    background: #d41f1fc6;
-    border: none;
-    padding: 12px;
-    color: white;
-    margin: 16px 0;
-    font-size: 16px;
-  }
+
   .fin3 img{
     display: none;
   }
@@ -383,7 +300,7 @@ width: 80px;
     display: none;
   }
     .container1 {
-        background:url(../proyecto/imagenesproyecto/buslion.png) no-repeat center;
+        background:url(../proyecto/imagenesproyecto/Megamenu-General-1500x1182-1.jpg) no-repeat center;
         background-size: cover;
         height: 400px;
         width: 100%;

@@ -94,7 +94,6 @@ body{
     width: 100%;
     background-color: #212121f5;
     padding: 15px;
-    box-sizing: border-box;
     z-index: 60;
     
   }

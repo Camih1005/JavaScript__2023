@@ -64,29 +64,29 @@
 </section>
 <div class="contenedorProductos">
     <!--CONTENEDOR TECLADOS-->
-<section class="$teclado animate__animated animate__fadeInLeftBig">
+<section class="teclado animate__animated animate__fadeInLeftBig">
    <h1>TECLADOS</h1>
-   <section id="teclados"></section>
+   <section id="tecladosP"></section>
 </section>
 <!--CONTENEDOR MOUSE-->
-<section class="$mouse animate__animated animate__fadeInLeftBig">
+<section class="mouse animate__animated animate__fadeInLeftBig">
 <h1>MOUSE</h1>
-<section id="mouse" ></section>
+<section id="mouseP" ></section>
 </section>
 <!--CONTENEDOR AUDIOS-->
-<section class="$audio animate__animated animate__fadeInLeftBig">
+<section class=" audio animate__animated animate__fadeInLeftBig">
     <h1>AUDIO</h1>
-    <section id="audio" ></section>
+    <section id="audioP" ></section>
     </section>
 <!--CONTENEDOR MONITORES-->
-    <section class="$monitor animate__animated animate__fadeInLeftBig">
+    <section class="monitor animate__animated animate__fadeInLeftBig">
         <h1>MONITORES</h1>
-        <section id="monitor" ></section>
+        <section id="monitorP" ></section>
         </section>
 <!--CONTENEDOR PADS-->
-        <section class="$pads animate__animated animate__fadeInLeftBig">
+        <section class="pads animate__animated animate__fadeInLeftBig">
             <h1>PADS</h1>
-            <section id="pads" ></section>
+            <section id="padsP" ></section>
             </section>
 
           
@@ -126,83 +126,35 @@
     <script>
 
 
-    function hamburguer() {
-      let info = document.getElementById('menu');
-      info.style.display = (info.style.display === 'none') ? 'flex' : 'none';
-      const agglist = document.getElementById('')
-      const p = document.getElementById('menu')
-      
+document.addEventListener("DOMContentLoaded", function () {
+    // Obtener el contenedor de teclados
+    const tecladosContainer = document.getElementById("tecladosP");
 
-    }
+    // Obtener el array de teclados del JSON
+    const teclados = [
+      // ... tu JSON de teclados ...
+    ];
 
-const formu = document.querySelector("form");
+    // Recorrer el array de teclados y generar las cartas
+    teclados.forEach(teclado => {
+      const cartaTeclado = document.createElement("div");
+      cartaTeclado.classList.add("carta-teclado");
 
-formu.addEventListener("click", (e) => {
-  e.preventDefault();
+      // Agregar la información del teclado a la carta
+      cartaTeclado.innerHTML = `
+        <img src="${teclado.img}" alt="${teclado.nombre}">
+        <h2>${teclado.nombre}</h2>
+        <p>Precio: $${teclado.precio}</p>
+        <button>Comprar</button>
+      `;
 
-  controlador(formu, e, "skills");
+      // Agregar la carta al contenedor de teclados
+      tecladosContainer.appendChild(cartaTeclado);
+    });
+  });
+</script>
 
-  e.stopPropagation();
-});
-
-    function post(url, objeto) {
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(objeto),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-}
-// import { get } from "./../models/get.js";
-// import { put } from "./../models/put.js";
-// import { delet } from "./../models/delete.js";
-
-// import { llenarFormulario, llenarSelect } from "./../views/utils.js";
-
-function controlador(formu, event, entidad, elemformu) {
-  const URL = "http://localhost:4000/";
-  let url = "";
-  
-  const datos = formu !== null ? Object.fromEntries(new FormData(formu)) : null;
-  const value = event.target.value;
-
-  switch (value) {
-    case "Agregar":
-      url = URL + entidad;
-      post(url, datos);
-      formu.reset();
-      break;
-    case "CARGARSELECT":
-    case "Buscar":
-      url = `${URL}${entidad}/${datos !== null ? datos.id : ""}`;
-      get(url, formu).then((data) => {
-        // Utilizar los datos obtenidos
-        if (formu !== null) llenarFormulario(formu, data);
-        else if (value === "CARGARSELECT") llenarSelect(data, elemformu);
-      });
-      break;
-    case "Modificar":
-      url = URL + entidad + `/${datos.id}`;
-      put(url, datos);
-      //formu.reset
-      break;
-    case "Borrar":
-      url = URL + entidad + `/${datos.id}`;
-      delet(url);
-      formu.reset;
-      break;
-  }
-}
-
-    </script>
+   
 
     
 </body>

@@ -161,14 +161,7 @@ label{
   text-align: center;
   gap: 10px;
 }
-header{
-  border: solid black;
-  width: 00px;
-  height: 600px;
-  padding: 30px;
-  gap: 10px;
-  
-}
+
 header,img{
   width: 250px;
   height:auto;
@@ -266,6 +259,20 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
       margin: 20px;
      }
 @media (max-width: 768px){
+
+  .sc{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+  #tecladoP{
+    flex: 1 0 auto;
+    margin: 0 50px;
+    background-color: #ff0000;
+    width: 500px;
+    height: 500px;
+  }
+  
 
 
 .container1 {

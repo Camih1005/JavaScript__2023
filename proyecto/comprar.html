@@ -67,7 +67,7 @@
         <button id="cerrarHambur" onclick="hamburguer()">X</button>
         <ul>
             <li><a href="InicioPag.html">Inicio</a></li>
-            <li><a href="#productos">Productos</a></li>
+            <li><a href="comprar.html">Productos</a></li>
             <li><a href="puntosdeventa.html">Puntos de venta</a></li>
             <li><a href="comunidad.html">Comunidad</a></li>
             <li><a href="InicioPag.html">Asesor</a></li>
@@ -103,7 +103,7 @@
 
   
   <div class="grid elimM item3"><a href="InicioPag.html">Inicio</a></div>
-  <div class="grid elimM item4"><a href="#productos">Productos</a></div>
+  <div class="grid elimM item4"><a href="comprar.html">Productos</a></div>
   <div class="grid elimM item5"><a href="puntosdeventa.html">Puntos de venta</a></div>
   <div class="grid elimM item6"><a href="comunidad.html">Comunidad</a></div>
   <div class="grid elimM item7"><a href="InicioPag.html">Asesor</a></div>
@@ -117,17 +117,17 @@
 </section>
 <div class="contenedorProductos">
     <!--CONTENEDOR TECLADOS-->
-<section class="Contteclado animate__animated animate__fadeInLeftBig">
+<section class="Contteclado sc animate__animated animate__fadeInLeftBig">
    <h1>TECLADOS</h1>
    <section id="tecladosP"></section>
 </section>
 <!--CONTENEDOR MOUSE-->
-<section class="mouse animate__animated animate__fadeInLeftBig">
+<section class="mouse sc animate__animated animate__fadeInLeftBig">
 <h1>MOUSE</h1>
 <section id="mouseP" ></section>
 </section>
 <!--CONTENEDOR AUDIOS-->
-<section class=" audio animate__animated animate__fadeInLeftBig">
+<section class=" audio sc animate__animated animate__fadeInLeftBig">
     <h1>AUDIO</h1>
     <section id="audioP" ></section>
     </section>
@@ -200,10 +200,12 @@ function cargarJson() {
         `;
         aggCarta.appendChild(agg);
 
-        // Asignar evento click a cada botón de "Agregar"
+
         const botonAgregar = agg.querySelector('.agregarAlcarro');
         botonAgregar.addEventListener('click', function() {
-          agregarAlCarrito(teclado.precio);
+          agregarAlCarrito(teclado.precio,teclado.nombre);
+          
+          
         });
       });
     })
@@ -216,18 +218,18 @@ cargarJson();
 function agregarAlCarrito(precio) {
   totalCarrito += precio;
   carritoTotal.textContent = totalCarrito;
+  console.log()
 }
 const llamarBoton = document.getElementById('agregarAlcarro')
 llamarBoton.addEventListener('click',agregarAlCarrito)
 console.log(carritoTotal)
 
 function mostrarFactura() {
-  // Crear el contenedor de la factura en el centro
+  
   const facturaContainer = document.createElement('div');
   facturaContainer.id = 'facturaContainer';
   document.body.appendChild(facturaContainer);
 
-  // Mostrar la factura en el contenedor
   carrito.forEach(producto => {
     const facturaItem = document.createElement('div');
     facturaItem.innerHTML = `
@@ -238,25 +240,24 @@ function mostrarFactura() {
     facturaContainer.appendChild(facturaItem);
   });
 
-  // Mostrar el precio total en la factura
+
   const totalItem = document.createElement('div');
   totalItem.innerHTML = `<p>Total: ${totalCarrito}</p>`;
   facturaContainer.appendChild(totalItem);
 
-  // Agregar la información al historial del usuario
+
   if (usuarioActual) {
     const historialUsuario = usuarioActual.historial || {};
-    // Agregar la información actual al historial
+ 
     carrito.forEach(producto => {
-      const nombreProducto = producto.nombre.replace(/\s+/g, ''); // Eliminar espacios para usar como clave
+      const nombreProducto = producto.nombre.replace(/\s+/g, ''); 
       historialUsuario[nombreProducto] = (historialUsuario[nombreProducto] || 0) + 1;
     });
     historialUsuario.valorTotal = (historialUsuario.valorTotal || 0) + totalCarrito;
 
-    // Actualizar el historial en el JSON (aquí necesitarías la lógica de escritura en el JSON)
+   
     usuarioActual.historial = historialUsuario;
-    // Aquí deberías llamar a tu función o servicio para actualizar el JSON en el backend
-    // guardaUsuarioActualEnJson(usuarioActual);
+ 
   }
 }
 const inicioSecion = document.getElementById('botonInicio')
@@ -301,41 +302,39 @@ const USUARIOS_ENDPOINT = '/usuarios';
 const CARRITO_ENDPOINT = '/carrito';
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Resto de tu código aquí
 
-  // Verificar si el usuario ya tiene una sesión activa
   const usuarioGuardado = JSON.parse(sessionStorage.getItem('usuario'));
   if (usuarioGuardado) {
     alert(`¡Bienvenido de nuevo, ${usuarioGuardado.nombre}!`);
-    // Recuperar información del carrito si existe
+
     const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || { total: 0 };
     totalCarrito = carritoGuardado.total;
     carritoTotal.textContent = totalCarrito;
   }
 });
 
-// Función para iniciar sesión
+
 
 function iniciarSesion() {
   const username = document.getElementById('inputIngresar').value;
   const password = document.getElementById('Inputcontraseña').value;
 
-  // Verificar si el usuario existe
+
   fetch(`${URL_BASE}${USUARIOS_ENDPOINT}?nombre=${username}&contraseña=${password}`)
     .then(respuesta => respuesta.json())
     .then(usuarios => {
       if (usuarios.length > 0) {
-        // Usuario válido, iniciar sesión
+ 
         const usuario = usuarios[0];
         alert(`¡Bienvenido, ${username}!`);
-        // Simulación de inicio de sesión persistente
+
         sessionStorage.setItem('usuario', JSON.stringify(usuario));
-        // Recuperar información del carrito si existe
+e
         const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || { total: 0 };
         totalCarrito = carritoGuardado.total;
         carritoTotal.textContent = totalCarrito;
       } else {
-        // Usuario no encontrado
+  
         alert('Credenciales incorrectas. Intenta de nuevo o regístrate.');
       }
     })
@@ -349,14 +348,12 @@ function iniciarSesion() {
   const newUsername = document.getElementById('inputRegistrar').value;
   const newPassword = document.getElementById('InputcontraseñaR').value;
 
-  // Verificar si el usuario ya existe
   fetch(`${URL_BASE}${USUARIOS_ENDPOINT}?nombre=${newUsername}`)
     .then(respuesta => respuesta.json())
     .then(usuarios => {
       if (usuarios.length > 0) {
         alert('Este nombre de usuario ya está registrado. Por favor, elige otro.');
       } else {
-        // Si el usuario no existe, proceder con el registro
         fetch(`${URL_BASE}${USUARIOS_ENDPOINT}`, {
           method: 'POST',
           headers: {
@@ -366,12 +363,10 @@ function iniciarSesion() {
         })
           .then(respuesta => respuesta.json())
           .then(usuarioRegistrado => {
-            // Recuperar el usuario recién registrado
             return fetch(`${URL_BASE}${USUARIOS_ENDPOINT}/${usuarioRegistrado.id}`);
           })
           .then(respuesta => respuesta.json())
           .then(usuario => {
-            // Utilizar el nombre de usuario registrado
             alert(`Usuario ${newUsername} registrado con éxito. ¡Ahora puedes iniciar sesión!`);
           })
           .catch(error => console.error('Error al registrar usuario:', error));

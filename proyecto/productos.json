@@ -3,31 +3,31 @@
         "id":1,
         "nombre":"kurumaK552",
         "precio": 230000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/teclados/K552RGB.png"
+        "img": "../proyecto/imagenesproductos/teclados/K552RGB.png"
     },
     {
         "id":2,
         "nombre":"horusK618",
         "precio": 280000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/teclados/HORUS.png"
+        "img": "../proyecto/imagenesproductos/teclados/HORUS.png"
     },
     {
         "id":3,
         "nombre":"FizzPro",
         "precio": 380000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/teclados/fizzpro.png"
+        "img": "/proyecto/imagenesproductos/teclados/fizzpro.png"
     },
     {
         "id":4,
         "nombre":"Deimos",
         "precio": 300000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/teclados/DEIMOS.png"
+        "img": "/proyecto/imagenesproductos/teclados/DEIMOS.png"
     },
     {
         "id":5,
         "nombre":"Diti",
         "precio": 180000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/teclados/DITI.png"
+        "img": "/proyecto/imagenesproductos/teclados/DITI.png"
     }
     
     ],
@@ -129,5 +129,16 @@
 
         
         
+    ],
+    "clientes":[{
+        "id":1,
+        "nombre":"",
+        "compras": "",
+        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/mouse/STORM.png"
+    }
+
+        
+        
     ]
+
 }

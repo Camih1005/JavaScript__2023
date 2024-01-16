@@ -72,7 +72,7 @@
             <button id="cerrarHambur" onclick="hamburguer()">X</button>
             <ul>
                 <li><a href="InicioPag.html">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
+                <li><a href="comprar.html">Productos</a></li>
                 <li><a href="puntosdeventa.html">Puntos de venta</a></li>
                 <li><a href="comunidad.html">Comunidad</a></li>
                 <li><a href="InicioPag.html">Asesor</a></li>
@@ -514,80 +514,101 @@ function hamburguer() {
 //     });
 
 
+
+
+const URL_BASE = 'http://localhost:3000';
+const USUARIOS_ENDPOINT = '/usuarios';
+const CARRITO_ENDPOINT = '/carrito';
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Resto de tu código aquí
+
+  // Verificar si el usuario ya tiene una sesión activa
+  const usuarioGuardado = JSON.parse(sessionStorage.getItem('usuario'));
+  if (usuarioGuardado) {
+    alert(`¡Bienvenido de nuevo, ${usuarioGuardado.nombre}!`);
+    // Recuperar información del carrito si existe
+    const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || { total: 0 };
+    totalCarrito = carritoGuardado.total;
+    carritoTotal.textContent = totalCarrito;
+  }
+});
+
 // Función para iniciar sesión
 
-
-
 function iniciarSesion() {
-    const loginUsername = document.getElementById('inputIngresar').value;
-    const loginPassword = document.getElementById('Inputcontraseña').value;
+  const username = document.getElementById('inputIngresar').value;
+  const password = document.getElementById('Inputcontraseña').value;
 
+  // Verificar si el usuario existe
+  fetch(`${URL_BASE}${USUARIOS_ENDPOINT}?nombre=${username}&contraseña=${password}`)
+    .then(respuesta => respuesta.json())
+    .then(usuarios => {
+      if (usuarios.length > 0) {
+        // Usuario válido, iniciar sesión
+        const usuario = usuarios[0];
+        alert(`¡Bienvenido, ${username}!`);
+        // Simulación de inicio de sesión persistente
+        sessionStorage.setItem('usuario', JSON.stringify(usuario));
+        // Recuperar información del carrito si existe
+        const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || { total: 0 };
+        totalCarrito = carritoGuardado.total;
+        carritoTotal.textContent = totalCarrito;
+      } else {
+        // Usuario no encontrado
+        alert('Credenciales incorrectas. Intenta de nuevo o regístrate.');
+      }
+    })
+    .catch(error => console.error('Error al iniciar sesión:', error));
+}
     
 
-    if (loginUsername && loginPassword) {
-        // Obtener datos de usuarios registrados
-        const existingData = localStorage.getItem('usuarios');
-        const usuarios = existingData ? JSON.parse(existingData) : [];
-
-        // Verificar si el usuario y la contraseña son correctos
-        const usuarioValido = usuarios.find(user => user.username === loginUsername && user.password === loginPassword);
-
-        if (usuarioValido) {
-            const nombreUsuariovalor = document.getElementById('inputIngresar').value
-            const InicioP = document.getElementById('iniciosesionPP')
-            InicioP.innerHTML = `Bienvenido ${nombreUsuariovalor} Acabas de iniciar sesion, espero tengas una buena experiencia
-            GAMLION es la revolucion en perifericos, solo vendemos al por mayor para pequeñas y grandes tiendas, si quieres ser parte de nosotros, dale click al boton de FORMULARIO para hacer comprar al por mayor`
-            const InicioExitoso = document.getElementById('InicioCorrecto')
-            desplegarInicio.style.display = (desplegarInicio.style.display === 'none') ? 'flex' : 'none';
-            const inicioSecion = document.getElementById('botonInicio')
-            inicioSecion.innerHTML = nombreUsuariovalor
-            inicioSecion.style.display = 'none'
 
 
-            setTimeout(function() {
-         InicioExitoso.style.display = "flex";
-         }, 1000); 
+  function registrarUsuario() {
+  const newUsername = document.getElementById('inputRegistrar').value;
+  const newPassword = document.getElementById('InputcontraseñaR').value;
 
-        } else {
-            alert('Nombre de usuario o contraseña incorrectos.');
-        }
-    } else {
-        alert('Por favor, complete todos los campos.');
-    }
+  // Verificar si el usuario ya existe
+  fetch(`${URL_BASE}${USUARIOS_ENDPOINT}?nombre=${newUsername}`)
+    .then(respuesta => respuesta.json())
+    .then(usuarios => {
+      if (usuarios.length > 0) {
+        alert('Este nombre de usuario ya está registrado. Por favor, elige otro.');
+      } else {
+        // Si el usuario no existe, proceder con el registro
+        fetch(`${URL_BASE}${USUARIOS_ENDPOINT}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ nombre: newUsername, contraseña: newPassword }),
+        })
+          .then(respuesta => respuesta.json())
+          .then(usuarioRegistrado => {
+            // Recuperar el usuario recién registrado
+            return fetch(`${URL_BASE}${USUARIOS_ENDPOINT}/${usuarioRegistrado.id}`);
+          })
+          .then(respuesta => respuesta.json())
+          .then(usuario => {
+            // Utilizar el nombre de usuario registrado
+            alert(`Usuario ${newUsername} registrado con éxito. ¡Ahora puedes iniciar sesión!`);
+          })
+          .catch(error => console.error('Error al registrar usuario:', error));
+      }
+    })
+    .catch(error => console.error('Error al verificar existencia del usuario:', error));
 }
 
-function registrar() {
-    const username = document.getElementById('inputRegistrar').value;
-    const password = document.getElementById('InputcontraseñaR').value;
-
-    if (username && password) {
-        // Obtener datos existentes o inicializar si es la primera vez
-        const existingData = localStorage.getItem('usuarios');
-        const usuarios = existingData ? JSON.parse(existingData) : [];
-
-        // Verificar si el usuario ya existe
-        const usuarioExistente = usuarios.find(user => user.username === username);
-        if (usuarioExistente) {
-            alert('¡El nombre de usuario ya está en uso!');
-        } else {
-            // Agregar nuevo usuario
-            usuarios.push({ username, password });
-            localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
-            alert('¡Registro exitoso!');
-        }
-    } else {
-        alert('Por favor, complete todos los campos.');
-    }
-}
     const ValidarRegistro = document.getElementById('RegistrarUS')
-    ValidarRegistro.addEventListener('click',registrar)
+    ValidarRegistro.addEventListener('click',registrarUsuario)
 
 
     const CartelR = document.getElementById('contenedorRegistro')
 
     const loginUsername = document.getElementById('inputIngresar').value;
     const loginPassword = document.getElementById('Inputcontraseña').value;
+    
 
     function RegistrarCartel() {
     CartelR.style.display = (CartelR.style.display === 'none') ? 'flex' : 'none';

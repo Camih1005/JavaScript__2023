@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="comprar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>formulario</title>
 </head>
@@ -56,8 +56,11 @@
   
 </div>
 </div>
-    
 </div>
+  <div id="contenedorCarro">
+    <button id="CarroCompras">🛒<p id="precios">0</p></button>
+  </div>
+  
   <div id="hamburguer">
         
     <nav class="menu animate__animated animate__delay-5s" id="menu">
@@ -71,7 +74,7 @@
         </ul>
     </nav>
 </div>
-<header class="encabezado animate__animated animate__fadeInDown">
+<section class="encabezado animate__animated animate__fadeInDown">
             
   <nav class="nav">
     <div class="grid  item1"><a href="InicioPag.html"><img src="../proyecto/imagenesproyecto/GAMLION.png" alt=""></a></div>
@@ -82,7 +85,7 @@
         <div class="barra"></div>
     </button>
  </nav>  
-  
+  <img src="" alt="">
 
   <div class="grid item2">
       <label for="buscar"></label>
@@ -106,44 +109,45 @@
   <div class="grid elimM item7"><a href="InicioPag.html">Asesor</a></div>
 
 
-</header>
+</section>
 <section class="container1 animate__fadeInBottomRight">
     <div>
-        <h1 class="animate__animated animate__fadeInLeftBig">¿QUIERES SER DISTRIBUIDOR?</h1> 
+        <h1 class="animate__animated animate__fadeInLeftBig">GAMLION PRODUCTOS</h1> 
      </div>
 </section>
-<section class="quieres animate__animated animate__fadeInLeftBig">
-    <div><h1>¿QUIERES TRABAJAR CON NOSOTROS? </h1>
-        <p>Si tienes una tienda física o virtual y te interesa comercializar GAMELION en tu ciudad o región, te invitamos a que completes el formulario y compartas con nosotros tu propuesta o tus inquietudes. <br>
-            Estaremos felices de ponerte en contacto rápidamente con las personas idóneas de tu zona para que se comuniquen contigo en la brevedad.
-            </p></div>
+<div class="contenedorProductos">
+    <!--CONTENEDOR TECLADOS-->
+<section class="Contteclado animate__animated animate__fadeInLeftBig">
+   <h1>TECLADOS</h1>
+   <section id="tecladosP"></section>
 </section>
-<section class="container2">
-<div class="fort it2"><h1>¿QUIERES SER DISTRIBUIDOR OFICIAL DE GAMELION Y AUMENTAR TUS INGRESOS? </h1>
-    <p>Si tienes una tienda física o virtual y te interesa comercializar GAMELION en tu ciudad o región, te invitamos a que completes el formulario y compartas con nosotros tu propuesta o tus inquietudes. <br>
-        Estaremos felices de ponerte en contacto rápidamente con las personas idóneas de tu zona para que se comuniquen contigo en la brevedad.
-        </p></div>
-<section class="form-register fort it1">
-    <form id="my-form" action="https://formspree.io/f/mwkgkdzq" method="POST">
-        <label>Nombre completo:</label>
-        <input type="text" name="Nombre Completo" />
-        <label>Pais:</label>
-        <input type="text" name="Pais" />
-        <label>Ciudad:</label>
-        <input type="text" name="Ciudad" />
-        <label>Telefono:</label>
-        <input type="number" name="Telefono" placeholder="+57" />
-        <label>Nombre de la empresa:</label>
-        <input type="text" name="Nombre de la Empresa" />
-        <label>Email:</label>
-        <input type="email" name="Correo Electronico" />       
-        <label>Por que quieres ser parte de nosotros?</label>
-        <input type="text" name="Por que quieres ser parte de nosotros?" id="TextoGrande"/>
-        <button id="my-form-button">Enviar Formulario</button>
-        <p id="my-form-status"></p>
-        <p id="Productsss">PRODUCTOS PARA DISTRIBUIDORES:</p>
+<!--CONTENEDOR MOUSE-->
+<section class="mouse animate__animated animate__fadeInLeftBig">
+<h1>MOUSE</h1>
+<section id="mouseP" ></section>
+</section>
+<!--CONTENEDOR AUDIOS-->
+<section class=" audio animate__animated animate__fadeInLeftBig">
+    <h1>AUDIO</h1>
+    <section id="audioP" ></section>
+    </section>
+<!--CONTENEDOR MONITORES-->
+    <section class="monitor animate__animated animate__fadeInLeftBig">
+        <h1>MONITORES</h1>
+        <section id="monitorP" ></section>
+        </section>
+<!--CONTENEDOR PADS-->
+        <section class="pads animate__animated animate__fadeInLeftBig">
+            <h1>PADS</h1>
+            <section id="padsP" ></section>
+            </section>
 
-      </form>
+          
+</div>
+<section class="container2">
+
+<section >
+
   </section>
 
 </section>
@@ -172,48 +176,90 @@
   <h4><a href="">Cookies</a></h4>
   <h5><a href="">GamLion2023℗</a></h5>
   </div>
+ 
+
     <script>
 
-var form = document.getElementById("my-form");
-    
-    async function handleSubmit(event) {
-      event.preventDefault();
-      var status = document.getElementById("my-form-status");
-      var data = new FormData(event.target);
-      fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          status.innerHTML = "Thanks for your submission!";
-          form.reset()
-        } else {
-          response.json().then(data => {
-            if (Object.hasOwn(data, 'errors')) {
-              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-            } else {
-              status.innerHTML = "Oops! There was a problem submitting your form"
-            }
-          })
-        }
-      }).catch(error => {
-        status.innerHTML = "Oops! There was a problem submitting your form"
+const aggCarta = document.getElementById('tecladosP');
+const carritoTotal = document.getElementById('precios');
+let totalCarrito = 0;
+
+function cargarJson() {
+  fetch('productos.json')
+    .then(respuesta => respuesta.json())
+    .then(respuesta => {
+      respuesta.teclados.forEach(teclado => {
+        const agg = document.createElement('header');
+        agg.innerHTML = `
+          <h1>${teclado.nombre}</h1>
+          <img src="${teclado.img}" alt="${teclado.nombre}">
+          <p>Precio: ${teclado.precio}</p>
+          <div class ='ventaBoton'>
+            <button class='agregarAlcarro' data-precio='${teclado.precio}'>Agregar</button><p>0</p>
+          </div>
+        `;
+        aggCarta.appendChild(agg);
+
+        // Asignar evento click a cada botón de "Agregar"
+        const botonAgregar = agg.querySelector('.agregarAlcarro');
+        botonAgregar.addEventListener('click', function() {
+          agregarAlCarrito(teclado.precio);
+        });
       });
-    }
-    form.addEventListener("submit", handleSubmit)
+    })
+    .catch(error => console.error('Error al cargar el JSON:', error));
+}
 
-    function hamburguer() {
-      let info = document.getElementById('menu');
-      info.style.display = (info.style.display === 'none') ? 'flex' : 'none';
-      const agglist = document.getElementById('')
-      const p = document.getElementById('menu')
-      
 
-    }
-    const inicioSecion = document.getElementById('botonInicio')
+cargarJson();
+
+function agregarAlCarrito(precio) {
+  totalCarrito += precio;
+  carritoTotal.textContent = totalCarrito;
+}
+const llamarBoton = document.getElementById('agregarAlcarro')
+llamarBoton.addEventListener('click',agregarAlCarrito)
+console.log(carritoTotal)
+
+function mostrarFactura() {
+  // Crear el contenedor de la factura en el centro
+  const facturaContainer = document.createElement('div');
+  facturaContainer.id = 'facturaContainer';
+  document.body.appendChild(facturaContainer);
+
+  // Mostrar la factura en el contenedor
+  carrito.forEach(producto => {
+    const facturaItem = document.createElement('div');
+    facturaItem.innerHTML = `
+      <p>${producto.nombre}</p>
+      <p>Precio: ${producto.precio}</p>
+      <hr>
+    `;
+    facturaContainer.appendChild(facturaItem);
+  });
+
+  // Mostrar el precio total en la factura
+  const totalItem = document.createElement('div');
+  totalItem.innerHTML = `<p>Total: ${totalCarrito}</p>`;
+  facturaContainer.appendChild(totalItem);
+
+  // Agregar la información al historial del usuario
+  if (usuarioActual) {
+    const historialUsuario = usuarioActual.historial || {};
+    // Agregar la información actual al historial
+    carrito.forEach(producto => {
+      const nombreProducto = producto.nombre.replace(/\s+/g, ''); // Eliminar espacios para usar como clave
+      historialUsuario[nombreProducto] = (historialUsuario[nombreProducto] || 0) + 1;
+    });
+    historialUsuario.valorTotal = (historialUsuario.valorTotal || 0) + totalCarrito;
+
+    // Actualizar el historial en el JSON (aquí necesitarías la lógica de escritura en el JSON)
+    usuarioActual.historial = historialUsuario;
+    // Aquí deberías llamar a tu función o servicio para actualizar el JSON en el backend
+    // guardaUsuarioActualEnJson(usuarioActual);
+  }
+}
+const inicioSecion = document.getElementById('botonInicio')
 
 inicioSecion.addEventListener('mouseover',cambiarcolor)
 inicioSecion.addEventListener('mouseout',cambiarcolor2)
@@ -227,7 +273,6 @@ desplegarInicio.style.display = (desplegarInicio.style.display === 'none') ? 'fl
 
 const inicio = document.getElementById('botonInicio');
 inicio.addEventListener('click', AbrirInicio);
-
 function cambiarcolor(){
         inicioSecion.style.filter = 'invert(0)'
         inicioSecion.style.width = '80px'
@@ -371,7 +416,10 @@ function iniciarSesion() {
         InicioExitoso.style.display = (InicioExitoso.style.display === 'none') ? 'flex' : 'none'; 
     })
   
-    </script>
+
+</script>
+
+   
 
     
 </body>

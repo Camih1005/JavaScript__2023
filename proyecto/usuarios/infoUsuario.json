@@ -1,0 +1,49 @@
+{
+  "usuarios": [
+    {
+      "id": "",
+      "nombre": "",
+      "contraseña": "",
+      "historial": ""
+    },
+    {
+      "id": "1",
+      "nombre": "camilo",
+      "contraseña": "123",
+      "historial": "compro un teclado azul"
+    },
+    {
+      "id": "761c"
+    },
+    {
+      "id": "8ee5"
+    },
+    {
+      "id": "9745"
+    },
+    {
+      "id": "fd95"
+    },
+    {
+      "id": "756f"
+    },
+    {
+      "id": "01f9"
+    },
+    {
+      "id": "3009",
+      "nombre": "cata",
+      "contraseña": "mama123"
+    },
+    {
+      "id": "4a1c",
+      "nombre": "carlos",
+      "contraseña": "camilo123"
+    },
+    {
+      "id": "ea1d",
+      "nombre": "santiago",
+      "contraseña": "123"
+    }
+  ]
+}

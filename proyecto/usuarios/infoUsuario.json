@@ -1,74 +1,108 @@
-{
-  "usuarios": [
-    {
-      "id": "",
-      "nombre": "",
-      "contraseña": "",
-      "historial": ""
-    },
-    {
-      "id": "1",
-      "nombre": "camilo",
-      "contraseña": "123",
-      "historial": "compro un teclado azul"
-    },
-    {
-      "id": "761c"
-    },
-    {
-      "id": "8ee5"
-    },
-    {
-      "id": "9745"
-    },
-    {
-      "id": "fd95"
-    },
-    {
-      "id": "756f"
-    },
-    {
-      "id": "01f9"
-    },
-    {
-      "id": "3009",
-      "nombre": "cata",
-      "contraseña": "mama123"
-    },
-    {
-      "id": "4a1c",
-      "nombre": "carlos",
-      "contraseña": "camilo123"
-    },
-    {
-      "id": "ea1d",
-      "nombre": "santiago",
-      "contraseña": "123"
-    },
-    {
-      "id": "44b0",
-      "nombre": "luis",
-      "contraseña": "123"
-    },
-    {
-      "id": "38ba",
-      "nombre": "kevin",
-      "contraseña": "123"
-    },
-    {
-      "id": "f5f7",
-      "nombre": "CAMILO",
-      "contraseña": "123"
-    },
-    {
-      "id": "3fd1",
-      "nombre": "CARLOS",
-      "contraseña": "1234"
-    },
-    {
-      "id": "48f7",
-      "nombre": "CARLOS",
-      "contraseña": "1234"
-    }
-  ]
-}
+[
+  {
+    "id": "",
+    "nombre": "",
+    "contraseña": "",
+    "historial": ""
+  },
+  {
+    "id": "1",
+    "nombre": "camilo",
+    "contraseña": "123",
+    "historial": "compro un teclado azul"
+  },
+  {
+    "id": "761c"
+  },
+  {
+    "id": "8ee5"
+  },
+  {
+    "id": "9745"
+  },
+  {
+    "id": "fd95"
+  },
+  {
+    "id": "756f"
+  },
+  {
+    "id": "01f9"
+  },
+  {
+    "id": "3009",
+    "nombre": "cata",
+    "contraseña": "mama123"
+  },
+  {
+    "id": "4a1c",
+    "nombre": "carlos",
+    "contraseña": "camilo123"
+  },
+  {
+    "id": "ea1d",
+    "nombre": "santiago",
+    "contraseña": "123"
+  },
+  {
+    "id": "9280",
+    "nombre": "caca",
+    "contraseña": "1234",
+    "historial": []
+  },
+  {
+    "id": "8df5",
+    "nombre": "cacaco",
+    "contraseña": "123",
+    "historial": []
+  },
+  {
+    "id": "535c",
+    "nombre": "camilocaca",
+    "contraseña": "111"
+  },
+  {
+    "id": "2ebe"
+  },
+  {
+    "id": "1746"
+  },
+  {
+    "id": "0440",
+    "nombre": "cacao",
+    "contraseña": "123",
+    "historial": []
+  },
+  {
+    "id": "6067",
+    "nombre": "cacaodd",
+    "contraseña": "123",
+    "historial": []
+  },
+  {
+    "id": "c44f",
+    "nombre": "mañana",
+    "contraseña": "233"
+  },
+  {
+    "id": "08a8",
+    "nombre": "mono",
+    "contraseña": "123"
+  },
+  {
+    "id": "4cf5",
+    "nombre": "catalina",
+    "contraseña": "123"
+  },
+  {
+    "id": "0edd",
+    "nombre": "sorro",
+    "contraseña": "camilo123",
+    "historial": []
+  },
+  {
+    "id": "779a",
+    "nombre": "camiloaaa",
+    "contraseña": "camilo 123"
+  }
+]

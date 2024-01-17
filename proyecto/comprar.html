@@ -57,8 +57,9 @@
 </div>
 </div>
 </div>
+<div id="fullScreen"></div>
   <div id="contenedorCarro">
-    <button id="CarroCompras">🛒<p id="precios">0</p></button>
+    <button id="CarroCompras">🛒<p id="precios"></p></button>
   </div>
   
   <div id="hamburguer">
@@ -131,11 +132,6 @@
     <h1>AUDIO</h1>
     <section id="audioP" ></section>
     </section>
-<!--CONTENEDOR MONITORES-->
-    <section class="monitor animate__animated animate__fadeInLeftBig">
-        <h1>MONITORES</h1>
-        <section id="monitorP" ></section>
-        </section>
 <!--CONTENEDOR PADS-->
         <section class="pads animate__animated animate__fadeInLeftBig">
             <h1>PADS</h1>
@@ -181,10 +177,9 @@
     <script>
 
 const aggCarta = document.getElementById('tecladosP');
-const carritoTotal = document.getElementById('precios');
-let totalCarrito = 0;
 
-function cargarJson() {
+
+function cargarTeclados() {
   fetch('productos.json')
     .then(respuesta => respuesta.json())
     .then(respuesta => {
@@ -200,10 +195,42 @@ function cargarJson() {
         `;
         aggCarta.appendChild(agg);
 
-
+        const botonCanasta = document.getElementById('CarroCompras')
         const botonAgregar = agg.querySelector('.agregarAlcarro');
         botonAgregar.addEventListener('click', function() {
+          botonCanasta.style.backgroundColor = 'green'
           agregarAlCarrito(teclado.precio,teclado.nombre);
+          
+        });
+      });
+    })
+    .catch(error => console.error('Error al cargar el JSON:', error));
+}
+cargarTeclados();
+
+/////////////
+const aggCartaMouse = document.getElementById('mouseP');
+function cargarMouse() {
+  fetch('productos.json')
+    .then(respuesta => respuesta.json())
+    .then(respuesta => {
+      respuesta.mouse.forEach(mouse => {
+        const agg = document.createElement('header');
+        agg.innerHTML = `
+          <h1>${mouse.nombre}</h1>
+          <img src="${mouse.img}" alt="${mouse.nombre}">
+          <p>Precio: ${mouse.precio}</p>
+          <div class ='ventaBoton'>
+            <button id='botonAgregar'class='agregarAlcarro' data-precio='${mouse.precio}'>Agregar</button><p>0</p>
+          </div>
+        `;
+        aggCartaMouse.appendChild(agg);
+
+        const botonCanasta = document.getElementById('CarroCompras')
+        const botonAgregar = agg.querySelector('.agregarAlcarro');
+        botonAgregar.addEventListener('click', function() {
+          botonCanasta.style.backgroundColor = 'green'
+          agregarAlCarrito(mouse.precio,mouse.nombre);
           
           
         });
@@ -213,53 +240,114 @@ function cargarJson() {
 }
 
 
-cargarJson();
+cargarMouse();
 
-function agregarAlCarrito(precio) {
+const aggCartaudio = document.getElementById('audioP');
+function cargaraudio() {
+  fetch('productos.json')
+    .then(respuesta => respuesta.json())
+    .then(respuesta => {
+      respuesta.audio.forEach(audio => {
+        const agg = document.createElement('header');
+        agg.innerHTML = `
+          <h1>${audio.nombre}</h1>
+          <img src="${audio.img}" alt="${audio.nombre}">
+          <p>Precio: ${audio.precio}</p>
+          <div class ='ventaBoton'>
+            <button id='botonAgregar'class='agregarAlcarro' data-precio='${audio.precio}'>Agregar</button><p>0</p>
+          </div>
+        `;
+        aggCartaudio.appendChild(agg);
+
+        const botonCanasta = document.getElementById('CarroCompras')
+        const botonAgregar = agg.querySelector('.agregarAlcarro');
+        botonAgregar.addEventListener('click', function() {
+          botonCanasta.style.backgroundColor = 'green'
+          agregarAlCarrito(audio.precio,audio.nombre);
+          
+          
+        });
+      });
+    })
+    .catch(error => console.error('Error al cargar el JSON:', error));
+}
+
+
+cargaraudio();
+
+//////////////
+const aggCartaPads = document.getElementById('padsP');
+function cargarPads() {
+  fetch('productos.json')
+    .then(respuesta => respuesta.json())
+    .then(respuesta => {
+      respuesta.pads.forEach(pads => {
+        const agg = document.createElement('header');
+        agg.innerHTML = `
+          <h1>${pads.nombre}</h1>
+          <img src="${pads.img}" alt="${pads.nombre}">
+          <p>Precio: ${pads.precio}</p>
+          <div class ='ventaBoton'>
+            <button id='botonAgregar'class='agregarAlcarro' data-precio='${pads.precio}'>Agregar</button><p>0</p>
+          </div>
+        `;
+        aggCartaPads.appendChild(agg);
+
+        const botonCanasta = document.getElementById('CarroCompras')
+        const botonAgregar = agg.querySelector('.agregarAlcarro');
+        botonAgregar.addEventListener('click', function() {
+          botonCanasta.style.backgroundColor = 'green'
+
+          agregarAlCarrito(audio.precio,audio.nombre);
+          
+          
+          
+        });
+      });
+    })
+    .catch(error => console.error('Error al cargar el JSON:', error));
+}
+
+
+cargarPads();
+
+const carritoTotal = document.getElementById('totalProductos');
+const nombrePro = document.getElementById('ProductoFinal')
+let totalCarrito = 0;
+ function agregarAlCarrito(precio,nombre){
   totalCarrito += precio;
   carritoTotal.textContent = totalCarrito;
-  console.log()
-}
+  nombrePro.innerHTML = nombre
+  console.log(nombre)
+
+ }
+ function datosCompra(){
+
+ }
+
+
+//DESPLEGAR FACTURA DEL USUARIO
+const botonAgg = document.getElementById('CarroCompras')
+botonAgg.addEventListener('click',()=>{
+ 
+  const desplegar = document.querySelector('#fullScreen')
+  desplegar.innerHTML = `<div id="contCarrito">
+                         <section class ="animate__animated animate__fadeInDown " id="contDentroCarrito"><h1>Venta final</h1> 
+                              <p>Productos</p>
+                              <p id="ProductoFinal">-</p>
+                               <p>Total a pagar</p>
+                               <p id="totalProductos">${totalCarrito}</p>
+                               <button>Pagar</button>
+                               <button>Seguir mirando</button><div/></section>`
+
+})
+
+
 const llamarBoton = document.getElementById('agregarAlcarro')
 llamarBoton.addEventListener('click',agregarAlCarrito)
 console.log(carritoTotal)
 
-function mostrarFactura() {
-  
-  const facturaContainer = document.createElement('div');
-  facturaContainer.id = 'facturaContainer';
-  document.body.appendChild(facturaContainer);
 
-  carrito.forEach(producto => {
-    const facturaItem = document.createElement('div');
-    facturaItem.innerHTML = `
-      <p>${producto.nombre}</p>
-      <p>Precio: ${producto.precio}</p>
-      <hr>
-    `;
-    facturaContainer.appendChild(facturaItem);
-  });
-
-
-  const totalItem = document.createElement('div');
-  totalItem.innerHTML = `<p>Total: ${totalCarrito}</p>`;
-  facturaContainer.appendChild(totalItem);
-
-
-  if (usuarioActual) {
-    const historialUsuario = usuarioActual.historial || {};
- 
-    carrito.forEach(producto => {
-      const nombreProducto = producto.nombre.replace(/\s+/g, ''); 
-      historialUsuario[nombreProducto] = (historialUsuario[nombreProducto] || 0) + 1;
-    });
-    historialUsuario.valorTotal = (historialUsuario.valorTotal || 0) + totalCarrito;
-
-   
-    usuarioActual.historial = historialUsuario;
- 
-  }
-}
 const inicioSecion = document.getElementById('botonInicio')
 
 inicioSecion.addEventListener('mouseover',cambiarcolor)

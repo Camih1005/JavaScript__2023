@@ -54,6 +54,21 @@
       "id": "38ba",
       "nombre": "kevin",
       "contraseña": "123"
+    },
+    {
+      "id": "f5f7",
+      "nombre": "CAMILO",
+      "contraseña": "123"
+    },
+    {
+      "id": "3fd1",
+      "nombre": "CARLOS",
+      "contraseña": "1234"
+    },
+    {
+      "id": "48f7",
+      "nombre": "CARLOS",
+      "contraseña": "1234"
     }
   ]
 }

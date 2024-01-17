@@ -222,7 +222,7 @@ const CARRITO_ENDPOINT = '/carrito';
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  const usuarioGuardado = JSON.parse(sessionStorage.getItem('usuario'));
+  const usuarioGuardado = JSON.parse(localStorage.getItem('usuario'));
   if (usuarioGuardado) {
     alert(`¡Bienvenido de nuevo, ${usuarioGuardado.nombre}!`);
     const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || { total: 0 };
@@ -239,7 +239,7 @@ function iniciarSesion() {
   fetch(`${URL_BASE}${USUARIOS_ENDPOINT}?nombre=${username}&contraseña=${password}`)
     .then(respuesta => respuesta.json())
     .then(usuarios => {
-      if (usuarios.length > 0) {
+      if (usuarios.length > 0 && usuarios) {
         const usuario = usuarios[0];
         alert(`¡Bienvenido, ${username}!`);
         sessionStorage.setItem('usuario', JSON.stringify(usuario));
@@ -247,7 +247,7 @@ function iniciarSesion() {
         totalCarrito = carritoGuardado.total;
         carritoTotal.textContent = totalCarrito;
       } else {
-        alert('Credenciales incorrectas. Intenta de nuevo o regístrate.');
+        alert('DATOS incorrectas. Intenta de nuevo o regístrate.');
       }
     })
     .catch(error => console.error('Error al iniciar sesión:', error));

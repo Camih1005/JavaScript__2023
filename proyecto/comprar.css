@@ -1,5 +1,27 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Zen+Dots&display=swap");
+#contCarrito{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+  
+
+}
+#contDentroCarrito{
+  width: auto;
+  height: auto;
+  border: white solid 1px;
+  padding: 20px;
+  background-color: #00000079;
+  color: white;
+
+}
+
+
 #CartelInicioSecion{
   display: none;
   justify-content: center;
@@ -123,12 +145,12 @@ label{
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
-.contteclado{
-  margin: 0 auto;
-  
 
-}
 #IniciarSecion{
   width: 300px;
 }
@@ -152,7 +174,7 @@ label{
   transition: 0.5s ease-in-out;
   box-shadow: 1px 1px 1px 1px rgb(255, 0, 0);
 }
-#tecladosP,div{
+#tecladosP,#mouseP,#audioP,#padsP,div{
   display: flex;
   width: 100%;
   justify-content: center;
@@ -161,21 +183,47 @@ label{
   text-align: center;
   gap: 10px;
 }
+header{
+  border: solid 2px black;
+ 
+}
+.contenedorProductos h1{
+  color: white;
+}
+header:hover{
+  padding:0px 10px 0px 10px;
+  transition: ease-in 0.5s;
+}
 
 header,img{
-  width: 250px;
+  width: 300px;
   height:auto;
+  transition: ease-in-out 0.5s;
 }
-#tecladosP{
+header img:hover{
+  width: 320px;
+}
+#tecladosP,#mouseP,#audioP,#padsP{
   display: flex;
   width: auto;
   align-items: center;
   height: auto;
   margin: 0 auto;
+
 }
 #CarroCompras,button{
   margin: 6px;
-  background-color: #ff00006f;
+  background-color: #c4c4c46f;
+  border: none;
+  border-radius: 3px;
+  padding: 3px;
+  cursor: pointer;
+  color: white;
+  padding: 4px;
+}
+#CarroCompras,button:hover{
+  background-color: rgb(58, 248, 0);
+  color: rgb(0, 0, 0);
 }
 #contenedorCarro{
   display: flex;
@@ -276,7 +324,7 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
 
 
 .container1 {
-    background:url(../proyecto/imagenesproyecto/Megamenu-General-1500x1182-1.jpg) no-repeat center;
+    background:url(../proyecto/imagenesproyecto/S101-BA-Header-1.jpg) no-repeat center;
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -513,7 +561,7 @@ width: 80px;
     display: none;
   }
     .container1 {
-        background:url(../proyecto/imagenesproyecto/Megamenu-General-1500x1182-1.jpg) no-repeat center;
+        background:url(../proyecto/imagenesproyecto/S101-BA-Header-1.jpg) no-repeat center;
         background-size: cover;
         height: 400px;
         width: 100%;
@@ -794,7 +842,7 @@ width: 80px;
     
     
         .container1 {
-            background:url(../proyecto/imagenesproyecto/buslion.png) no-repeat center;
+            background:url(../proyecto/imagenesproyecto/S101-BA-Header-1.jpg) no-repeat center;
             background-size: cover;
             height: 650px;
             width: 100%;

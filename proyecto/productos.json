@@ -35,32 +35,32 @@
         "id":1,
         "nombre":"storm",
         "precio": 220000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/mouse/STORM.png"
+        "img": "/proyecto/imagenesproductos/mouse/STORM.png"
     },
     {
         "id":2,
         "nombre":"inpact",
         "precio": 218000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/mouse/IMPACT.png"
+        "img": "/proyecto/imagenesproductos/mouse/IMPACT.png"
     },
     {
         "id":3,
         "nombre":"cobrafps",
         "precio": 230000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/mouse/COBRA-FPS.png"
+        "img": "/proyecto/imagenesproductos/mouse/COBRA-FPS.png"
     }
     ,
     {
         "id":4,
         "nombre":"griffin",
         "precio": 330000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/mouse/GRIFFIN-W.png"
+        "img": "/proyecto/imagenesproductos/mouse/GRIFFIN-W.png"
     },
     {
         "id":5,
         "nombre":"dagger",
         "precio": 310000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/mouse/DAGGER.png"
+        "img": "/proyecto/imagenesproductos/mouse/DAGGER.png"
     }
 
         
@@ -70,32 +70,32 @@
         "id":1,
         "nombre":"zeus",
         "precio": 520000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/audio/ZEUS-X-W-B.png"
+        "img": "/proyecto/imagenesproductos/audio/ZEUS-X-W-B.png"
     },
     {
         "id":2,
         "nombre":"ireblue",
         "precio": 212000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/audio/ireblue.png"
+        "img": "/proyecto/imagenesproductos/audio/ireblue.png"
     },
     {
         "id":3,
         "nombre":"pandora",
         "precio": 230000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/audio/PANDORA-1.png"
+        "img": "/proyecto/imagenesproductos/audio/PANDORA-1.png"
     }
     ,
     {
         "id":4,
         "nombre":"blazar",
         "precio": 440000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/audio/BLAZAR.png"
+        "img": "/proyecto/imagenesproductos/audio/BLAZAR.png"
     },
     {
         "id":5,
         "nombre":"quazar",
         "precio": 310000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/audio/QUAZAR-1.png"
+        "img": "/proyecto/imagenesproductos/audio/QUAZAR-1.png"
     }
 
         
@@ -105,26 +105,26 @@
         "id":1,
         "nombre":"flicks",
         "precio": 80000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/pads/FLICK-S.png"
+        "img": "/proyecto/imagenesproductos/pads/FLICK-S.png"
     },
     {
         "id":2,
         "nombre":"epeius",
         "precio": 120000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/pads/EPEIUS-3.png"
+        "img": "/proyecto/imagenesproductos/pads/EPEIUS-3.png"
     },
     {
         "id":3,
         "nombre":"kunklun",
         "precio": 130000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/pads/KUNLUN-L.png"
+        "img": "/proyecto/imagenesproductos/pads/KUNLUN-L.png"
     }
     ,
     {
         "id":4,
         "nombre":"piscies",
         "precio": 440000,
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/pads/PISCIES-1.png"
+        "img": "/proyecto/imagenesproductos/pads/PISCIES-1.png"
     }
 
         

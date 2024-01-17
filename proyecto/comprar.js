@@ -53,12 +53,9 @@ function cargarProductos() {
 
 // Añade el manejador de eventos para desplegar la factura
 const botonFactura = document.getElementById('CarroCompras');
-botonFactura.addEventListener('click', () => {
-  const desplegar = document.querySelector('#fullScreen');
-  desplegar.style.display = 'flex';
-});
+botonFactura.addEventListener('click',agregarAlCarrito);
 
-// Llama a la función para cargar productos
+
 cargarProductos();
 
 const carritoTotal = document.getElementById('totalProductos');
@@ -66,7 +63,8 @@ const nombrePro = document.getElementById('ProductoFinal');
 let totalCarrito = 0;
 let totalnombres = 0;
 
-function agregarAlCarrito(precio, nombre) {
+
+function agregarAlCarrito(precio) {
     totalCarrito += precio;
   
     // Actualizar el contenido de la factura
@@ -86,7 +84,14 @@ function agregarAlCarrito(precio, nombre) {
     // Añade manejadores de eventos a los botones en la factura
     
 };
+const desplegarcarrito = document.getElementById('contCarrito')
 const btnPagar = document.getElementById('btnPagar');
+btnPagar.addEventListener('click',()=>{
+  console.log('hola')
+  desplegarcarrito.style.display = (desplegarcarrito.style.display === 'flex') ? 'none' : 'flex';
+  body.document.style.backgroundColor = 'white'
+
+})
 const inicioSecion = document.getElementById('botonInicio')
 
 inicioSecion.addEventListener('mouseover',cambiarcolor)

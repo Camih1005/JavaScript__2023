@@ -221,10 +221,15 @@ header img:hover{
   color: white;
   padding: 4px;
 }
-#CarroCompras,button:hover{
+#CarroCompras:hover{
   background-color: rgb(58, 248, 0);
   color: rgb(0, 0, 0);
 }
+#botonAgregar:hover{
+  background-color:rgb(58, 248, 0) ;
+color: #000000;
+}
+
 #contenedorCarro{
   display: flex;
   width: 100%;
@@ -272,6 +277,7 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
     h1,
     p,
     .footer1 {
+     
       view-timeline-name: --image;
       view-timeline-axis: block;
   

@@ -113,7 +113,7 @@
 </section>
 <section class="container1 animate__fadeInBottomRight">
     <div>
-        <h1 class="animate__animated animate__fadeInLeftBig">GAMLION PRODUCTOS</h1> 
+        <h1 class="animate__animated animate__slideInLeft">GAMLION PRODUCTOS</h1> 
      </div>
 </section>
 <div class="contenedorProductos">
@@ -190,7 +190,7 @@ function cargarTeclados() {
           <img src="${teclado.img}" alt="${teclado.nombre}">
           <p>Precio: ${teclado.precio}</p>
           <div class ='ventaBoton'>
-            <button class='agregarAlcarro' data-precio='${teclado.precio}'>Agregar</button><p>0</p>
+            <button id ='botonAgregar' class='agregarAlcarro' data-precio='${teclado.precio}'>Agregar</button><p>0</p>
           </div>
         `;
         aggCarta.appendChild(agg);
@@ -198,7 +198,7 @@ function cargarTeclados() {
         const botonCanasta = document.getElementById('CarroCompras')
         const botonAgregar = agg.querySelector('.agregarAlcarro');
         botonAgregar.addEventListener('click', function() {
-          botonCanasta.style.backgroundColor = 'green'
+          botonCanasta.style.backgroundColor = 'rgb(58, 248, 0)'
           agregarAlCarrito(teclado.precio,teclado.nombre);
           
         });
@@ -229,7 +229,7 @@ function cargarMouse() {
         const botonCanasta = document.getElementById('CarroCompras')
         const botonAgregar = agg.querySelector('.agregarAlcarro');
         botonAgregar.addEventListener('click', function() {
-          botonCanasta.style.backgroundColor = 'green'
+          botonCanasta.style.backgroundColor = 'rgb(58, 248, 0)'
           agregarAlCarrito(mouse.precio,mouse.nombre);
           
           
@@ -262,7 +262,7 @@ function cargaraudio() {
         const botonCanasta = document.getElementById('CarroCompras')
         const botonAgregar = agg.querySelector('.agregarAlcarro');
         botonAgregar.addEventListener('click', function() {
-          botonCanasta.style.backgroundColor = 'green'
+          botonCanasta.style.backgroundColor = 'rgb(58, 248, 0)'
           agregarAlCarrito(audio.precio,audio.nombre);
           
           
@@ -276,6 +276,8 @@ function cargaraudio() {
 cargaraudio();
 
 //////////////
+const listPro = []
+console.log(listPro)
 const aggCartaPads = document.getElementById('padsP');
 function cargarPads() {
   fetch('productos.json')
@@ -292,14 +294,15 @@ function cargarPads() {
           </div>
         `;
         aggCartaPads.appendChild(agg);
+        listPro.push({id: pads.id, nombre: pads.nombre, precio: pads.precio });
 
         const botonCanasta = document.getElementById('CarroCompras')
         const botonAgregar = agg.querySelector('.agregarAlcarro');
         botonAgregar.addEventListener('click', function() {
-          botonCanasta.style.backgroundColor = 'green'
-
-          agregarAlCarrito(audio.precio,audio.nombre);
-          
+          botonCanasta.style.backgroundColor = 'rgb(58, 248, 0)'
+          const precio = pads.precio
+          const nombre = pads.nombre
+          agregarAlCarrito(pads.precio,pads.nombre);
           
           
         });
@@ -321,10 +324,7 @@ let totalCarrito = 0;
   console.log(nombre)
 
  }
- function datosCompra(){
-
- }
-
+ 
 
 //DESPLEGAR FACTURA DEL USUARIO
 const botonAgg = document.getElementById('CarroCompras')
@@ -370,10 +370,6 @@ function cambiarcolor(){
         inicioSecion.style.transition = '0.5s ease-out'
         inicioSecion.style.backgroundColor = 'black'
         inicioSecion.style.color = 'white'
-        
-       
-
-        
     }
     function cambiarcolor2(){
         inicioSecion.style.filter = 'invert(0)'
@@ -381,9 +377,6 @@ function cambiarcolor(){
         inicioSecion.style.height = ''
         inicioSecion.innerHTML= '&#128100'
         inicioSecion.style.transition = '0.5s ease-out'
-     
-        
-
     }
     const URL_BASE = 'http://localhost:3000';
 const USUARIOS_ENDPOINT = '/usuarios';
@@ -400,8 +393,6 @@ document.addEventListener("DOMContentLoaded", function () {
     carritoTotal.textContent = totalCarrito;
   }
 });
-
-
 
 function iniciarSesion() {
   const username = document.getElementById('inputIngresar').value;
@@ -428,10 +419,6 @@ e
     })
     .catch(error => console.error('Error al iniciar sesión:', error));
 }
-    
-
-
-
   function registrarUsuario() {
   const newUsername = document.getElementById('inputRegistrar').value;
   const newPassword = document.getElementById('InputcontraseñaR').value;
@@ -498,6 +485,7 @@ e
         const InicioExitoso = document.getElementById('InicioCorrecto')
         InicioExitoso.style.display = (InicioExitoso.style.display === 'none') ? 'flex' : 'none'; 
     })
+    
   
 
 </script>

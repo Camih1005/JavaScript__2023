@@ -34,7 +34,7 @@ function cargarProductos() {
             botonCanasta.style.backgroundColor = 'rgb(58, 248, 0)';
             const precio = item.precio;
             const nombre = item.nombre;
-            agregarAlCarrito(precio, nombre);
+            
 
             // Contador de productos
             if (listPro[nombre]) {
@@ -43,7 +43,7 @@ function cargarProductos() {
               listPro[nombre] = 1;
             }
 
-            console.log("Contador de productos:", listPro);
+            console.log(listPro);
           });
         });
       })

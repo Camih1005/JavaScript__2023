@@ -1,25 +1,7 @@
-function cambiarcolor(){
-  inicioSecion.style.filter = 'invert(0)'
 
-  inicioSecion.innerHTML= '&#128100'
-  inicioSecion.style.transition = '0.5s ease-out'
-
-  
-
-}
-function cambiarcolor2(){
-  inicioSecion.style.filter = 'invert(1)'
-  inicioSecion.innerHTML= '&#128100'
-  inicioSecion.style.transition = '0.5s ease-out'
-
-  
-
-}
 
 const inicioSecion = document.getElementById('botonInicio')
 
-inicioSecion.addEventListener('mouseover',cambiarcolor)
-inicioSecion.addEventListener('mouseout',cambiarcolor2)
 
 ///
 const desplegarInicio = document.getElementById('CartelInicioSecion');
@@ -84,7 +66,11 @@ fetch(`${URL_BASE}${USUARIOS_ENDPOINT}?nombre=${username}&contraseña=${password
 .then(respuesta => respuesta.json())
 .then(usuarios => {
 if (usuarios.length > 0) {
-
+  const nom = JSON.parse(localStorage.getItem('usuario'))
+  console.log(nom.nombre)
+  CerrarInicio.style.display = (CerrarInicio.style.display === 'flex') ? 'none' : 'flex';
+  inicioSecion.innerHTML = `${nom.nombre}`
+ 
   const usuario = usuarios[0];
   alert(`¡Bienvenido, ${username}!`);
 
@@ -105,7 +91,7 @@ botonIniciarSesion.addEventListener('click',iniciarSesion)
 
 
 
-function registrarUsuario() {
+function registrarUsuario(event) {
 const newUsername = document.getElementById('inputRegistrar').value;
 const newPassword = document.getElementById('InputcontraseñaR').value;
 
@@ -131,13 +117,15 @@ if (usuarios.length > 0) {
     })
     .then(respuesta => respuesta.json())
     .then(usuario => {
-
+      CartelR.style.display = (CartelR.style.display === 'none') ? 'flex' : 'none';
       alert(`Bienvenido ${newUsername} acabas de registrarte,ya puedes iniciar sesion`);
+
     })
     .catch(error => console.error('Error al registrar usuario:', error));
 }
 })
 .catch(error => console.error('Error al verificar existencia del usuario:', error));
+event.preventDefault()
 }
 
 const ValidarRegistro = document.getElementById('RegistrarUS')

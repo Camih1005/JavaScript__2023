@@ -1,5 +1,24 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Zen+Dots&display=swap");
+
+.nuevaClase{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 200;
+}
+#contDentroExit{
+  width: auto;
+  height: auto;
+  border: white solid 1px;
+  padding: 20px;
+  background-color: #000000d7;
+  color: white;
+}
+/*carrito de compras*/
 #contCarrito{
   display: flex;
   align-items: center;
@@ -7,7 +26,7 @@
   width: 100%;
   height: 100vh;
   position: fixed;
-  z-index: 11;
+  z-index: 12;
 }
 #contDentroCarrito{
   width: auto;

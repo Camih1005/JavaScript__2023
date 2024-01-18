@@ -3,13 +3,13 @@
         "id":1,
         "nombre":"kurumaK552",
         "precio": 230000,
-        "img": "../proyecto/imagenesproductos/teclados/K552RGB.png"
+        "img": "/proyecto/imagenesproductos/teclados/K552RGB.png"
     },
     {
         "id":2,
         "nombre":"horusK618",
         "precio": 280000,
-        "img": "../proyecto/imagenesproductos/teclados/HORUS.png"
+        "img": "/proyecto/imagenesproductos/teclados/HORUS.png"
     },
     {
         "id":3,

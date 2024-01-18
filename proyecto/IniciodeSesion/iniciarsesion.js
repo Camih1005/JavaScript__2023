@@ -1,10 +1,10 @@
 
 
+const inicioSecion = document.getElementById('botonInicio')
 
 
 ///
 const desplegarInicio = document.getElementById('CartelInicioSecion');
-const inicioSecion = document.getElementById('botonInicio')
 
 function AbrirInicio() {
 desplegarInicio.style.display = (desplegarInicio.style.display === 'none') ? 'flex' : 'none';
@@ -55,32 +55,31 @@ if (usuarioGuardado) {
 
 
 function iniciarSesion() {
-  const username = document.getElementById('inputIngresar').value;
-  const password = document.getElementById('Inputcontraseña').value;
+const username = document.getElementById('inputIngresar').value;
+const password = document.getElementById('Inputcontraseña').value;
 
-  fetch(`${URL_BASE}${USUARIOS_ENDPOINT}?nombre=${username}&contraseña=${password}`)
-    .then(respuesta => respuesta.json())
-    .then(usuarios => {
-      if (usuarios.length > 0) {
-        const contenedorInicio = document.getElementById('CartelInicioSecion');
-        contenedorInicio.parentNode.removeChild(contenedorInicio); // Elimina completamente el contenedor
-        inicioSecion.innerHTML = '🔚'
-        
-        const usuario = usuarios[0];
-        alert(`¡Bienvenido, ${username}!`);
-        localStorage.setItem('usuario', JSON.stringify(usuario));
 
-        const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || { total: 0 };
-        totalCarrito = carritoGuardado.total;
-        carritoTotal.textContent = totalCarrito;
-      } else {
-        alert('Credenciales incorrectas. Intenta de nuevo o regístrate.');
-      }
-    })
-    .catch(error => console.error('Error al iniciar sesión:', error));
+fetch(`${URL_BASE}${USUARIOS_ENDPOINT}?nombre=${username}&contraseña=${password}`)
+.then(respuesta => respuesta.json())
+.then(usuarios => {
+if (usuarios.length > 0) {
+  
+ 
+  const usuario = usuarios[0];
+  alert(`¡Bienvenido, ${username}!`);
+
+  localStorage.setItem('usuario', JSON.stringify(usuario));
+
+  const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || { total: 0 };
+  totalCarrito = carritoGuardado.total;
+  carritoTotal.textContent = totalCarrito;
+} else {
+
+  alert('Credenciales incorrectas. Intenta de nuevo o regístrate.');
 }
-
-
+})
+.catch(error => console.error('Error al iniciar sesión:', error));
+}
 const botonIniciarSesion = document.getElementById('ingresar')
 botonIniciarSesion.addEventListener('click',iniciarSesion)
 

@@ -129,16 +129,6 @@
 
         
         
-    ],
-    "clientes":[{
-        "id":1,
-        "nombre":"",
-        "compras": "",
-        "img": "/home/user/Documentos/JavaScript__2023-1/proyecto/imagenesproductos/mouse/STORM.png"
-    }
-
-        
-        
     ]
 
 }

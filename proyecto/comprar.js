@@ -67,18 +67,29 @@ function agregarAlCarrito(precio) {
   totalCarrito += precio;
 }
 
-async function checkOut(aggNew) {
-  const response = await fetch(`http://localhost:3000/usuarios/${aggNew.id}`, {
+async function checkOut(aggNew, productosVendidos) {
+  try {
+    const response = await fetch(`http://localhost:3000/usuarios/${aggNew.id}`, {
       method: "PATCH",
       headers: {
-          "Content-Type": "applicaiton/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-          "historial": aggNew.historial
+        historial: [...aggNew.historial, { productos: productosVendidos, fecha: new Date() }],
       }),
-  });
+    });
 
-  // return await response.json();
+    if (response.ok) {
+      console.log('Datos actualizados correctamente en el servidor.');
+      localStorage.setItem('usuario', JSON.stringify(aggNew));
+
+    
+    } else {
+      console.error('Error en la respuesta del servidor:', response.status);
+    }
+  } catch (error) {
+    console.error('Error en la solicitud PATCH:', error);
+  }
 }
 ////
 
@@ -109,32 +120,35 @@ function desplegarTotalFac() {
     desplegarcarrito.style.display = desplegarcarrito.style.display === 'none' ? 'flex' : 'none';
 })
 
-  btnPagar.addEventListener('click',()=>{
-    if(totalCarrito <= 0){
-      alert('no tienes productos en el carrito')
-    }
-    else{
-      const agregar_jsonUs = localStorage.getItem('usuario')
-  const aggNew = JSON.parse(agregar_jsonUs)
-  aggNew.historial.push('productos')
-  localStorage.setItem('usuario', JSON.stringify(aggNew))
-  console.log(aggNew)
-  checkOut(aggNew)
+ btnPagar.addEventListener('click', () => {
+  if (totalCarrito <= 0) {
+    alert('No tienes productos en el carrito');
+  } else {
+    const agregar_jsonUs = localStorage.getItem('usuario');
+    const aggNew = JSON.parse(agregar_jsonUs);
+
+    const productosVendidos = Object.entries(listPro).map(([nombreProducto, cantidad]) => ({
+      nombreProducto,
+      cantidad,
+    }));
+
+    aggNew.historial.push({ productos: productosVendidos, fecha: new Date() });
+    
+    localStorage.setItem('usuario', JSON.stringify(aggNew));
+
+    checkOut(aggNew, productosVendidos);
+
+    // Restablecer el carrito y la pantalla de éxito
     finalCompra.classList.toggle('nuevaClase');
     desplegarcarrito.style.display = desplegarcarrito.style.display === 'none' ? 'flex' : 'none';
     finalCompra.innerHTML = `<div id="ExitoCompra">
-    <section class="animate__animated animate__fadeInDown" id="contDentroExit">
-      <h1>Compra exitosa</h1>
-      <p>Espero disfrutes al maximo nuestros productos</p>
-      
-    </section>
-  </div>`
-
-  }})
-const elimexit = document.getElementById('ExitoCompra')
-setTimeout(function() {
-  elimexit.style.display === "flex" ? 'none':'flex ' }, 1000); 
-
+      <section class="animate__animated animate__fadeInDown" id="contDentroExit">
+        <h1>Compra exitosa</h1>
+        <p>Espero disfrutes al máximo nuestros productos</p>
+      </section>
+    </div>`;
+  }
+});
 }
 const rightBtn = document.querySelector("#scrolling-button-right");
 const leftBtn = document.querySelector("#scrolling-button-left");

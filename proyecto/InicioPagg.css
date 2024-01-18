@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Zen+Dots&display=swap");
-
+.cerrarsesion{
+  background-color: #22ff00;
+  
+}
 body {
   background-color: #090909;
   box-sizing: border-box;

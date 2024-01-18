@@ -3,6 +3,9 @@
 .ana{
   display: none;
 }
+#buscar{
+  display: none;
+}
 .nuevaClase{
   display: flex;
   align-items: center;

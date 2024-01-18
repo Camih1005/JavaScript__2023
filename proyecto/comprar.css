@@ -357,12 +357,32 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
       margin: 20px;
      }
 @media (max-width: 768px){
-
-  .sc{
+  .contenedorProductos {
     display: flex;
     flex-wrap: nowrap;
-    overflow: scroll;
+    overflow-x: auto;
+    scroll-behavior: smooth;
   }
+  #tecladosP,#mouseP,#audioP,#padsP{
+    flex: 0 0 auto;
+    border: solid 1px black;
+    margin: 10px;
+    width: 250px;
+    height: 150px;
+    text-align: center;
+  
+  }
+  .contenedorProductos::-webkit-scrollbar {
+    display: none;
+  }
+  .scrolling-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  
   #tecladoP{
     flex: 1 0 auto;
     margin: 0 50px;

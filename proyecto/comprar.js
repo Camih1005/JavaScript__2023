@@ -7,20 +7,17 @@ const productos = [
   { id: 'padsP', tipo: 'pads', elemento: null }
 ];
 
-const URL_BASE = 'http://localhost:3000';
-const PRODUCTOS_ENDPOINT = '/productos'; // Endpoint general para productos
-
 console.log(productos);
 
 function cargarProductos() {
   productos.forEach(producto => {
     producto.elemento = document.getElementById(producto.id);
 
-    fetch(`${URL_BASE}${PRODUCTOS_ENDPOINT}/${producto.tipo}`)
+    fetch('productos.json')
       .then(respuesta => respuesta.json())
       .then(respuesta => {
-        respuesta.forEach(item => {
-          const agg = document.createElement('div');
+        respuesta[producto.tipo].forEach(item => {
+          const agg = document.createElement('header');
           agg.innerHTML = `
             <h1>${item.nombre}</h1>
             <img src="${item.img}" alt="${item.nombre}">
@@ -32,26 +29,31 @@ function cargarProductos() {
           producto.elemento.appendChild(agg);
 
           const botonAgregar = agg.querySelector('.agregarAlcarro');
-          botonAgregar.addEventListener('click', function () {
+          botonAgregar.addEventListener('click', function() {
             const botonCanasta = document.getElementById('CarroCompras');
             botonCanasta.style.backgroundColor = 'rgb(58, 248, 0)';
             const precio = item.precio;
             const nombre = item.nombre;
-            agregarAlCarrito(precio);
+            agregarAlCarrito(precio, nombre);
 
+           
             if (listPro[nombre]) {
               listPro[nombre] += 1;
             } else {
               listPro[nombre] = 1;
             }
 
-            console.log(listPro);
+            console.log("Contador de productos:", listPro);
           });
         });
       })
-      .catch(error => console.error(`Error al cargar productos de tipo ${producto.tipo}:`, error));
+      .catch(error => console.error('Error al cargar el JSON:', error));
   });
 }
+
+const botonFactura = document.getElementById('CarroCompras');
+botonFactura.addEventListener('click', desplegarTotalFac);
+
 
 cargarProductos();
 
@@ -64,7 +66,22 @@ let totalnombres = 0;
 function agregarAlCarrito(precio) {
   totalCarrito += precio;
 }
+
+async function checkOut(aggNew) {
+  const response = await fetch(`http://localhost:3000/usuarios/${aggNew.id}`, {
+      method: "PATCH",
+      headers: {
+          "Content-Type": "applicaiton/json",
+      },
+      body: JSON.stringify({
+          "historial": aggNew.historial
+      }),
+  });
+
+  // return await response.json();
+}
 ////
+const jaja = []
 function desplegarTotalFac() {
   const desplegar = document.querySelector('#fullScreen');
   desplegar.innerHTML = `<div class='' id="contCarrito">
@@ -78,8 +95,11 @@ function desplegarTotalFac() {
         <button id="btnSeguirMirando">Seguir mirando</button>
       </section>
     </div>`
-  console.log(totalCarrito);
-
+    const nuevoObjeto = Object.entries(listPro).map(([nombreProducto, cantidad]) => ({
+      nombreProducto, 
+      cantidad}))
+      const nuevoJson = JSON.stringify(nuevoObjeto);
+      console.log(nuevoJson);
   const desplegarcarrito = document.getElementById('contCarrito');
   const btnSeguir = document.getElementById('btnSeguirMirando');
   const btnPagar = document.getElementById('btnPagar');
@@ -94,6 +114,12 @@ function desplegarTotalFac() {
       alert('no tienes productos en el carrito')
     }
     else{
+      const agregar_jsonUs = localStorage.getItem('usuario')
+  const aggNew = JSON.parse(agregar_jsonUs)
+  aggNew.historial.push('productos')
+  localStorage.setItem('usuario', JSON.stringify(aggNew))
+  console.log(aggNew)
+  checkOut(aggNew)
     finalCompra.classList.toggle('nuevaClase');
     desplegarcarrito.style.display = desplegarcarrito.style.display === 'none' ? 'flex' : 'none';
     finalCompra.innerHTML = `<div id="ExitoCompra">
@@ -113,13 +139,18 @@ function desplegarTotalFac() {
 
 ;
 }
+const rightBtn = document.querySelector("#scrolling-button-right");
+const leftBtn = document.querySelector("#scrolling-button-left");
 
+const content = document.querySelector(".contenedorProductos");
 
+rightBtn.addEventListener("click", () => {
+  content.scrollLeft += 300;
+});
 
-
-
-
-
+leftBtn.addEventListener("click", () => {
+  content.scrollLeft -= 300;
+});
 
 
 ///

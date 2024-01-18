@@ -49,9 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
 const usuarioGuardado = JSON.parse(localStorage.getItem('usuario'));
 if (usuarioGuardado) {
 
-const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || { total: 0 };
-totalCarrito = carritoGuardado.total;
-carritoTotal.textContent = totalCarrito;
 }
 });
 
@@ -66,10 +63,7 @@ fetch(`${URL_BASE}${USUARIOS_ENDPOINT}?nombre=${username}&contraseña=${password
 .then(respuesta => respuesta.json())
 .then(usuarios => {
 if (usuarios.length > 0) {
-  const nom = JSON.parse(localStorage.getItem('usuario'))
-  console.log(nom.nombre)
-  CerrarInicio.style.display = (CerrarInicio.style.display === 'flex') ? 'none' : 'flex';
-  inicioSecion.innerHTML = `${nom.nombre}`
+  
  
   const usuario = usuarios[0];
   alert(`¡Bienvenido, ${username}!`);
@@ -108,7 +102,7 @@ if (usuarios.length > 0) {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ nombre: newUsername, contraseña: newPassword }),
+    body: JSON.stringify({ nombre: newUsername, contraseña: newPassword, historial:[]}),
   })
     .then(respuesta => respuesta.json())
     .then(usuarioRegistrado => {
@@ -158,8 +152,3 @@ CartelR.style.display = (CartelR.style.display === 'none') ? 'flex' : 'none';
 const cerrarRegistro = document.getElementById('cerrarInicioR')
 cerrarRegistro.addEventListener('click', CerrarR);
 
-const botonEntendido = document.getElementById('Entendido')
-botonEntendido.addEventListener('click',()=>{
-  const InicioExitoso = document.getElementById('InicioCorrecto')
-  InicioExitoso.style.display = (InicioExitoso.style.display === 'none') ? 'flex' : 'none'; 
-})

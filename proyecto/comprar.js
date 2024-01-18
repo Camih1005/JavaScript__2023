@@ -81,7 +81,7 @@ async function checkOut(aggNew) {
   // return await response.json();
 }
 ////
-const jaja = []
+
 function desplegarTotalFac() {
   const desplegar = document.querySelector('#fullScreen');
   desplegar.innerHTML = `<div class='' id="contCarrito">
@@ -126,18 +126,15 @@ function desplegarTotalFac() {
     <section class="animate__animated animate__fadeInDown" id="contDentroExit">
       <h1>Compra exitosa</h1>
       <p>Espero disfrutes al maximo nuestros productos</p>
-      <button id="botonExit">Salir</button>
+      
     </section>
   </div>`
+
   }})
-  
-  const exitBot = document.getElementById('botonExit')
-  exitBot.addEventListener('click',()=>{
-    finalCompra.classList.toggle('nuevaClase');
-  })
+const elimexit = document.getElementById('ExitoCompra')
+setTimeout(function() {
+  elimexit.style.display === "flex" ? 'none':'flex ' }, 1000); 
 
-
-;
 }
 const rightBtn = document.querySelector("#scrolling-button-right");
 const leftBtn = document.querySelector("#scrolling-button-left");

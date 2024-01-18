@@ -1,6 +1,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Zen+Dots&display=swap");
-
+.ana{
+  display: none;
+}
 .nuevaClase{
   display: flex;
   align-items: center;
@@ -135,9 +137,8 @@ label{
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   padding: 30px;
-
   position: fixed;
   z-index: 40;
   background-color: rgba(0, 0, 0, 0.76);
@@ -152,29 +153,13 @@ label{
   border: solid 2px red;
   height: 60%;
   width: 20%;
-  gap: 10px;
-  padding: 30px;
+  padding: 20px;
   background-color: #000000;
 
 
 }
 
-#InicioCorrecto{
-  display: none;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 25%;
-  height: 50%;
-  padding: 30px;
-  position: fixed;
-  z-index: 40;
-  background-color: rgba(0, 0, 0, 0.76);
-  margin: 0 auto;
-  color: white;
-  left: 35%;
 
-}
 #cacasInicio{
   display: flex;
   justify-content: center;
@@ -357,7 +342,28 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
       margin: 20px;
      }
 @media (max-width: 768px){
-  .contenedorProductos {
+  #dentroDelregistro{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+  #contenedorRegistro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  #dentroDelInicio{
+    border: solid 2px red;
+    height: 60%;
+    width: 200px;
+  }
+  
+  
+  .Contteclado,.mouse,.audio,.pads {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -372,7 +378,7 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
     text-align: center;
   
   }
-  .contenedorProductos::-webkit-scrollbar {
+  .Contteclado,.mouse,.audio,.pads::-webkit-scrollbar {
     display: none;
   }
   .scrolling-buttons-container {
@@ -620,6 +626,7 @@ width: 80px;
   #soloCel{
     display: none;
   }
+ 
  
 }
 
@@ -905,11 +912,14 @@ width: 80px;
       .header{
         display: none;
     }
+    .scrolling-buttons-container{
+      display: none;
+    }
     
     
     }
     @media(min-width:1024px) {
-    
+
     
         .container1 {
             background:url(../proyecto/imagenesproyecto/S101-BA-Header-1.jpg) no-repeat center;
@@ -1030,27 +1040,9 @@ width: 80px;
             font-size: 15px ;
             display: none;
           }
-          .form-register {
-            width: 340px;
-            background: rgba(73, 73, 73, 0.392);
-            padding: 30px;
-            margin: auto;
-            margin-top: 100px;
-            border-radius: 4px;
-            font-family: "Zen Dots", sans-serif;
-            color: white;
-            box-shadow: 4px 4px 4px #1c1c1c;
-            height: 650px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-          }
+        
           
-          .form-register h4 {
-            font-size: 22px;
-            margin-bottom: 20px;
-          }
+       
           
           
           .controls {
@@ -1066,32 +1058,7 @@ width: 80px;
             
             
           } 
-          .form-register p {
-            height: 40px;
-            text-align: center;
-            font-size: 18px;
-            line-height: 40px;
-          }
-          
-          .form-register a {
-            color: white;
-            text-decoration: none;
-          }
-          
-          .form-register a:hover {
-            color: white;
-            text-decoration: underline;
-          }
-          
-          .form-register .botons {
-            width: 100%;
-            background: #d41f1fc6;
-            border: none;
-            padding: 12px;
-            color: white;
-            margin: 16px 0;
-            font-size: 16px;
-          }
+       
           .fin3 img{
             display: none;
           }
@@ -1199,6 +1166,9 @@ width: 80px;
           display: none;
         }
         #menuHamburguesa{
+          display: none;
+        }
+        .scrolling-buttons-container{
           display: none;
         }
         

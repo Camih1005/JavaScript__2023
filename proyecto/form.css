@@ -238,7 +238,33 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
       font-size: 12px;
      }
 @media (max-width: 768px){
-
+  #dentroDelregistro{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+  #contenedorRegistro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  #dentroDelInicio{
+    border: solid 2px red;
+    height: 60%;
+    width: 200px;
+  }
+  
+  
+  .contenedorProductos {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
 
 .container1 {
     background:url(../proyecto/imagenesproyecto/buslion.png) no-repeat center;

@@ -1,10 +1,9 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&family=Amaranth:ital,wght@1,700&family=Fugaz+One&family=Kaushan+Script&family=Lato:wght@100&family=Zen+Dots&display=swap");
 .ana{
   display: none;
 }
 .container1 {
-  background:url(../imagenesproyecto/230131-Redragon-Arma-tu-estudio-Principal-4-3-1.jpg) no-repeat center;
+  background:url(../proyecto/imagenesproyecto/230131-Redragon-Arma-tu-estudio-Principal-4-3-1.jpg) no-repeat center;
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -191,6 +190,8 @@ label{
   justify-content: center;
   align-items: center;
   width: 100%;
+  flex-wrap: wrap;
+  z-index: 10;
 }
 
 #IniciarSecion{
@@ -224,6 +225,7 @@ label{
   flex-direction: row;
   text-align: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 header{
   border: solid 2px black;
@@ -287,7 +289,7 @@ color: #000000;
   height: 50px;
   border-radius: 50%;
   position: fixed;
-  z-index: 10;
+  z-index: 120;
   margin: 20px;
   cursor: pointer;
 }
@@ -356,6 +358,9 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
       margin: 20px;
      }
 @media (max-width: 768px){
+  
+  
+  
   #dentroDelregistro{
     width: 200px;
     display: flex;
@@ -377,31 +382,8 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
   }
   
   
-  .Contteclado,.mouse,.audio,.pads {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-  }
-  #tecladosP,#mouseP,#audioP,#padsP{
-    flex: 0 0 auto;
-    border: solid 1px black;
-    margin: 10px;
-    width: 250px;
-    height: 150px;
-    text-align: center;
-  
-  }
-  .Contteclado,.mouse,.audio,.pads::-webkit-scrollbar {
-    display: none;
-  }
-  .scrolling-buttons-container {
-    display: flex;
-    justify-content: space-between;
-    font-size: 25px;
-    margin-left: 25px;
-    margin-right: 25px;
-  }
+
+
   
   #tecladoP{
     flex: 1 0 auto;
@@ -414,7 +396,7 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
 
 
 .container1 {
-    background:url(../imagenesproyecto/230131-Redragon-Arma-tu-estudio-Principal-4-3-1.jpg) no-repeat center;
+    background:url(../proyecto/imagenesproyecto/230131-Redragon-Arma-tu-estudio-Principal-4-3-1.jpg) no-repeat center;
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -424,13 +406,7 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
     align-items: end;
 
 }
-.container1 h1{
-    color: rgb(255, 255, 255);
-    width: 200px;
-    font-size: 28px;
-    padding:15px;
-   
-}
+
 .grid a{
   color: #ffffff;
   text-decoration: none;
@@ -505,7 +481,11 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
   margin: 0 auto;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  height: 100px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav{
   margin: 0 auto;
@@ -582,7 +562,7 @@ width: 80px;
     align-items: center;
     justify-content: center;
     background: linear-gradient(to bottom, transparent, rgb(9, 9, 9,0.9),rgb(9, 9, 9)),
-      url(../proyecto/imagenesproyecto/DRAGONBORN2.jpg) no-repeat center center;
+              url(../proyecto/imagenesproyecto/HEROS-desktop-6.jpg) no-repeat center center;
     margin: 0 auto;
     
     font-size: 11px;
@@ -640,7 +620,19 @@ width: 80px;
   #soloCel{
     display: none;
   }
- 
+  #contenedorRegistro{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+    position: fixed;
+    z-index: 40;
+    background-color: rgba(0, 0, 0, 0.76);
+    margin: 0px;
+  } 
  
 }
 
@@ -837,7 +829,7 @@ width: 80px;
         align-items: center;
         justify-content: center;
         background: linear-gradient(to bottom, transparent, rgb(9, 9, 9,0.9),rgb(9, 9, 9)),
-          url(../proyecto/imagenesproyecto/DRAGONBORN2.jpg) no-repeat center center;
+              url(../proyecto/imagenesproyecto/HEROS-desktop-6.jpg) no-repeat center center;
         margin: 0 auto;
         
         font-size: 11px;
@@ -936,20 +928,21 @@ width: 80px;
 
     
         .container1 {
-            background:url(../proyecto/imagenesproyecto/S101-BA-Header-1.jpg) no-repeat center;
+            background:url(../proyecto/imagenesproyecto/230131-Redragon-Arma-tu-estudio-Principal-4-3-1.jpg) no-repeat center;
             background-size: cover;
-            height: 650px;
+            height: 100vh;
             width: 100%;
             display: flex;
-            justify-content:flex-start;
-            align-items: end;
+            justify-content:center;
+            align-items: center;
         
         }
         .container1 h1{
-            color: rgb(255, 255, 255);
+            color: rgb(165, 0, 0);
             width: 450px;
-            font-size: 40px;
+            font-size: 60px;
             margin-left: 30px;
+            text-shadow: 3px 3px 3px 3px black;
         }
         .encabezado{
             position: absolute;
@@ -1084,7 +1077,7 @@ width: 80px;
             align-items: center;
             justify-content: center;
             background: linear-gradient(to bottom, transparent, rgb(9, 9, 9,0.9),rgb(9, 9, 9)),
-              url(../proyecto/imagenesproyecto/DRAGONBORN2.jpg) no-repeat center center;
+              url(../proyecto/imagenesproyecto/HEROS-desktop-6.jpg) no-repeat center center;
             margin: 0 auto;
             
             font-size: 11px;

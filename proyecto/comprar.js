@@ -23,7 +23,7 @@ function cargarProductos() {
             <img src="${item.img}" alt="${item.nombre}">
             <p>Precio: ${item.precio}</p>
             <div class ='ventaBoton'>
-              <button id='botonAgregar' class='agregarAlcarro' data-precio='${item.precio}'>Agregar</button><p>0</p>
+              <button id='botonAgregar' class='agregarAlcarro' data-precio='${item.precio}'>Agregar</button>
             </div>
           `;
           producto.elemento.appendChild(agg);
@@ -138,7 +138,7 @@ function desplegarTotalFac() {
 
     checkOut(aggNew, productosVendidos);
 
-    // Restablecer el carrito y la pantalla de éxito
+ 
     finalCompra.classList.toggle('nuevaClase');
     desplegarcarrito.style.display = desplegarcarrito.style.display === 'none' ? 'flex' : 'none';
     finalCompra.innerHTML = `<div id="ExitoCompra">
@@ -164,5 +164,4 @@ leftBtn.addEventListener("click", () => {
 });
 
 
-///
 

@@ -30,6 +30,37 @@
         "nombreProducto",
         1900000
       ]
+    },
+    {
+      "id": "3c05",
+      "nombre": "DANIEL",
+      "contraseña": "123",
+      "historial": []
+    },
+    {
+      "id": "c3e8",
+      "nombre": "papa",
+      "contraseña": "123",
+      "historial": [
+        {
+          "productos": [
+            {
+              "nombreProducto": "FizzPro",
+              "cantidad": 3
+            }
+          ],
+          "fecha": "2024-01-18T20:50:11.705Z"
+        },
+        {
+          "productos": [
+            {
+              "nombreProducto": "FizzPro",
+              "cantidad": 3
+            }
+          ],
+          "fecha": "2024-01-18T20:50:11.706Z"
+        }
+      ]
     }
   ]
 }

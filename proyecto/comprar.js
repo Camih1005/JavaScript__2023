@@ -155,13 +155,6 @@ const leftBtn = document.querySelector("#scrolling-button-left");
 
 const content = document.querySelector(".contenedorProductos");
 
-rightBtn.addEventListener("click", () => {
-  content.scrollLeft += 300;
-});
-
-leftBtn.addEventListener("click", () => {
-  content.scrollLeft -= 300;
-});
 
 
 

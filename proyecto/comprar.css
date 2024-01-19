@@ -380,28 +380,14 @@ img,.texto,.mapa,.vender,.formularioventas,.for,.grid,.imagenmenu
   .Contteclado,.mouse,.audio,.pads {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-  }
-  #tecladosP,#mouseP,#audioP,#padsP{
-    flex: 0 0 auto;
-    border: solid 1px black;
-    margin: 10px;
-    width: 250px;
-    height: 150px;
-    text-align: center;
   
   }
-  .Contteclado,.mouse,.audio,.pads::-webkit-scrollbar {
-    display: none;
-  }
-  .scrolling-buttons-container {
+ 
+  .contenedorProductos{
     display: flex;
-    justify-content: space-between;
-    font-size: 25px;
-    margin-left: 25px;
-    margin-right: 25px;
-  }
+    flex-wrap: nowrap;
+  
+   }
   
   #tecladoP{
     flex: 1 0 auto;
@@ -926,11 +912,7 @@ width: 80px;
       .header{
         display: none;
     }
-    .scrolling-buttons-container{
-      display: none;
-    }
-    
-    
+ 
     }
     @media(min-width:1024px) {
 

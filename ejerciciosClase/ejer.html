@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    IDS = [
+    {"id": "1"},
+    {"id": "1"},
+    {"id": "2"}
+]
+fn = new Object()
+console.table(fn)
+function crear(){
+for (let i = 0; i< IDS.length; i++) {
+    const element = IDS[i];
+    console.log(IDS[0].id)
+    if(IDS[0].id === 1){
+
+        fn.push(element)
+            console.log(fn)       
+    }
+
+}
+}
+crear()
+</script>
+</body>
+</html>

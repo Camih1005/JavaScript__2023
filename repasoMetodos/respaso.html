@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    const numeros = [1,2,3,4,5,6]
+
+    //MAP me devuelve otro array con la funcion que le quisieramos poner
+        const MAP = numeros.map(n => n*2)
+        console.log(MAP)
+
+    //filtrer filtra como t quieras
+
+    const filtrar = numeros.filter(n => n % 2 == 0)
+    console.log('numeros pares ' + filtrar)
+
+    // find me devuelve lo que busquemos
+    const find = numeros.find(n => n === 3 )
+    console.log(find)
+    //// findIndex devuelve la posicion de el find
+    const findI = numeros.findIndex(n => n == 4)
+    console.log(findI)
+
+    /// 
+
+    
+
+    </script>
+    
+</body>
+</html>

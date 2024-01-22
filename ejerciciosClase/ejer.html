@@ -62,6 +62,33 @@ for (let i = 0; i < array.length; i++) {
 }
 
 console.log(resultado);
+
+const arr = [
+    {"id": "1"},
+    {"id": "1"},
+    {"id": "2"},
+    {'id':'3'}
+];
+
+
+function group_By (arr, fnct) {
+    let obj = {};
+    
+    arr.forEach( element => {
+        if (fnct(element) in obj) {
+            
+            obj[`${fnct(element)}`].push(element);
+            
+        } else {
+            obj[`${fnct(element)}`] = [element];
+            
+        }
+
+        
+    })
+
+    console.log(obj)
+}
 </script>
 </body>
 </html>

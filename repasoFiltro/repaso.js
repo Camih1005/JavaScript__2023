@@ -67,19 +67,11 @@ const coche = {
     modelo : 'model X'
 }
 const caca = Object.entries(coche)
-console.log(caca)
+console.log(delete coche.marca)
+console.log(coche)
+coche['marca']='TESLA' //agrega al final 
+console.log(coche)
+const obtener = coche['marca']
+console.log(obtener)
 
 ////
-var myObj = new Object(),
-  str = "myString",
-  rand = Math.random(),
-  obj = new Object();
-
-myObj.type = "Sintaxis de puntos";
-myObj["fecha de creación"] = "Cadena con espacios";
-myObj[str] = "Valor de cadena";
-myObj[rand] = "Número aleatorio";
-myObj[obj] = "Object";
-myObj[""] = "Incluso una cadena vacía";
-
-console.log(myObj);

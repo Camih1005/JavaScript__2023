@@ -36,15 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch(`http://localhost:3000/${value}`)
             .then(response => response.json())
             .then(data => {
-                // Limpia el contenido anterior
+
                 resultadoContainer.innerHTML = '';
 
-                // Itera sobre las propiedades numeradas (0, 1, 2, ...)
+        
                 for (const tipoVehiculo in data) {
                     if (data.hasOwnProperty(tipoVehiculo) && tiposVehiculo.includes(tipoVehiculo)) {
                         const vehiculos = data[tipoVehiculo];
 
-                        // Verifica si vehiculos es un array antes de usar forEach
+              
                         if (Array.isArray(vehiculos)) {
                             vehiculos.forEach(vehiculo => {
                                 const elemento = document.createElement('p');

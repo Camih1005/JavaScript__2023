@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
 
-        // Definición de la función groupBy
-        Array.prototype.groupBy = function (fn) {
+     Array.prototype.groupBy = function (fn) {
             return this.reduce((result, item) => {
                 const key = fn(item);
                 if (!result[key]) {
@@ -19,12 +9,12 @@
                 return result;
             }, {});
         };
+   
+       const grupo = [1,2,3,4,5,6,7,8,9,].groupBy(g =>{
+        return g %2 === 0 ? 'par':'inpar'
+       })
 
-        const group = [1,2,3,4,5,6,7,8,9].groupBy(n => {
-         return  n % 2 === 0 ? 'par': 'inpar'
-        });
-
-        console.log(group);
+        console.log(grupo);
 /////////////////////
         const Personas = [{nombre:'camilo'},{nombre: 'Luis'},{nombre:'catalina'}].groupBy(usuarios =>{
             if(usuarios.nombre.includes('e')){
@@ -49,6 +39,3 @@ const IDS = [
 
 const groupedIds = IDS.groupBy(item => item.id);
 console.log(groupedIds);
-    </script>
-</body>
-</html>

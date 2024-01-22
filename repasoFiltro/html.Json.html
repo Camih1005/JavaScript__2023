@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 255, 0.352);
+        border: solid 1px black;
+        padding: 20px;
+        text-align: center;
+        width: 50%;
+        height: auto;
+        gap: 10px;
+    }
+    #p{
+        border: solid 1px black;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        height: auto;
+    }
+</style>
+<body>
+    <div id='container'>
+        <h1>¿Qué carros quieres ver?</h1>
+        <form id="formularioBusqueda">
+            <label for="marca">Elige qué tipo de vehículos quieres ver:</label>
+            <input type="checkbox" name="autos" id="busquedaInputAutos"> Autos
+            <input type="checkbox" name="camionetas" id="busquedaInputCamionetas"> Camionetas
+            <button type="submit" id="busquedaButton">Buscar</button>
+        </form>
+
+        <div id="p">
+        </div>
+    </div>
+
+    <script src="busqueda.js"></script>
+</body>
+</html>

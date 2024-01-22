@@ -1,0 +1,75 @@
+{
+    "autos":[
+        {   "id":1,
+            "marca": "Tesla",
+            "modelo":"Model X",
+            "año":   2023,
+            "kilometraje":"12000"
+        },
+        {
+            "id":2,
+            "marca": "Audi",
+            "modelo":"Q8",
+            "año":   2022,
+            "kilometraje":"0"  
+        },
+        {
+            "id":3,
+            "marca": "BMW",
+            "modelo":"R7",
+            "año":   2024,
+            "kilometraje":"1000"
+        },
+        {
+            "id":4,
+            "marca": "Mazda",
+            "modelo":"CX50",
+            "año":   2023,
+            "kilometraje":"12000"
+        },
+        {
+            "id":5,
+            "marca": "Hyundai",
+            "modelo":"Accent",
+            "año":   2012,
+            "kilometraje":"14000" 
+        }
+    ],
+    "camionetas":[
+        {
+            "id":1,
+            "marca": "Hummer",
+            "modelo":"EV",
+            "año":   2022,
+            "kilometraje":"3000"  
+        },
+        {
+            "id":2,
+            "marca": "Ford",
+            "modelo":"F150",
+            "año":   2021,
+            "kilometraje":"314000" 
+        },
+        {
+            "id":3,
+            "marca": "Mazda",
+            "modelo":"CX9",
+            "año":   2022,
+            "kilometraje":"0" 
+        },
+        {
+            "id":4,
+            "marca": "Renault",
+            "modelo":"Koleos",
+            "año":   2019,
+            "kilometraje":"84000" 
+        },
+        {
+            "id":5,
+            "marca": "Dodge",
+            "modelo":"Durango",
+            "año":   2025,
+            "kilometraje":"0" 
+        }
+    ]
+}

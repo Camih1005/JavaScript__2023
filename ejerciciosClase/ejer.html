@@ -7,26 +7,61 @@
 </head>
 <body>
 <script>
-    IDS = [
+const IDS = [
     {"id": "1"},
     {"id": "1"},
-    {"id": "2"}
-]
-fn = new Object()
-console.table(fn)
-function crear(){
-for (let i = 0; i< IDS.length; i++) {
-    const element = IDS[i];
-    console.log(IDS[0].id)
-    if(IDS[0].id === 1){
+    {"id": "2"},
+    {'id':'3'}
+];
 
-        fn.push(element)
-            console.log(fn)       
+function crear() {
+    const resultado = {};
+
+    for (let i = 0; i < IDS.length; i++) {
+        const elemento = IDS[i];
+        const id = elemento.id;
+        if (!resultado[id]) {
+            
+            resultado[id] = [elemento];
+        } else {
+         
+            resultado[id].push(elemento);
+        }
     }
 
+    console.log(resultado);
 }
+
+crear();
+
+// let caca = [IDS]
+// console.log(Object.entries(IDS))
+// console.log(caca)
+
+// function generar(n){
+//     return Array(n)
+//     .fill('C'.repeat(n))
+//     .join('\n')
+// }
+// console.log(generar(2))
+
+const array = [
+    [1, 2, 3],
+    [1, 3, 5],
+    [1, 5, 9]
+];
+
+const fn = function(list) {
+    return String(list[0]);
+};
+
+// Aplicar la función fn a cada subarray y generar un objeto
+const resultado = {};
+for (let i = 0; i < array.length; i++) {
+    resultado[String(i + 1)] = [fn(array[i])];
 }
-crear()
+
+console.log(resultado);
 </script>
 </body>
 </html>

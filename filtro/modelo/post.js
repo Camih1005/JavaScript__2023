@@ -23,7 +23,40 @@ async function checkOut(aggNew, compras) {
     }
   }
 
+///////////////agregar productos//////
 
+function productos(){
+
+ 
+
+  fetch(`http://localhost:4001/perfumes`,
+  {
+  method: 'GET',
+  headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+.then(response => response.json())
+.then(perfumes => {
+  perfumes.forEach(item => {
+    const pro = document.getElementById('productos')
+    const par = JSON.stringify(perfumes)
+  console.log(par)
+  pro.innerHTML = `<div>
+                  <p>perfume: ${item.name} marca :${item.marca} </p>
+                
+                  </div>`;
+
+})
+  });
+  
+
+
+}
+productos()
+
+
+////////////////////
 
 function ingresarUsuario() {
     const username = document.getElementById('nombre').value;
@@ -36,6 +69,8 @@ function ingresarUsuario() {
     if (usuarios.length > 0) {
       const usuario = usuarios[0];
       alert(`${username} en sesion`);
+      const usu = document.getElementById('ususu')
+      usu.innerHTML = `nombre`
     
       localStorage.setItem('usuario', JSON.stringify(usuario));
       const agregar_jsonUs = localStorage.getItem('usuario');
@@ -112,6 +147,8 @@ function ingresarUsuario() {
         
         localStorage.clear('usuario')
         alert('sesion usuario retirado')
+        const ses = document.getElementById('UsuarioIn')
+        ses.document.style.display = 'none'
 
     }
     ////////////////////////////////
@@ -147,9 +184,14 @@ function historial(){
   const ids = localStorage.getItem('usuario')
   const histori = document.getElementById('historialDiv')
 const parse = JSON.parse(ids)
-histori.innerHTML = `nombre : ${parse.nombre} <br> 
-                      cedula: ${parse.id} <br>
-                      compras : ${parse.compras} `
+if(!localStorage.getItem('usuario')){
+  alert('No hay ningun usuario en linea')
+}else{
+  histori.innerHTML = `nombre : ${parse.nombre} <br> 
+  cedula: ${parse.id} <br>
+  compras : ${parse.compras} `
+}
+
 
 }
 const histo = document.getElementById('historial')

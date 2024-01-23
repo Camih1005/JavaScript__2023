@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        flex-direction: column;
+        background-color: rgba(127, 255, 212, 0.479);
+        margin: 0 auto;
+        padding: 20px;
+        gap: 10px;
+    }
+    #cerrar{
+        border: none;
+        padding: 5px;
+        background-color: rgba(165, 42, 42, 0.534);
+        margin: 0 auto;
+        cursor: pointer;
+        text-align: center;
+        width: 200px;
+        height: 50px;
+    }
+    h2{
+        font-size: 13px;
+        text-align: center;
+    }
+    button{
+        background-color: rgb(0, 85, 0);
+        color: white;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #historialDiv{
+        display: flex;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        border: solid 2px;
+        z-index: 10;
+        text-align: center;
+        gap: 5px;
+        color: red;
+        font-size: 20px;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+</style>
+<body>
+    <h2>SI EL USUARIO ENTRA POR PRIMERA VEZ TIENE QUE REGISTRARLO,APENAS LO REGISTRE OBTIENE UNA COMPRA<BR> SI DESEA AGREGARLE AL MISMO USUARIO MAS COMPRAS LE DA EN compra nueva usuario <br> si desea ver el hisrorial esta en la parte de la izquierda</BR>
+    PRFE SOLO EMPIEZA ASI : npx json-server -p 4001 db/db.json </h2>
+    <button id="cerrar">CERRAR COMPRA</button>
+   
+    <form action="">
+        <h1>Compra nueva</h1>
+        <label for="">Nombre usuario</label>
+        <input type="text" id="nombre">
+        <label for="" >Cedula</label>
+        <input type="text" id="cedula">
+        <button id="BotonVer">Ver usuario</button>
+        <button id="bono">Ver bono</button>
+        <button id="AggCompra"> compra nueva usuario</button>
+        
+    </form>
+ 
+    <br>
+    <div id="has">
+        <button  id="historial">Ver historial del usuario</button>
+        <div id="historialDiv"></div>
+    </div>
+  
+    <br>
+
+    <form action="">
+        <h1>Registrar usuario</h1>
+        <p style="text-align: center;">La primera vez que registra a un usuario se agrega una compra</p>
+        <label for="">nombre</label>
+        <input type="text" id="Nomregistrar">
+        <label for="">cedula</label>
+        <input type="password" id="cedularegistro">
+        <button id="RegistrarBoton">Registrar</button>
+
+    </form>
+    
+    
+    <script src="../modelo/post.js">
+        
+    </script>
+</body>
+</html>

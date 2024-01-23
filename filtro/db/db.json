@@ -1,0 +1,157 @@
+{
+  "tipousuarios": [
+    {
+      "id": "1",
+      "tipo": "administrador"
+    },
+    {
+      "id": "2",
+      "tipo": "funcionario"
+    },
+    {
+      "id": "3",
+      "tipo": "cliente"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "integer; 0 < d <= 2.000.0000; (cedula cliente)",
+      "pass": "string; len(pass) > 6",
+      "nombre": "camilo",
+      "tipousuarioId": "[1, 2, 3]"
+    },
+    {
+      "id": "222222",
+      "pass": "strin222g; len(pass) > 6",
+      "nombre": "string222; len(nombre) > 3",
+      "tipousuarioId": "[1, 222, 3]"
+    }
+  ],
+  "registros": [
+    {
+      "id": "123",
+      "nombre": "camilo3",
+      "contraseña": "123",
+      "fecha": "2024-01-23T01:18:55.310Z",
+      "compras": 1
+    },
+    {
+      "id": "123",
+      "nombre": "cacaca",
+      "contraseña": "123",
+      "fecha": "2024-01-23T01:32:08.513Z",
+      "compras": 1
+    },
+    {
+      "id": "1005323441",
+      "nombre": "papas",
+      "contraseña": "1005323441",
+      "fecha": "2024-01-23T01:34:16.243Z",
+      "compras": 1
+    },
+    {
+      "id": "1005323441",
+      "nombre": "christian2",
+      "contraseña": "1005323441",
+      "fecha": "2024-01-23T01:39:45.785Z",
+      "compras": 1
+    },
+    {
+      "id": "1005323441",
+      "nombre": "christian4",
+      "contraseña": "1005323441",
+      "fecha": "2024-01-23T01:51:19.274Z",
+      "compras": 1
+    },
+    {
+      "id": "1005323441",
+      "nombre": "camilo33",
+      "contraseña": "1005323441",
+      "fecha": "2024-01-23T02:13:49.679Z",
+      "compras": 11
+    },
+    {
+      "id": "123456789",
+      "nombre": "lala",
+      "contraseña": "123456789",
+      "fecha": "2024-01-23T02:42:40.774Z",
+      "compras": 1
+    },
+    {
+      "id": "1005323441",
+      "nombre": "pola",
+      "contraseña": "1005323441",
+      "fecha": "2024-01-23T02:53:10.451Z",
+      "compras": 1
+    },
+    {
+      "id": "12345678",
+      "nombre": "cacacaca",
+      "contraseña": "12345678",
+      "fecha": "2024-01-23T02:58:26.705Z",
+      "compras": 1
+    }
+  ],
+  "bonos": [
+    {
+      "id": "integer; id > 0",
+      "usuarioId": "integer; 0 < d <= 2.000.0000; (cedula cliente)",
+      "historial": [
+        "date; yyyy-mm-dd",
+        "date; yyyy-mm-dd"
+      ]
+    }
+  ],
+  "perfumes": [
+    {
+      "id": "1",
+      "name": "Perfume A",
+      "marca": "Brand X"
+    },
+    {
+      "id": "2",
+      "name": "Perfume B",
+      "marca": "Brand Y"
+    },
+    {
+      "id": "3",
+      "name": "Perfume C",
+      "marca": "Brand Z"
+    },
+    {
+      "id": "4",
+      "name": "Perfume D",
+      "marca": "Brand X"
+    },
+    {
+      "id": "5",
+      "name": "Perfume E",
+      "marca": "Brand Y"
+    },
+    {
+      "id": "6",
+      "name": "Perfume F",
+      "marca": "Brand Z"
+    },
+    {
+      "id": "7",
+      "name": "Perfume G",
+      "marca": "Brand X"
+    },
+    {
+      "id": "8",
+      "name": "Perfume H",
+      "marca": "Brand Y"
+    },
+    {
+      "id": "9",
+      "name": "Perfume I",
+      "marca": "Brand Z"
+    },
+    {
+      "id": "10",
+      "name": "Perfume J",
+      "marca": "Brand X"
+    }
+  ]
+}

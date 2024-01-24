@@ -76,17 +76,45 @@
     #usuu{
         color: azure;
     }
+    .ocultar{
+        display: none;
+    }
+    #elegir{
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        width: 300px;
+        gap: 30px;
+        margin: 0 auto;
+        background-color: rgba(0, 0, 255, 0.539);
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+    }
+    #cedulaP{
+        width: 150px;
+        margin:  auto;
+    }
 
 </style>
 <body>
+    <h1>PERFUMERIA ACME</h1>
+    <div id="elegir">
+    <form  action="">
+        <label name = 'tipo' for="tipo"> Funcionario</label>
+        <input type="radio" value="funcionario">
+        <label name = 'tipo' for="tipo">Usuario</label>
+        <input type="radio" value="usuario">
+        <br> <br>
+       
+    </form>
+    <label for="cedula">cedula</label>
+    <input id="cedulaP" type="text">
+    <button>Ingresar</button>
+</div>
 
-<div id="UsuarioIn"><p id="ususu"></p></div>
-
-    <h2>SI EL USUARIO ENTRA POR PRIMERA VEZ TIENE QUE REGISTRARLO,APENAS LO REGISTRE OBTIENE UNA COMPRA<BR> SI DESEA AGREGARLE AL MISMO USUARIO MAS COMPRAS LE DA EN compra nueva usuario <br> si desea ver el hisrorial esta en la parte de la izquierda</BR>
-    PRFE SOLO EMPIEZA ASI : npx json-server -p 4001 db/db.json </h2>
-    
-   
-    <form action="">
+    <form action="" class="ocultar">
         <button id="cerrar">CERRAR COMPRA</button>
         <h1>Compra nueva</h1>
         <label for="">Nombre usuario</label>
@@ -105,7 +133,7 @@
   
     <br>
 
-    <form action="">
+    <form action="" class="ocultar">
         <h1>Registrar usuario</h1>
         <p style="text-align: center;">La primera vez que registra a un usuario se agrega una compra</p>
         <label for="">nombre</label>
@@ -115,14 +143,14 @@
         <button id="RegistrarBoton">Registrar</button>
 
     </form>
-    <button  id="historial">Ver historial del usuario</button>
-    <div id="has">
-        
-        <div id="historialDiv"></div>
+    <button class="ocultar"  id="historial">Ver historial del usuario</button>
+
+   
     </div>
     
     <script src="../modelo/post.js">
         
     </script>
+    <script src="../modelo/funcionarios.js"></script>
 </body>
 </html>

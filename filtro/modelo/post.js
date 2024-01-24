@@ -102,7 +102,7 @@ function ingresarUsuario() {
     const cedula = document.getElementById('cedularegistro').value;
     
     
-    fetch(`http://localhost:4001/usuarios?nombre=${newUsername}`)
+    fetch(`http://localhost:4001/registros?id=${cedula}`)
     .then(respuesta => respuesta.json())
     .then(usuarios => {
     if (usuarios.length > 0) {
@@ -113,6 +113,9 @@ function ingresarUsuario() {
     }
     else if(cedula.length < 7){
         alert('la cedula debe ser de 6 digitos')
+    }
+    else if(cedula === usuarios.id){
+      alert('este usuario ya existe')
     }
     else {
     

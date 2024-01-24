@@ -36,66 +36,17 @@
       "compras": 1
     },
     {
-      "id": "123",
-      "nombre": "cacaca",
-      "contraseña": "123",
-      "fecha": "2024-01-23T01:32:08.513Z",
-      "compras": 1
-    },
-    {
-      "id": "1005323441",
-      "nombre": "papas",
-      "contraseña": "1005323441",
-      "fecha": "2024-01-23T01:34:16.243Z",
-      "compras": 1
-    },
-    {
-      "id": "1005323441",
-      "nombre": "christian2",
-      "contraseña": "1005323441",
-      "fecha": "2024-01-23T01:39:45.785Z",
-      "compras": 1
-    },
-    {
-      "id": "1005323441",
-      "nombre": "christian4",
-      "contraseña": "1005323441",
-      "fecha": "2024-01-23T01:51:19.274Z",
-      "compras": 1
-    },
-    {
-      "id": "1005323441",
-      "nombre": "camilo33",
-      "contraseña": "1005323441",
-      "fecha": "2024-01-23T02:13:49.679Z",
-      "compras": 11
-    },
-    {
-      "id": "123456789",
-      "nombre": "lala",
-      "contraseña": "123456789",
-      "fecha": "2024-01-23T02:42:40.774Z",
-      "compras": 1
-    },
-    {
-      "id": "1005323441",
-      "nombre": "pola",
-      "contraseña": "1005323441",
-      "fecha": "2024-01-23T02:53:10.451Z",
-      "compras": 1
-    },
-    {
-      "id": "12345678",
-      "nombre": "cacacaca",
-      "contraseña": "12345678",
-      "fecha": "2024-01-23T02:58:26.705Z",
-      "compras": 1
-    },
-    {
-      "id": "1005323441",
+      "id": "100323441",
       "nombre": "cata1",
-      "contraseña": "1005323441",
-      "fecha": "2024-01-23T04:22:24.233Z",
+      "contraseña": "100323441",
+      "fecha": "2024-01-24T05:49:07.309Z",
+      "compras": 1
+    },
+    {
+      "id": "100323441",
+      "nombre": "cata1",
+      "contraseña": "100323441",
+      "fecha": "2024-01-24T05:49:33.883Z",
       "compras": 1
     }
   ],
